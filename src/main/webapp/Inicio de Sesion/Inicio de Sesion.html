@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Paraiso de la oscuridad | Entrada al Paraiso</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Inicio Sesion.css">
+    <link rel="icon" type="image/x-icon" href="../recursos/global/img-index/Wikisingers.png">
+    <script src="../Assets/js/sql-storage.js"></script>
+</head>
+<body>
+    <div class="contenedor-volver-global">
+        <a href="../index.html" class="boton-volver-global">
+            <img src="../recursos/global/img-index/volver.png" alt="Volver">
+        </a>
+        <p class="texto-ayuda-subtitulado">volver</p>
+    </div>
+
+    <div class="contenedor-ayuda-global">
+    <a href="#" class="boton-ayuda-global" id="disparador-ayuda">
+        <img src="../recursos/global/img-index/Informacion.png" alt="Informacion">
+    </a>
+    <p class="texto-ayuda-subtitulado">Guia</p>
+
+    <div class="pantalla-ayuda-modal" id="modal-ayuda-visual">
+        <div class="cuerpo-ayuda-retro">
+            
+            <h2>Manual de Inicio de Sesion  </h2>
+            
+            <div class="galeria-explicativa">
+                <div class="tarjeta-instruccion">
+                    <img src="img/alma.png" alt="Paso 1: El Vuelo">
+                    <p>En la sección <span>"Proporcionar Alma Sometida"</span> introduzca su <span>Correo electronico</span>con el que ya hizo el pacto.</p>
+                </div>
+                 <div class="tarjeta-instruccion">
+                    <img src="img/sangre.png" alt="Paso 1: El Vuelo">
+                    <p>En la sección <span>"Pacto de sangre"</span> introduzca su <span>Contraseña</span>la sangre la cual uso para el pacto.</p>
+                </div>
+                 <div class="tarjeta-instruccion">
+                    <img src="img/alma perdida.png" alt="Paso 1: El Vuelo">
+                    <p>En <span>"Reclamar Alma Perdida"</span> te llevará a la sección de <span>Exumación</span> donde podras cambiar o recuperar tu pacto de sangre <span>(Contraseña)</span>.</p>
+                </div>
+                 <div class="tarjeta-instruccion">
+                    <img src="img/pertenecer.png" alt="Paso 1: El Vuelo">
+                    <p>En <span>"Pertenecer a la Plaga"</span> te llevará a la sección de <span>Abrazar la Plaga</span> donde podras contagiarte de la plaga <span>(Registrarse)</span>.</p>
+                </div>
+                
+               
+            </div>
+            <button class="cerrar-ayuda-btn ritual-btn">Entendi el ritual</button>
+        </div>
+    </div>
+</div>
+
+<div class="caja0">
+    <div class="caja">
+        
+        <h1>Paraiso de la Oscuridad</h1>
+        <img src="../Inicio de Sesion/img/carnero.png" alt="Logo Carnero" class="logo">
+        
+        <p class="subtitulo">Estas en las puertas del Paraiso de la oscuridad.</p>
+        <p class="subtitulo">Permite que escuchemos tus canticos.</p>
+        <p class="subtitulo">Aqui comienza tu travesia.</p>
+        
+        <form id="loginForm">
+            <div class="grupo">
+                <label for="email">Proporcionar Alma Sometida</label>
+                <input type="email" id="email" placeholder="dametu@lma.com" required>
+            </div>
+
+            <div class="grupo">
+                <label for="password">Pacto de sangre</label>
+                <input type="password" id="password" placeholder="Pacto de sangre" required>
+            </div>
+
+            <button type="submit" class="Iniciar">Sometete</button>
+
+            <p id="error" class="error"></p>
+
+           <div class="links">
+    <a href="../contraseña olvidada/Contraseña olvidada.html">Reclamar alma perdida</a>
+    
+    <a href="../Registrarse/Registrarse.html">Pertenecer a la plaga</a>
+</div>
+        </form>
+    </div>
+</div>
+
+<script src="js/Sesion.js"></script>
+<script src="../Assets/js/heart-animation.js?v=heart-index-1"></script>
+
+<script src="../Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

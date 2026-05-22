@@ -1,0 +1,325 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Menú - Paraíso de la Oscuridad</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="Menú.css">
+    <link rel="icon" type="image/x-icon" href="img index/Wikisingers.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="Assets/js/sql-storage.js?v=sql-artistas-1"></script>
+</head>
+<body>
+    <div class="contenedor-maestro">
+        
+        <div class="navegacion-superior">
+            <a href="Menú.html" class="item-navegacion">
+                <img src="img index/Wikisingers.png" alt="Menú" class="icono-pixel">
+                <span class="texto-menu">Menú</span>
+            </a>
+            <a href="index.html" class="item-navegacion btn-atras">
+                <img src="img index/volver.png" alt="Atrás" class="icono-pixel">
+                <span class="texto-menu">Atrás</span>
+            </a>
+        </div>
+
+        <div class="contenedor-derecha">
+            <div class="seccion-usuario">
+                <div class="contenedor-perfil">
+                    <img src="img index/Perfil.png" alt="Perfil" class="icono-pixel">
+                    <a href="index.html" class="btn-logout">Cerrar Sesión</a>
+                </div>
+            </div>
+            
+            <div class="contenedor-ayuda-global">
+                <a href="#" class="boton-ayuda-global" id="disparador-ayuda">
+                    <img src="img index/Informacion.png" alt="Información" class="icono-pixel">
+                </a>
+                <p class="texto-ayuda-subtitulado">Guía</p>
+            </div>
+        </div>
+
+        <div class="contenedor">
+            <img src="img index/Wikisingers.png" class="conejito" alt="deco">
+            <div class="buscador">
+                <input type="text" id="mibuscador" placeholder="Buscar entidad...">
+                <button onclick="Ejecutar()">
+                    <img class="busca" src="img index/Buscador.png" alt="icon">
+                </button>
+            </div>
+            <img src="img index/Wikisingers.png" class="conejito2" alt="deco">
+        </div>
+
+        <header class="Encabezado">
+            <details class="detalles-retro">
+                <summary>
+                    <img class="Generos" src="img index/Generos.png" alt="icon">
+                    <p>Géneros</p>
+                </summary>
+                <div class="lista">
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Indie Pop')">Indie Pop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Ouija-Pop')">Ouija-Pop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Avant-Pop')">Avant-Pop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Alt-Pop')">Alt-Pop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Electropop')">Electropop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Darkpop')">Darkpop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Bubblegum Pop')">Bubblegum Pop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Hyperpop')">Hyperpop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Neo-Pop')">Neo-Pop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Pop-Rock')">Pop-Rock</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Alt-Rock')">Alt-Rock</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Grunge')">Grunge</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Electro-Industrial')">Electro-Industrial</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Hip Hop')">Hip Hop</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Trap')">Trap</a><br>
+                    <a href="javascript:void(0)" onclick="filtrarPorGenero('Trap Metal')">Trap Metal</a><br>
+                </div>
+            </details>
+
+            <details class="detalles-retro">
+                <summary>
+                    <div class="contenedor-mood">
+                        <img class="mood" src="img index/mood.png" alt="emociones">
+                        <img class="mood2" src="img index/mood2.png" alt="emociones-alt">
+                    </div>
+                    <p>Mood</p>
+                </summary>
+                <div class="lista">
+                    <a href="#" onclick="filtrarPorMood('Alegre')">Alegre</a><br>
+                    <a href="#" onclick="filtrarPorMood('Triste')">Triste</a><br>
+                    <a href="#" onclick="filtrarPorMood('Rabia')">Rabia</a><br>
+                    <a href="#" onclick="filtrarPorMood('Relax')">Relax</a><br>
+                    <a href="#" onclick="filtrarPorMood('Energía')">Energía</a><br>
+                    <a href="#" onclick="filtrarPorMood('Fiesta')">Fiesta</a><br>
+                    <a href="#" onclick="filtrarPorMood('Concentración')">Concentración</a><br>
+                    <a href="#" onclick="filtrarPorMood('Amor')">Amor</a><br>
+                    <a href="#" onclick="filtrarPorMood('todas')" style="color: #66dbff; font-weight: bold;">Mostrar Todas</a>
+                </div>
+            </details>
+
+            <details class="detalles-retro">
+                <summary>
+                    <div class="img-menu">
+                        <img class="igual" src="img index/gif/ouija.gif" alt="ouija">
+                    </div>
+                    <p>Conjuros</p>
+                </summary>
+                <div class="lista" id="lista-conjuros">
+                    <button class="crear" onclick="nuevaLista()">INVOCAR NUEVO CONJURO</button>
+                </div>
+            </details>
+
+            <details class="detalles-retro">
+                <summary>
+                    <div class="img-menu">
+                        <img class="igual" src="img index/Favoritos.png" alt="favoritos">
+                    </div>
+                    <p>Favoritos</p>
+                </summary>
+                <div class="lista" id="lista-favoritos">
+                    </div>
+            </details>
+
+            <button type="button" class="boton-anadir-menu" onclick="abrirModalArtista()">
+                <div class="img-menu">
+                    <img class="igual" src="img index/Wikisingers.png" alt="añadir">
+                </div>
+                <p>Añadir</p>
+            </button>
+
+            <a class="boton-admin-menu" href="administrador/admin.html" aria-label="Entrar al panel de administrador" hidden>
+                <div class="img-menu">
+                    <img class="igual" src="img index/gif/Parpadeo.gif" alt="administrador">
+                </div>
+                <p>Admin</p>
+            </a>
+        </header>
+
+        <main>
+            <div class="portadas1">
+                <div class="hoja Port" data-artista-oficial="Melanie Martinez" data-genero="Alt-Pop" data-mood="Triste">
+                    <a href="Melanie Martinez/Melanie Martinez.html">
+                        <img src="Melanie Martinez/img/Portada Melanie.jpg" alt="Melanie Martinez">
+                    </a>
+                    <p>Melanie Martinez</p>
+                </div>
+
+                <div class="hoja Port" data-artista-oficial="Jazmin Bean" data-genero="Ouija-Pop" data-mood="Darkpop">
+                    <a href="Jazmin Bean/Jazmin Bean.html">
+                        <img src="Jazmin Bean/img/Icono jazmin bean.jpg" alt="Jazmin Bean">
+                    </a>
+                    <p>Jazmin Bean</p>
+                </div>
+            </div>
+        </main>
+
+        <div id="modal-artista" class="overlay modal-artista" style="display:none">
+            <form class="hoja-diario formulario-artista" id="form-artista-personalizado">
+                <button type="button" class="cerrar-btn cerrar-formulario" onclick="cerrarModalArtista()">&times;</button>
+                <h2>Añadir artista</h2>
+                <p class="intro-formulario-artista">Crea su página principal ahora. Después podrás entrar en ella para añadir álbumes, EPs, singles, significados, comentarios y valoraciones.</p>
+
+                <fieldset class="tipo-artista-campo">
+                    <legend>1. Elige qué vas a crear</legend>
+                    <label class="opcion-artista">
+                        <input type="radio" name="nuevo-artista-tipo" value="famoso" checked>
+                        <span>
+                            <strong>Cantante famoso</strong>
+                            <small>Para guardar información de un artista que ya existe.</small>
+                        </span>
+                    </label>
+                    <label class="opcion-artista">
+                        <input type="radio" name="nuevo-artista-tipo" value="propio">
+                        <span>
+                            <strong>Mi propio proyecto</strong>
+                            <small>Para publicar música tuya desde tu perfil.</small>
+                        </span>
+                    </label>
+                </fieldset>
+
+                <section class="bloque-formulario-artista">
+                    <h3>2. Datos básicos</h3>
+                    <label>
+                        Nombre del artista
+                        <small>Este será el nombre que aparezca en la portada y en su página.</small>
+                        <input type="text" id="nuevo-artista-nombre" required placeholder="Ejemplo: Jazmin Bean">
+                    </label>
+
+                    <label>
+                        Imagen de portada
+                        <small>Elige una foto cuadrada o una portada que represente bien su estética.</small>
+                        <input type="file" id="nuevo-artista-portada" accept="image/*">
+                    </label>
+
+                    <label>
+                        Biografía inicial
+                        <small>Con una presentación corta basta. Podrás editarla más adelante.</small>
+                        <textarea id="nuevo-artista-biografia" placeholder="Escribe quién es, qué estilo tiene y qué quieres que se sepa al entrar..."></textarea>
+                    </label>
+                </section>
+
+                <div class="grupo-estetica-artista">
+                    <h3>3. Estética de su página</h3>
+                    <label>
+                        Color principal
+                        <small>Bordes, detalles y botones importantes.</small>
+                        <input type="color" id="nuevo-artista-color-principal" value="#ff7fa7">
+                    </label>
+                    <label>
+                        Color secundario
+                        <small>Brillos, textos destacados y sombras.</small>
+                        <input type="color" id="nuevo-artista-color-secundario" value="#66dbff">
+                    </label>
+                    <label>
+                        Fondo
+                        <small>Color base del ambiente del artista.</small>
+                        <input type="color" id="nuevo-artista-color-fondo" value="#e68e9e">
+                    </label>
+                </div>
+
+                <p class="nota-formulario">El género y el mood no pertenecen al artista: se añaden después en cada canción.</p>
+                <button type="submit" class="btn-borrar-todo">Crear página del artista</button>
+            </form>
+        </div>
+
+        <div id="modal-conjuro" class="overlay">
+            <div class="hoja-diario">
+                <span class="cerrar-btn" onclick="cerrarConjuro()">&times;</span>
+
+                <div class="portada-contenedor" onclick="document.getElementById('input-archivo').click()" title="Subir imagen desde el PC">
+                    <img id="img-portada-lista" src="img index/gif/ouija.gif" alt="Portada">
+                    <div class="overlay-edit">SUBIR</div>
+                    <input type="file" id="input-archivo" style="display:none" accept="image/*" onchange="subirImagenLocal(event)">
+                </div>
+
+                <h2 id="titulo-conjuro">LIBRO DE ALMAS</h2>
+
+                <label class="campo-nombre-conjuro" for="nombre-conjuro">
+                    Nombre de la playlist
+                    <input type="text" id="nombre-conjuro" placeholder="Mi playlist...">
+                </label>
+
+                <div class="buscador-interno">
+                    <input type="text" id="input-busqueda-almas" placeholder="Buscar audios por artista, cancion, genero o mood..." onkeyup="filtrarContenido()">
+                    <div id="sugerencias-almas" class="sugerencias-box"></div>
+                </div>
+
+                <div id="lista-canciones-interna"></div>
+                
+                <div id="reproductor-contenedor">
+                    <div id="reproductor-frame"></div>
+                </div>
+
+                <div class="footer-hoja">
+                    <button class="btn-borrar-todo" onclick="eliminarConjuro(listaActivaId)">BORRAR PLAYLIST</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="pantalla-ayuda-modal" id="modal-ayuda-visual">
+            <div class="cuerpo-ayuda-retro">
+                <h2>Índice del menú <br>(Elige el ritual que necesitas)</h2>
+                <div class="indice-menu-guia">
+                    <article>
+                        <img src="img index/Generos.png" alt="Géneros">
+                        <div>
+                            <h3>Géneros</h3>
+                            <p>Filtra las canciones por estilo musical para encontrar sonidos parecidos.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="img index/mood.png" alt="Mood">
+                        <div>
+                            <h3>Mood</h3>
+                            <p>Busca canciones según la emoción que quieras escuchar.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="img index/gif/ouija.gif" alt="Conjuros">
+                        <div>
+                            <h3>Conjuros</h3>
+                            <p>Crea playlists propias y añade canciones desde el buscador interno.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="img index/Favoritos.png" alt="Favoritos">
+                        <div>
+                            <h3>Favoritos</h3>
+                            <p>Revisa las canciones que has guardado para volver a ellas rápido.</p>
+                        </div>
+                    </article>
+                    <article>
+                        <img src="img index/Wikisingers.png" alt="Añadir">
+                        <div>
+                            <h3>Añadir</h3>
+                            <p>Publica o registra un nuevo artista con sus álbumes, EPs, singles y estética.</p>
+                        </div>
+                    </article>
+                </div>
+                <button class="cerrar-ayuda-btn ritual-btn">Entendí el ritual</button>
+            </div>
+        </div>
+
+    </div>
+<script src="Assets/js/page-info.js"></script>
+    <script src="Assets/js/favorites.js?v=sin-residuos-1"></script>
+    <script src="Assets/js/catalogo-canciones.js?v=sin-residuos-1"></script>
+    <script src="Menú.js?v=restore-artist-1"></script>
+    <script src="Story_Book.js"></script>
+<script src="Assets/js/profile-editor.js?v=perfil-cuenta-3"></script>
+<script src="Assets/js/history-back.js"></script>
+<script src="Assets/js/heart-animation.js?v=heart-index-1"></script>
+
+<script src="Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

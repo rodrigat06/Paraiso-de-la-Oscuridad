@@ -1,0 +1,295 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 16rem 1fr;
+    background: linear-gradient(135deg, #180411 0%, #d96c93 55%, #301021 100%);
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff7fb;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(255,255,255,0.08) 0 0.0625rem, transparent 0.0625rem 0.35rem);
+}
+
+body.admin-bloqueado {
+    grid-template-columns: 1fr;
+}
+
+.barra-admin,
+.panel-admin { position: relative; z-index: 1; }
+
+.barra-admin {
+    min-height: 100vh;
+    padding: 1rem;
+    background: rgba(8, 1, 7, 0.96);
+    border-right: 0.2rem solid #ff7fa7;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.marca-admin {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: #dfff4f;
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.marca-admin img {
+    width: 3.4rem;
+    height: 3.4rem;
+    object-fit: contain;
+    image-rendering: pixelated;
+}
+
+button,
+.boton-secundario {
+    border: 0.12rem solid #ff7fa7;
+    background: #140509;
+    color: #fff7fb;
+    box-shadow: 0.18rem 0.18rem 0 #050105;
+    padding: 0.72rem 0.85rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.56rem;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
+
+button:hover,
+button.activo,
+.boton-secundario:hover {
+    background: #dfff4f;
+    color: #12030d;
+    border-color: #fff7fb;
+}
+
+button.peligro {
+    background: #b3002d;
+    border-color: #66dbff;
+}
+
+.panel-admin {
+    padding: 1.4rem;
+    overflow-x: hidden;
+}
+
+.panel-acceso-denegado {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 2rem;
+}
+
+.panel-acceso-denegado .tarjeta-admin {
+    width: min(34rem, 92%);
+    text-align: center;
+}
+
+.panel-acceso-denegado a {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    color: #66dbff;
+    border: 0.125rem solid #ff7fa7;
+    background: #140509;
+    box-shadow: 0.25rem 0.25rem 0 #050105;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    line-height: 1.5;
+}
+
+.cabecera-admin {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.3rem;
+    padding: 1.2rem;
+    background: rgba(8, 1, 7, 0.92);
+    border: 0.18rem solid #ff7fa7;
+    box-shadow: 0.45rem 0.45rem 0 #050105;
+}
+
+.cabecera-admin h1 {
+    margin: 0 0 0.55rem;
+    font-family: 'Press Start 2P', monospace;
+    color: #66dbff;
+    font-size: clamp(1rem, 2.4vw, 1.55rem);
+    line-height: 1.4;
+    text-transform: uppercase;
+}
+
+.cabecera-admin p {
+    margin: 0;
+    color: #ffb5dc;
+    font-weight: 900;
+    line-height: 1.5;
+}
+
+.vista { display: none; }
+.vista.activa { display: block; }
+
+.metricas-admin {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.metricas-admin article,
+.tarjeta-admin,
+.item-admin {
+    background: rgba(255, 247, 251, 0.96);
+    border: 0.14rem solid #ff7fa7;
+    border-radius: 0.45rem;
+    box-shadow: 0.35rem 0.35rem 0 rgba(5, 1, 5, 0.88);
+    color: #1d0716;
+}
+
+.metricas-admin article {
+    padding: 1rem;
+    min-height: 7rem;
+}
+
+.metricas-admin strong {
+    display: block;
+    color: #c70072;
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.3;
+}
+
+.metricas-admin span {
+    display: block;
+    margin-top: 0.45rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.tarjeta-admin {
+    padding: 1.1rem;
+    margin-bottom: 1.1rem;
+}
+
+.tarjeta-admin h2 {
+    margin: 0 0 0.75rem;
+    color: #c70072;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.tarjeta-admin p {
+    margin: 0 0 0.8rem;
+    font-weight: 900;
+    line-height: 1.45;
+}
+
+.grid-admin-doble {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.lista-admin,
+#lista-oficiales,
+#lista-personalizados {
+    display: grid;
+    gap: 0.8rem;
+}
+
+.item-admin {
+    padding: 0.85rem;
+    display: grid;
+    gap: 0.55rem;
+}
+
+.item-admin h3 {
+    margin: 0;
+    color: #8f0033;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.item-admin p {
+    margin: 0;
+    font-weight: 900;
+    line-height: 1.45;
+}
+
+.item-compacto {
+    border-color: #66dbff;
+}
+
+.usuario-bloqueado {
+    border-color: #b3002d;
+    background: #ffe7ee;
+}
+
+.usuario-advertido {
+    border-color: #d6a900;
+    background: #fff8d8;
+}
+
+.acciones-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.55rem;
+    margin-top: 0.2rem;
+}
+
+.subtitulo-lista {
+    margin: 0.9rem 0 0.2rem;
+    color: #dfff4f;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+}
+
+.toast {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 20;
+    padding: 0.85rem 1rem;
+    background: #0b0204;
+    border: 0.12rem solid #66dbff;
+    box-shadow: 0.25rem 0.25rem 0 #1a0005;
+    color: #fff7fb;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0.6rem);
+    transition: 0.2s ease;
+}
+
+.toast.activo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 56rem) {
+    body { grid-template-columns: 1fr; }
+    .barra-admin { min-height: auto; position: static; }
+    .metricas-admin,
+    .grid-admin-doble { grid-template-columns: 1fr; }
+    .cabecera-admin { flex-direction: column; align-items: flex-start; }
+}

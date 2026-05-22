@@ -1,0 +1,5 @@
+target/
+*.war
+
+# GitHub rejects files over 100 MB; keep full-length local media out of Git.
+src/main/webapp/**/videos/K-12 (The Film).mp4

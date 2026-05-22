@@ -1,0 +1,102 @@
+CREATE DATABASE IF NOT EXISTS bd1;
+USE bd1;
+
+CREATE TABLE IF NOT EXISTS usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100) NOT NULL,
+  apellido VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  rol ENUM('USER','ADMIN') DEFAULT 'USER',
+  bloqueado BOOLEAN DEFAULT FALSE,
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+SET @add_rol = (
+  SELECT IF(COUNT(*) = 0, 'ALTER TABLE usuarios ADD COLUMN rol ENUM(''USER'',''ADMIN'') DEFAULT ''USER''', 'SELECT 1')
+  FROM INFORMATION_SCHEMA.COLUMNS
+  WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'usuarios' AND COLUMN_NAME = 'rol'
+);
+PREPARE stmt FROM @add_rol;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+
+SET @add_bloqueado = (
+  SELECT IF(COUNT(*) = 0, 'ALTER TABLE usuarios ADD COLUMN bloqueado BOOLEAN DEFAULT FALSE', 'SELECT 1')
+  FROM INFORMATION_SCHEMA.COLUMNS
+  WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'usuarios' AND COLUMN_NAME = 'bloqueado'
+);
+PREPARE stmt FROM @add_bloqueado;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+
+SET @add_creado = (
+  SELECT IF(COUNT(*) = 0, 'ALTER TABLE usuarios ADD COLUMN creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP', 'SELECT 1')
+  FROM INFORMATION_SCHEMA.COLUMNS
+  WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = 'usuarios' AND COLUMN_NAME = 'creado_en'
+);
+PREPARE stmt FROM @add_creado;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
+
+INSERT INTO usuarios (nombre,apellido, email, password, rol)
+VALUES ('Admin','moran', 'admin@test.com', '1234', 'ADMIN')
+ON DUPLICATE KEY UPDATE rol = 'ADMIN';
+
+CREATE TABLE IF NOT EXISTS ayuda (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT,
+  nombre VARCHAR(100) NOT NULL,
+  email VARCHAR(100) NOT NULL,
+  telefono VARCHAR(30),
+  motivo VARCHAR(100) NOT NULL,
+  mensaje TEXT NOT NULL,
+  estado ENUM('Nuevo','En revision','Resuelto') DEFAULT 'Nuevo',
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE IF NOT EXISTS resenas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT,
+  nombre VARCHAR(100) NOT NULL,
+  actividad VARCHAR(50) NOT NULL,
+  valoracion INT NOT NULL,
+  comentario TEXT NOT NULL,
+  creada_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE IF NOT EXISTS usuarios_bloqueados (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  email VARCHAR(100) UNIQUE NOT NULL,
+  motivo VARCHAR(255),
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS reservas (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  usuario_id INT,
+  nombre_cliente VARCHAR(100) NOT NULL,
+  email_cliente VARCHAR(100) NOT NULL,
+  telefono VARCHAR(30),
+  actividad VARCHAR(50) NOT NULL,
+  instalacion VARCHAR(100) NOT NULL,
+  fecha DATE NOT NULL,
+  hora TIME NOT NULL,
+  personas INT NOT NULL,
+  precio DECIMAL(10,2) NOT NULL,
+  estado ENUM('Confirmada','Cancelada') DEFAULT 'Confirmada',
+  estado_pago ENUM('Pendiente','Pagado') DEFAULT 'Pendiente',
+  creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+CREATE TABLE IF NOT EXISTS app_estado (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  clave VARCHAR(120) NOT NULL,
+  usuario_email VARCHAR(100) NOT NULL DEFAULT '',
+  valor LONGTEXT NOT NULL,
+  actualizado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  UNIQUE KEY uq_app_estado (clave, usuario_email)
+);

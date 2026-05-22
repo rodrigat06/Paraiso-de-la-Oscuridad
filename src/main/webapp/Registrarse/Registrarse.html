@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Paraiso de la Oscuridad | Unirse a la plaga</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="../Registrarse/css/Registro.css">
+    <link rel="icon" type="image/x-icon" href="../recursos/global/img-index/Wikisingers.png">
+    <script src="../Assets/js/sql-storage.js"></script>
+</head>
+<body>
+
+<div class="controles-registro">
+    <a href="../Inicio de Sesion/Inicio de Sesion.html" class="control-registro">
+        <img src="../recursos/global/img-index/volver.png" alt="Atras">
+        <span>Volver</span>
+    </a>
+    <div class="contenedor-ayuda-global">
+        <a href="#" class="boton-ayuda-global" id="disparador-ayuda">
+            <img src="../recursos/global/img-index/Informacion.png" alt="Información">
+        </a>
+        <p class="texto-ayuda-subtitulado">Guia</p>
+
+        <div class="pantalla-ayuda-modal" id="modal-ayuda-visual">
+            <div class="cuerpo-ayuda-retro">
+                           <h2>Manual para registrarse en el paraiso</h2>
+            
+            <div class="galeria-explicativa">
+                <div class="tarjeta-instruccion">
+                    <img src="img/vende tu alma .png" alt="Paso 1: El Vuelo">
+                    <span><p>Sacrificio: Nombre</p></span>
+                    <span><p>Credenciales del sacrificio: Apellidos</p></span>
+                    <span><p>Someter alma: Correo electrónico</p></span>
+                    <span><p> Pacto de sangre: Contraseña</p></span>
+                    <span><p>Confirmar pacto de sangre: Confirmar contraseña</p></span>
+                </div>
+
+            </div>
+            <button class="cerrar-ayuda-btn ritual-btn">Entendí el ritual</button>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="register-container">
+    <div class="contenedor-ojos-plaga fila-superior">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-gigante">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-pequeno">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-diminuto">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-mediano">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-gigante">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-diminuto">
+    </div>
+
+    <div class="contenedor-ojos-plaga fila-media-alta">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-pequeno">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-diminuto">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-mediano">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-pequeno">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-diminuto">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-mediano">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-pequeno">
+    </div>
+
+    <div class="contenedor-ojos-plaga fila-media-baja">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-mediano">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-diminuto">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-gigante">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-pequeno">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-mediano">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-gigante">
+    </div>
+
+    <div class="contenedor-ojos-plaga fila-inferior">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-gigante">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-mediano">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-diminuto">
+        <img src="../recursos/global/img-index/Ojo izquierdo.png" alt="Ojo" class="ojo ojo-pequeno">
+        <img src="../recursos/global/img-index/Ojo derecho.png" alt="Ojo" class="ojo ojo-gigante">
+    </div>
+    
+
+    <div class="register-box">
+        <h1 class="titulo-infectado">Paraiso de la Oscuridad</h1>
+        <img src="../Inicio de Sesion/img/carnero.png" alt="Logo Carnero" class="logo">
+        <p class="subtitulo">Estas frente al pacto de entrada.</p>
+        <p class="subtitulo">Entrega tus datos para pertenecer a la plaga.</p>
+        <p class="subtitulo">Despues podras iniciar sesion con tu alma sometida.</p>
+        
+        
+<form id="registroForm" method="POST">
+
+            <div class="grupo">
+                <label for="nombre">Sacrificio</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Sacrificio humano..." required>
+            </div>
+
+            <div class="grupo">
+                <label for="apellidos">credenciales del sacrifício</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Credenciales..." required>
+            </div>
+
+            <div class="grupo">
+                <label for="email">Someter alma</label>
+                <input type="email" id="email" name="email" placeholder="alma@wikisingers.com" required>
+            </div>
+
+            <div class="grupo">
+                <label for="password">Pacto de sangre</label>
+                <input type="password" id="password" name="password" placeholder="********" required>
+            </div>
+
+            <div class="grupo">
+                <label for="confirm">Confirmar pacto de sangre</label>
+                <input type="password" id="confirm" name="confirm_password" placeholder="********" required>
+            </div>
+
+            <button type="submit" class="btn-contagiar">CONTAGIARSE</button>
+
+            <p id="error-message" class="error-text"></p>
+
+<p id="error" class="error-text"></p>
+            <div class="links">
+                <a href="../Inicio de Sesion/Inicio de Sesion.html">Ya hice el pacto</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="../recursos/shared/js/register.js"></script>
+<script src="../Assets/js/heart-animation.js?v=heart-index-1"></script>
+
+<script src="../Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

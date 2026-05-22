@@ -1,0 +1,1696 @@
+/* ============================================================
+   PUNTO 1: CONFIGURACIÓN GLOBAL Y BODY
+   Estilo base del sitio: fondo degradado rosa-lila, fuentes y propiedades generales
+   ============================================================ */
+body {
+    background: linear-gradient(135deg, #FFD1DC 0%, #E6E6FA 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* El Portal: Pantalla completa y por encima de TODO */
+.portal-total {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000; /* Fondo negro para que no se filtre nada */
+    z-index: 999999; /* Un número altísimo para que tape botones y menús */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    perspective: 900px;
+    transform-style: preserve-3d;
+    transition: opacity 0.8s ease, filter 0.8s ease;
+}
+
+.img-portal-full {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform-origin: 50% 50%;
+    animation: portalRespira 4s ease-in-out infinite;
+    transition: transform 2.2s cubic-bezier(0.08, 0.86, 0.18, 1), filter 2.2s ease, opacity 1.8s ease;
+    will-change: transform, filter, opacity;
+}
+
+.portal-total::before,
+.portal-total::after {
+    content: "";
+    position: absolute;
+    inset: -18vmax;
+    pointer-events: none;
+    opacity: 0;
+    transform-origin: center;
+}
+
+.portal-total::before {
+    background:
+        conic-gradient(from 0deg,
+            rgba(178, 255, 214, 0),
+            rgba(178, 255, 214, 0.42),
+            rgba(216, 180, 254, 0.55),
+            rgba(255, 245, 166, 0.38),
+            rgba(178, 255, 214, 0));
+    mix-blend-mode: screen;
+    filter: blur(18px) saturate(1.4);
+}
+
+.portal-total::after {
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 0 12%, rgba(178, 255, 214, 0.18) 18%, rgba(216, 180, 254, 0.28) 28%, rgba(0, 0, 0, 0.82) 68%),
+        repeating-radial-gradient(circle at 50% 50%, transparent 0 16px, rgba(255, 245, 166, 0.14) 17px 19px, transparent 20px 36px);
+    mix-blend-mode: screen;
+    filter: blur(1px);
+}
+
+.portal-total.portal-atraccion::before {
+    opacity: 0.85;
+    animation: portalGiro 1.1s linear infinite;
+}
+
+.portal-total.portal-atraccion::after {
+    opacity: 0.72;
+    animation: portalPulsoTunel 1.4s ease-in-out infinite;
+}
+
+/* Estado del contenido real */
+.interfaz-oculta {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 2s ease;
+}
+
+/* Animación Mística de Salida */
+.portal-animacion-entrada .img-portal-full {
+    transform: scale(3.25) rotate(-7deg) translateZ(180px);
+    filter: brightness(2.7) saturate(1.65) blur(8px) contrast(1.18);
+    opacity: 0;
+}
+
+.portal-animacion-entrada {
+    animation: portalSacudidaCamara 1.6s cubic-bezier(0.12, 0.82, 0.2, 1) both;
+}
+
+.portal-animacion-entrada::before {
+    opacity: 1;
+    animation: portalGiroFinal 1.75s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.portal-animacion-entrada::after {
+    opacity: 1;
+    animation: portalTunelFinal 1.75s cubic-bezier(0.1, 0.9, 0.2, 1) forwards;
+}
+
+.portal-desvanecer {
+    opacity: 0;
+    filter: brightness(2.2) blur(18px);
+}
+
+.interfaz-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.portal-entrando > *:not(#portal-portals) {
+    animation: mundoSeAcerca 1.45s cubic-bezier(0.12, 0.82, 0.2, 1) both;
+}
+
+@keyframes portalRespira {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(0.92) saturate(1.05);
+    }
+    50% {
+        transform: scale(1.045);
+        filter: brightness(1.16) saturate(1.28);
+    }
+}
+
+@keyframes portalGiro {
+    from { transform: rotate(0deg) scale(1); }
+    to { transform: rotate(360deg) scale(1.04); }
+}
+
+@keyframes portalPulsoTunel {
+    0%, 100% { transform: scale(1); filter: blur(1px) brightness(1); }
+    50% { transform: scale(0.86); filter: blur(2px) brightness(1.45); }
+}
+
+@keyframes portalSacudidaCamara {
+    0% { transform: scale(1); }
+    16% { transform: scale(1.015) translate(-0.4vw, 0.2vh); }
+    32% { transform: scale(1.04) translate(0.45vw, -0.3vh); }
+    54% { transform: scale(1.12) translate(-0.25vw, 0.35vh); }
+    78% { transform: scale(1.22) translate(0.18vw, -0.2vh); }
+    100% { transform: scale(1.32); }
+}
+
+@keyframes portalGiroFinal {
+    0% { transform: rotate(0deg) scale(1); filter: blur(18px) brightness(1); }
+    60% { transform: rotate(540deg) scale(0.62); filter: blur(10px) brightness(1.7); }
+    100% { transform: rotate(920deg) scale(0.2); filter: blur(4px) brightness(3); }
+}
+
+@keyframes portalTunelFinal {
+    0% { transform: scale(1.2); opacity: 0.7; }
+    55% { transform: scale(0.62); opacity: 1; }
+    100% { transform: scale(0.08); opacity: 0; }
+}
+
+@keyframes mundoSeAcerca {
+    0% {
+        transform: scale(0.94);
+        filter: blur(8px) brightness(0.6);
+        opacity: 0;
+    }
+    65% {
+        transform: scale(1.025);
+        filter: blur(2px) brightness(1.12);
+        opacity: 0.78;
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0) brightness(1);
+        opacity: 1;
+    }
+}
+
+/* ==========================================================================
+   PORTAL: DESTELLO DIRECTO A LA PAGINA
+   ========================================================================== */
+.portal-total {
+    background: #ffffff;
+    perspective: none;
+    transition: opacity 0.72s ease, filter 0.72s ease;
+}
+
+.img-portal-full {
+    animation: portalRespira 3.4s ease-in-out infinite;
+    transition: transform 0.88s ease, filter 0.88s ease, opacity 0.72s ease;
+}
+
+.portal-total::before {
+    inset: 0;
+    background:
+        radial-gradient(circle at 50% 50%, #ffffff 0 18%, rgba(255, 255, 255, 0.96) 32%, rgba(255, 245, 220, 0.78) 48%, transparent 72%);
+    mix-blend-mode: screen;
+    filter: blur(18px);
+}
+
+.portal-total::after {
+    background:
+        radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0) 0 18%, rgba(255, 255, 255, 0.86) 36%, #ffffff 72%);
+    mix-blend-mode: screen;
+    filter: blur(2px);
+}
+
+.portal-total.portal-atraccion::before {
+    opacity: 0.9;
+    animation: luzPortalCarga 0.42s ease-out forwards;
+}
+
+.portal-total.portal-atraccion::after {
+    opacity: 0.72;
+    animation: luzPortalPulso 0.42s ease-out forwards;
+}
+
+.portal-animacion-entrada .img-portal-full {
+    transform: scale(1.22);
+    filter: brightness(4.8) saturate(0.45) blur(12px) contrast(0.9);
+    opacity: 0.18;
+}
+
+.portal-animacion-entrada {
+    animation: flashPortal 0.72s ease-out both;
+}
+
+.portal-animacion-entrada::before {
+    animation: luzPortalTotal 0.72s ease-out forwards;
+}
+
+.portal-animacion-entrada::after {
+    animation: luzPortalTotal 0.72s ease-out forwards;
+}
+
+.portal-desvanecer {
+    opacity: 0;
+    filter: brightness(1.4) blur(10px);
+}
+
+body.portal-entrando > *:not(#portal-portals) {
+    animation: aparecerDesdeLuz 0.78s ease-out both;
+}
+
+body.portal-entrando .contenedor-derecha,
+body.portal-entrando .info,
+body.portal-entrando .info .icono-pixel,
+body.portal-entrando .contenedor-ayuda-global,
+body.portal-entrando .btn-info-texto {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+body.portal-pendiente .contenedor-derecha,
+body.portal-pendiente .info,
+body.portal-pendiente .info .icono-pixel,
+body.portal-pendiente .btn-info-texto,
+body.portal-pendiente .contenedor-ayuda-global {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+body.portals-page:not(.portal-listo) .contenedor-derecha,
+body.portals-page:not(.portal-listo) .info,
+body.portals-page:not(.portal-listo) .info .icono-pixel,
+body.portals-page:not(.portal-listo) .btn-info-texto,
+body.portals-page:not(.portal-listo) .contenedor-ayuda-global {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    animation: none !important;
+    transition: none !important;
+}
+
+@keyframes portalRespira {
+    0%, 100% {
+        transform: scale(1);
+        filter: brightness(0.96) saturate(1.05);
+    }
+    50% {
+        transform: scale(1.025);
+        filter: brightness(1.18) saturate(1.18);
+    }
+}
+
+@keyframes luzPortalCarga {
+    0% { transform: scale(0.35); opacity: 0; }
+    100% { transform: scale(1.8); opacity: 1; }
+}
+
+@keyframes luzPortalPulso {
+    0% { transform: scale(0.65); opacity: 0; }
+    100% { transform: scale(1.35); opacity: 0.9; }
+}
+
+@keyframes flashPortal {
+    0% { filter: brightness(1); }
+    45% { filter: brightness(3.4); }
+    100% { filter: brightness(1.55); }
+}
+
+@keyframes luzPortalTotal {
+    0% { transform: scale(0.8); opacity: 0.72; }
+    45% { transform: scale(2.4); opacity: 1; }
+    100% { transform: scale(3.2); opacity: 1; }
+}
+
+@keyframes aparecerDesdeLuz {
+    0% {
+        transform: scale(1);
+        filter: brightness(2.4) blur(8px);
+        opacity: 0;
+    }
+    45% {
+        filter: brightness(1.65) blur(3px);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0) brightness(1);
+        opacity: 1;
+    }
+}
+
+
+
+/* ============================================================
+   PUNTO 2: NAVEGACIÓN Y POSICIONAMIENTO (IZQUIERDA Y DERECHA)
+   Barras de navegación superior: menú/atrás a la izquierda, info/perfil a la derecha
+   ============================================================ */
+
+/* Navegación Superior Izquierda (Menú y Atrás) */
+.navegacion-superior {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    align-items: flex-end;
+}
+
+.item-navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 6rem;
+}
+
+/* Navegación Superior Derecha (Info y Perfil) */
+.info,
+.seccion-usuario {
+    position: relative;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6.5rem;
+}
+
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 6rem;
+}
+
+/* ============================================================
+   PUNTO 3: ESTILOS DE ICONOS Y EFECTOS HOVER
+   Tamaños, transiciones y animaciones de iconos pixelados
+   ============================================================ */
+
+.icono-pixel {
+    width: 100%;
+    height: 4rem;
+    object-fit: contain;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+/* Tamaños específicos para Perfil e Info */
+.contenedor-perfil .icono-pixel,
+.info .icono-pixel {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.seccion-usuario .icono-pixel,
+.info .icono-pixel {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+
+/* Animaciones Hover - Movimiento hacia arriba */
+.item-navegacion:hover .icono-pixel,
+.seccion-usuario:hover .icono-pixel {
+    transform: translateY(-0.3rem);
+}
+
+/* Animación de latido constante para el icono info */
+@keyframes latidoConstante {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.12); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.08); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.info .icono-pixel {
+    animation: latidoConstante 1s ease-in-out infinite;
+}
+
+.logo-sitio:hover img {
+    transform: translateY(0.5rem);
+}
+
+/* ============================================================
+   PUNTO 4: BOTONES Y ETIQUETAS DE TEXTO (PÍLDORAS/BADGES)
+   Estilos para botones, etiquetas de menú y badges coloridos
+   ============================================================ */
+
+.texto-menu,
+.btn-logout,
+.btn-info-texto {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: white;
+    background-color: #E68E9E;
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.25rem 0 #d47a8a;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/* Botón Atrás (Azul) */
+.btn-atras .texto-menu {
+    background-color: #BDE0FE;
+    box-shadow: 0 0.25rem 0 #a2c6e4;
+}
+
+/* Botón Información (Lila pastel) */
+.btn-info-texto {
+    background-color: #D8BFD8 !important;
+    box-shadow: 0 0.25rem 0 #b194b1 !important;
+    font-size: 0.65rem !important;
+    line-height: 1.2;
+}
+
+/* Botón Cerrar Sesión (Marrón oscuro) */
+.btn-logout {
+    background-color: #5D4350 !important;
+    box-shadow: 0 0.25rem 0 #3d2c35 !important;
+    font-size: 0.65rem !important;
+}
+
+/* Contenedor derecha (agrupa Info y Perfil) */
+.contenedor-derecha {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    align-items: flex-start;
+}
+
+.bloque-columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6.5rem;
+}
+  
+
+/* ============================================================
+   PUNTO 5: SECCIÓN BUSCADOR Y ANIMACIONES
+   Buscador central, input, botón y conejitos saltadores
+   ============================================================ */
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    gap: 1.5rem;
+}
+
+.buscador {
+    width: 20rem;
+    height: 3rem;
+    background: white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border: 0.15rem solid #FFB6C1;
+    z-index: 5;
+}
+
+.buscador:focus-within {
+    border-color: #E68E9E;
+    box-shadow: 0 0.25rem 1.2rem rgba(230, 142, 158, 0.4);
+    transform: translateY(-0.2rem);
+}
+
+/* Input del Buscador */
+#mibuscador {
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 3rem;
+    font-size: 1.1rem;
+    flex: 1;
+    padding-left: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #555;
+}
+
+#mibuscador::placeholder {
+    color: #E68E9E;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* Botón del Buscador */
+.buscador button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.buscador button:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.busca {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    filter: sepia(1) saturate(5) hue-rotate(300deg) brightness(0.9);
+}
+
+/* Conejitos animados */
+.conejito,
+.conejito2 {
+    width: 4rem;
+    height: auto;
+}
+
+.conejito {
+    animation: saltar 0.6s ease-in-out infinite;
+}
+
+.conejito2 {
+    transform: scaleX(-1);
+    animation: saltarEspejo 0.6s ease-in-out infinite;
+}
+
+/* Animación de salto normal */
+@keyframes saltar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-1rem); }
+}
+
+/* Animación de salto espejo */
+@keyframes saltarEspejo {
+    0%, 100% { transform: scaleX(-1) translateY(0); }
+    50% { transform: scaleX(-1) translateY(-1rem); }
+}
+
+
+
+/* ============================================================
+   PUNTO 6: ENCABEZADO Y MENÚS DESPLEGABLES
+   Barra de navegación con iconos animados (géneros, mood, etc.)
+   ============================================================ */
+
+.Encabezado {
+    background-color: #FFB6C1;
+    width: 90%; /* No ocupa todo el ancho, parece una etiqueta */
+    margin: 3% auto 0 auto; /* Centrado */
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 0px rgba(230, 142, 158, 0.3); /* Sombra sólida estilo pixel */
+    border: 3px dashed #ffffff; /* Efecto de recorte o costura */
+}
+
+.Encabezado img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+details {
+    position: relative;
+    width: fit-content;
+}
+
+summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+summary p {
+    color: #E68E9E;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: #ffe4e8;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* --- MENÚ DE NAVEGACIÓN INFERIOR (Opcional) --- */
+.Encabezado {
+    background-color: #FFB6C1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2%;
+    padding: 1rem 0;
+}
+
+.enlace-nav {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.enlace-nav img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+.enlace-nav p {
+    margin-top: 0.5rem;
+    color: #E68E9E;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: #ffe4e8;
+    padding: 2px 8px;
+    border-radius: 1.5px;
+}
+
+.enlace-nav:hover {
+    transform: scale(1.1) translateY(-0.3rem);
+}
+
+/* ============================================================
+   PUNTO 7: SECCIÓN LIBRO (CONTENEDOR Y EFECTO 3D)
+   Contenedor principal del libro interactivo de Melanie Martinez
+   ============================================================ */
+
+.libros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25rem; 
+    width: 100%;
+    padding: 5rem;
+    flex-wrap: wrap;
+    /* Fondo con neblina mística */
+    background: radial-gradient(circle, #fff0f6 0%, #e9d5ff 100%);
+}
+
+.seccion-libro {
+    overflow: visible !important; 
+    perspective: 2500px;
+}
+/* Libro físico con efecto 3D y sombra realista */
+/* PUNTO 8: COMPONENTES DEL LIBRO - Estructura física */
+
+.libro-fisico {
+    width: 25rem;
+    height: 35rem;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Aura mágica en lugar de sombra de cartón */
+    filter: drop-shadow(0 0 25px rgba(216, 180, 254, 0.4)) 
+            drop-shadow(15px 25px 40px rgba(88, 28, 135, 0.2));
+}
+
+/* Hojas de pergamino antiguo con brillo de hadas */
+.libro-fisico::before {
+    content: "";
+    position: absolute;
+    top: 1.5%;
+    left: 0.5rem;
+    width: 100%;
+    height: 97%;
+    /* Papel envejecido con seda */
+    background: linear-gradient(to right, #fff9f0, #ffffff);
+    box-shadow:
+        2px 0 0 #e9d5ff, 
+        5px 0 15px rgba(216, 180, 254, 0.5); 
+    border-radius: 0 15px 15px 0;
+}
+/* Estado del libro cuando está abierto */
+.libro-fisico.abierto {
+    transform: translateX(12.5rem);
+}
+
+.lomo {
+    position: absolute;
+    left: -1.8rem; 
+    top: 5%;
+    width: 3.5rem;
+    height: 90%;
+    background: transparent; 
+    z-index: 30;
+}
+
+.lomo::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* Espiral de oro encantado */
+    background: repeating-linear-gradient(
+        to bottom,
+        #b8860b 0px,
+        #f7e0a1 2px,
+        #d4af37 4px,
+        #b8860b 6px,
+        transparent 6px,
+        transparent 35px
+    );
+    filter: drop-shadow(0 0 5px rgba(212, 175, 55, 0.6));
+}
+
+.contenedor-img-portada {
+    width: 100%;
+    height: 55%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.contenedor-img-portada img {
+    width: 80%;
+    border: none;
+    padding: 8px;
+    /* Efecto irisado */
+    background: linear-gradient(45deg, #fff9f0, #f3e5f5);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Sustituimos el celo por un fragmento de cinta de organza */
+.contenedor-img-portada::after {
+    content: "✿"; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: -15px;
+    right: 12%;
+    width: 70px;
+    height: 30px;
+    background: linear-gradient(90deg, transparent, rgba(248, 187, 208, 0.5), transparent);
+    backdrop-filter: blur(2px);
+    border-bottom: 1px dashed rgba(255,255,255,0.5);
+    transform: rotate(25deg);
+}
+
+/* Título: El Sello Real de la Ninfa */
+.tapa-frontal h3 {
+    background: linear-gradient(135deg, #fff, #fff9f0) !important;
+    color: #b57a84 !important;
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 1.6rem;
+    padding: 12px 25px !important;
+    border: 2px double #d8b4fe !important; 
+    border-radius: 40px 15px; 
+    transform: rotate(-1deg);
+    box-shadow: 0 0 15px rgba(216, 180, 254, 0.4);
+}
+
+/* --- ÍNDICE DEL GRIMORIO (Cantos y Relatos) --- */
+.lista-indice {
+    list-style: none;
+    padding: 12% 8%; /* Más aire para que respire la magia */
+    columns: 2;
+    column-gap: 30px;
+    font-size: 1.1rem; /* Un poco más grande para la caligrafía */
+    
+    /* Cambiamos la fuente de oficina por una manuscrita fluida */
+    font-family: 'Dancing Script', cursive; 
+    color: #5d4037; /* Tinta sepia antigua */
+}
+
+.lista-indice li {
+    margin-bottom: 15px;
+    /* Cambiamos el renglón azul por un hilo de oro traslúcido */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.3); 
+    padding-bottom: 5px;
+    position: relative;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+/* El "punto" ahora es un destello de luz o una estrella mística */
+.lista-indice li::before {
+    content: "✦"; 
+    color: #d8b4fe; /* Lila místico */
+    margin-right: 8px;
+    font-size: 0.8rem;
+    /* Pequeño resplandor para la estrella */
+    text-shadow: 0 0 5px rgba(216, 180, 254, 0.8);
+    display: inline-block;
+    transition: transform 0.4s ease;
+}
+
+/* Efecto al pasar el ratón: el texto levita y brilla */
+.lista-indice li:hover {
+    color: #b57a84; /* Rosa pétalo profundo */
+    transform: translateX(8px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.8);
+}
+
+.lista-indice li:hover::before {
+    transform: rotate(180deg) scale(1.3);
+    color: #ffd700; /* Oro puro al tocarlo */
+}
+
+/* --- HOJAS DEL CUADERNO (Páginas) --- */
+.hoja {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    /* Transición más dramática y fluida */
+    transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    z-index: 1;
+}
+/* Giro de la hoja */
+.hoja.girada {
+    transform: rotateY(-180deg);
+}
+
+.cara {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    
+    /* Color marfil/crema con textura de papel natural */
+    background-color: #fffdf5;
+    background-image: 
+        /* Efecto de motas de luz brillantes */
+        radial-gradient(circle at 50% 50%, rgba(216, 180, 254, 0.15) 1px, transparent 1px),
+        url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    background-size: 60px 60px, auto;
+    
+    padding: 1rem;
+    padding-left: 1rem; 
+    box-sizing: border-box;
+    
+    /* Borde dorado muy tenue en lugar del gris industrial */
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    
+    /* Brillo interno irisado */
+    box-shadow: inset 0 0 30px rgba(216, 180, 254, 0.05);
+}
+.cara img {
+
+   
+    /* 2. Definimos límites máximos para que no se salgan de la hoja */
+    max-width: 70% !important;
+    max-height: 40% !important;
+
+    /* 3. El secreto del encuadre místico */
+    object-fit: contain !important; /* Mantiene la proporción real siempre */
+    display: block;
+    margin: 2% auto; /* Centrado perfecto */
+
+    /* 4. Estética Portals */
+    border-radius: 1rem;
+    filter: drop-shadow(0 0 20px rgba(216, 180, 254, 0.4));
+    transition: all 0.5s ease;
+}
+
+.cara.trasera {
+    transform: rotateY(180deg);
+    /* Tinte sutil de atardecer feérico */
+    background: linear-gradient(135deg, #fffdf5 0%, #f3e5f5 100%);
+    background-image: url("https://www.transparenttextures.com/patterns/natural-paper.png");
+    border-radius: 15px 0 0 15px;
+}
+
+/* Sombra en el pliegue: De gris a un tono amatista suave */
+.cara::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    /* Degradado que simula la sombra del lomo encantado */
+    background: linear-gradient(to right, 
+        rgba(88, 28, 135, 0.12) 0%, 
+        rgba(88, 28, 135, 0.03) 60%, 
+        transparent 100%);
+    pointer-events: none;
+}
+
+
+/* TAPA FRONTAL NINFÁCEA */
+.tapa-frontal .cara.frontal {
+    /* Degradado de seda: Rosa pétalo que se funde con lila místico */
+    background: linear-gradient(135deg, #E68E9E 0%, #D8B4FE 100%); 
+    border: none; /* Quitamos el borde blanco de pegatina */
+    
+    /* Aura de luz: Un resplandor interior y exterior en lugar de sombras duras */
+    box-shadow: 
+        inset 0 0 40px rgba(255, 255, 255, 0.4),
+        0 0 25px rgba(216, 180, 254, 0.5); 
+    
+    overflow: hidden;
+}
+
+/* Efecto de destello mágico que atraviesa la portada */
+.tapa-frontal .cara.frontal::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+.tapa-frontal .cara.frontal img {
+    /* De marco de cartón a marco de luz */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px); /* Efecto de cristal encantado */
+    
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 0 15px rgba(216, 180, 254, 0.3);
+    transform: rotate(-1.5deg) scale(0.95);
+    border-radius: 8px; /* Bordes más suaves */
+}
+
+/* --- IMÁGENES DENTRO DE LAS PÁGINAS (Visiones Ninfáceas) --- */
+.cara img {
+    max-width: 85%;
+    max-height: 45%; /* Un poco más de presencia */
+    object-fit: cover;
+    
+    /* Cambiamos el marco rígido por un borde de luz y seda */
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    padding: 10px;
+    
+    /* Efecto de cristal encantado: un fondo blanco muy traslúcido con neblina */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px); 
+    
+    /* Resplandor de aura en lugar de sombra de cartón */
+    box-shadow: 
+        0 8px 25px rgba(0, 0, 0, 0.1), 
+        0 0 15px rgba(216, 180, 254, 0.3); /* Destello lila suave */
+    
+    /* Inclinación más orgánica */
+    transform: rotate(-1.5deg); 
+    margin-bottom: 1.5rem;
+    
+    /* Bordes más suaves, nada de esquinas afiladas industriales */
+    border-radius: 8px;
+    
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Efecto al pasar el ratón: La visión se aclara */
+.cara img:hover {
+    transform: rotate(0deg) scale(1.03);
+    box-shadow: 0 15px 35px rgba(216, 180, 254, 0.4);
+    background: rgba(255, 255, 255, 0.4);
+    filter: brightness(1.1);
+}
+
+/* --- NÚMERO DE PÁGINA (Sello de Luz) --- */
+.numero-pag {
+    position: absolute;
+    bottom: 20px;
+    right: 25px;
+    
+    /* Color lila místico muy suave y traslúcido */
+    color: #d8b4fe; 
+    
+    /* Usamos la misma fuente manuscrita para mantener la armonía */
+    font-family: 'Dancing Script', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    
+    /* Efecto de resplandor: parece que el número emite una luz tenue */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 
+                 0 0 3px rgba(216, 180, 254, 0.4);
+    
+    /* Lo hacemos sutil para que no distraiga de la lectura principal */
+    opacity: 0.6;
+    
+    /* Un pequeño toque de rotación para que parezca un sello manual */
+    transform: rotate(-5deg);
+    
+    transition: all 0.5s ease;
+}
+
+/* Al pasar el ratón, el número "despierta" */
+.numero-pag:hover {
+    opacity: 1;
+    transform: rotate(0deg) scale(1.2);
+    color: #b57a84;
+    text-shadow: 0 0 12px rgba(230, 142, 158, 0.6);
+}
+/* --- ESTRUCTURA DE LA PÁGINA (Respiración Ninfácea) --- */
+.cara.frontal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    
+    /* Padding equilibrado: eliminamos la rigidez del margen de instituto */
+    padding: 10% 12% 10% 12%; 
+    box-sizing: border-box;
+    
+}
+
+/* Título de la página (El Canto Principal) */
+.cara.frontal h3 {
+    margin-bottom: 8%;
+    width: auto;
+    text-align: center;
+    
+    /* Sustituimos el dashed escolar por un hilo de seda dorado */
+    border-bottom: 1px solid rgba(212, 175, 55, 0.4); 
+    
+    /* Añadimos un pequeño adorno feérico a los lados del título */
+    position: relative;
+    font-family: 'Dancing Script', cursive;
+}
+
+.cara.frontal h3::before,
+.cara.frontal h3::after {
+    content: "✨";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    opacity: 0.5;
+}
+
+.cara.frontal h3::before { left: -30px; }
+.cara.frontal h3::after { right: -30px; }
+/* --- IMAGEN EN LA PÁGINA FRONTAL (Visión Encantada) --- */
+.cara.frontal img {
+    width: 85%;
+    height: auto;
+    max-height: 45%;
+    margin-bottom: 8%;
+    display: block;
+    
+    /* De marco de plástico a borde de seda y luz */
+    border: 1px solid rgba(255, 255, 255, 0.6); 
+    padding: 10px;
+    
+    /* El "toque ninfáceo": fondo traslúcido con efecto neblina */
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    
+    /* Sombra de aura: un resplandor lila que la hace flotar */
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.1), 
+        0 0 20px rgba(216, 180, 254, 0.3); 
+    
+    /* Rotación más sutil y orgánica */
+    transform: rotate(-1.5deg); 
+    
+    /* Bordes redondeados como un pétalo */
+    border-radius: 12px;
+    
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Al pasar el ratón, la visión cobra vida */
+.cara.frontal img:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 0 15px 40px rgba(216, 180, 254, 0.5);
+    filter: brightness(1.1) saturate(1.1);
+}
+/* --- TEXTO/POEMA EN LA PÁGINA FRONTAL (Susurro de Ninfa) --- */
+.cara.frontal p {
+    width: 92%; /* Un poco más de libertad para los versos */
+    margin: 0;
+    
+    /* Interlineado más aireado, como si las palabras flotaran */
+    line-height: 1.4;
+    text-align: left; 
+    
+    /* Cambiamos la máquina de escribir por una caligrafía manuscrita etérea */
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    
+    /* Color de tinta amatista/sepia: más suave que el gris industrial */
+    color: #6d4c41; 
+    
+    padding-left: 10px;
+    
+    /* Un ligero resplandor que hace que las letras parezcan recién escritas */
+    text-shadow: 0.5px 0.5px 1px rgba(230, 142, 158, 0.2);
+    
+    /* Opacidad sutil para que el texto se integre con la textura de la hoja */
+    opacity: 0.95;
+    
+    transition: all 0.4s ease;
+}
+
+/* El inicio del poema con una letra capitular mágica */
+.cara.frontal p::first-letter {
+    font-size: 1.8rem;
+    color: #b57a84;
+    font-weight: 700;
+    margin-right: 2px;
+    text-shadow: 0 0 8px rgba(216, 180, 254, 0.4);
+}
+
+/* ============================================================
+   PUNTO 9: BOTONES DE CONTROL DEL LIBRO (ESTILO PARCHE)
+   ============================================================ */
+
+/* Contenedor de controles (Aura mágica) */
+.controles-libro {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Botones con estética de "Amuletos de Seda" */
+.btn-libro {
+    background: linear-gradient(135deg, #E68E9E 0%, #D8B4FE 100%);
+    color: white;
+    /* Cambiamos el borde de parche por un marco de luz doble */
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    outline: none; 
+    
+    padding: 0.8rem 2rem;
+    border-radius: 50px; /* Forma de pétalo/óvalo */
+    cursor: pointer;
+    
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    text-transform: none; /* Las hadas no gritan en mayúsculas */
+    letter-spacing: 1px;
+    
+    /* Resplandor etéreo en lugar de sombra rígida */
+    box-shadow: 0 8px 20px rgba(216, 180, 254, 0.4);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Hover: El amuleto brilla y levita */
+.btn-libro:hover {
+    background: linear-gradient(135deg, #f0a1af 0%, #e9d5ff 100%);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 12px 25px rgba(216, 180, 254, 0.6);
+}
+
+/* Click: El botón se funde con el aura */
+.btn-libro:active {
+    transform: translateY(2px) scale(0.98);
+    box-shadow: 0 4px 10px rgba(216, 180, 254, 0.3);
+}
+
+/* Click: El botón se hunde */
+.btn-libro:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.btn-libro:first-child,
+.btn-libro:last-child {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5) rotate(-10deg);
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    color: #b57a84;
+    border: 1px solid rgba(216, 180, 254, 0.5);
+}
+
+/* Cuando el libro está abierto */
+.libro-abierto .btn-libro:first-child,
+.libro-abierto .btn-libro:last-child {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+    pointer-events: auto;
+    font-family: 'Dancing Script', cursive;
+}
+#btnLibro {
+    z-index: 2;
+    font-size: 1.3rem;
+    border: 2px double rgba(255, 255, 255, 0.8);
+    background: radial-gradient(circle, #fff 0%, #fce4ec 100%);
+    color: #b57a84;
+}
+
+/* Cuando el libro está activo (ajusta esta clase según tu JS) */
+.libro-abierto .btn-libro:first-child,
+.libro-abierto .btn-libro:last-child {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+
+    /* Tipografía de examen o reporte escolar */
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Sombra rígida (Pop-art / Sticker) */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+    
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+}
+
+/* Efecto al pasar el ratón: parece que lo presionas */
+.btn-libro:hover {
+    background-color: #f0a1af;
+    transform: translateY(-3px) rotate(-1deg);
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.05);
+}
+
+/* Efecto de click: se hunde como un botón físico */
+.btn-libro:active {
+    transform: translateY(2px);
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo específico para los botones que aparecen (Anterior/Siguiente) */
+.btn-libro:first-child,
+.btn-libro:last-child {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5) rotate(-10deg);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    background-color: #ffffff; /* Contraste para que parezcan notas adhesivas */
+    color: #E68E9E;
+    border-color: #E68E9E;
+    outline: none;
+}
+
+/* Cuando el libro se abre y los botones aparecen (suponiendo que añades una clase al contenedor) */
+.libro-abierto .btn-libro:first-child,
+.libro-abierto .btn-libro:last-child {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1) rotate(0deg);
+    pointer-events: auto;
+}
+
+/* El botón central "Abrir" con un toque extra */
+#btnLibro {
+    z-index: 2;
+    font-size: 1.1rem;
+    border-style: dashed; /* Efecto de "recortar por aquí" */
+}
+
+/* Mostrar botones cuando se active la clase */
+.controles-libro.mostrar-laterales .btn-libro:first-child,
+.controles-libro.mostrar-laterales .btn-libro:last-child {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    pointer-events: auto;
+}
+
+/* Efecto al hacer clic */
+.btn-libro:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px #d47a8a;
+}
+
+
+.contenedor-audio {
+    width: 85%;
+    margin: 25px auto 15px;
+    /* Efecto de cristal esmerilado místico */
+    background: rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(8px);
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid rgba(216, 180, 254, 0.4); 
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 5px 15px rgba(216, 180, 254, 0.2);
+}
+
+audio {
+    width: 100%;
+    height: 35px;
+    outline: none;
+    /* Filtro para que los controles parezcan hechos de cuarzo rosa */
+    filter: sepia(100%) hue-rotate(280deg) saturate(180%) brightness(110%);
+    opacity: 0.75;
+    transition: opacity 0.4s ease;
+}
+
+audio:hover {
+    opacity: 1;
+}
+
+/* --- ESTILO DEL REPRODUCTOR MÍSTICO --- */
+audio::-webkit-media-controls-panel {
+    /* Un rosa seda traslúcido con brillo de perla */
+    background: linear-gradient(135deg, #f8e1e7 0%, #f3e5f5 100%);
+    backdrop-filter: blur(5px);
+}
+
+audio {
+    /* Filtro para convertir los iconos en amatista pura */
+    filter: sepia(100%) hue-rotate(280deg) saturate(180%) brightness(105%);
+    opacity: 0.65;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+audio:hover {
+    opacity: 1;
+    transform: scale(1.03) translateY(-2px);
+    /* El aura se intensifica al tocarlo */
+    filter: sepia(100%) hue-rotate(280deg) saturate(220%) brightness(115%);
+}
+
+.flecha-izquierda, .flecha-derecha {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    
+    font-size: 4rem; 
+    width: 5.5rem;
+    height: 5.5rem;
+    
+    /* Color pétalo suave */
+    color: #E68E9E;
+    text-decoration: none;
+    
+    /* Bordes irregulares como un pétalo o piedra preciosa */
+    border-radius: 40% 60% 50% 70% / 60% 40% 60% 40%;
+    
+    /* Cristal esmerilado etéreo */
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(216, 180, 254, 0.4);
+    
+    /* Sombra de luz lila */
+    box-shadow: 0 0.5rem 2rem rgba(216, 180, 254, 0.3);
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    transition: all 0.6s ease;
+    padding: 1.2rem;
+}
+
+.flecha-izquierda { left: 3%; }
+.flecha-derecha { right: 3%; }
+
+/* Hover: El espíritu guía se ilumina */
+.flecha-izquierda:hover, .flecha-derecha:hover {
+    background: rgba(255, 255, 255, 0.6);
+    color: #b57a84;
+    transform: translateY(-55%) scale(1.15) rotate(5deg);
+    box-shadow: 0 1rem 2.5rem rgba(216, 180, 254, 0.5);
+    border-color: #D8B4FE;
+}
+
+/* Ajuste de la imagen dentro de la flecha */
+.flecha-derecha img, .flecha-izquierda img {
+    /* 1. Hacemos que la imagen nunca supere el ancho o alto del círculo */
+    max-width: 100%;
+    max-height: 100%;
+    
+    /* 2. Esto es clave: si la imagen no es cuadrada, 'contain' hace que 
+       quepa entera sin recortarse, manteniendo su proporción. */
+    object-fit: contain;
+    
+    /* 3. Evita que la imagen se estire y se vea borrosa si es pequeña */
+    width: auto;
+    height: auto;
+}
+
+/* Opcional: Si quieres que la imagen ocupe casi todo el círculo 
+   dejando un pequeño margen estético de 1rem (o 10px) */
+.flecha-derecha, .flecha-izquierda {
+    /* Mantenemos tu código anterior y aseguramos que tenga padding */
+    padding: 1rem; 
+    
+    /* Aseguramos que el contenido (la imagen) esté centrado */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hover manteniendo el centrado vertical */
+.flecha-izquierda:hover, .flecha-derecha:hover {
+    background: white;
+    color: #5D4350;
+    transform: translateY(-50%) scale(1.1);
+}
+@keyframes flotarMistico {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-0.5rem) rotate(3deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+.flecha-derecha img, .flecha-izquierda img {
+    width: 80%;
+    height: auto;
+    object-fit: contain;
+    /* Una animación más pausada y mágica */
+    animation: flotarMistico 3.5s ease-in-out infinite;
+    /* Efecto de luz interior */
+    filter: drop-shadow(0 0 8px rgba(230, 142, 158, 0.4));
+}
+
+/* Ajuste opcional para pantallas muy pequeñas */
+@media (max-width: 600px) {
+    .flecha-izquierda, .flecha-derecha {
+        width: 3.5rem;
+        height: 3.5rem;
+        font-size: 2.5rem;
+    }
+}
+
+/* --- CONTENEDOR DE LA REVELACIÓN (Foto y Aura) --- */
+.contenedor-portada-audio {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 25px auto;
+    padding: 15px;
+    
+    /* Creamos un aura circular suave detrás de la imagen */
+    background: radial-gradient(
+        circle, 
+        rgba(216, 180, 254, 0.2) 0%, 
+        transparent 70%
+    );
+    
+    /* Aseguramos que nada de la foto se corte si le añadimos efectos */
+    overflow: visible;
+}
+
+/* Un pequeño detalle: destellos que orbitan la imagen */
+.contenedor-portada-audio::before {
+    content: "✨";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    opacity: 0.6;
+    animation: latidoMagico 2s ease-in-out infinite alternate;
+}
+
+@keyframes latidoMagico {
+    from { transform: scale(1) rotate(0deg); opacity: 0.4; }
+    to { transform: scale(1.2) rotate(15deg); opacity: 0.8; }
+}
+
+/* --- LA VISIÓN DEL CANTOR (Imagen del Reproductor) --- */
+.img-reproductor {
+    width: 170px; /* Un poco más de presencia */
+    height: 170px;
+    cursor: pointer;
+    
+    /* Fondo de seda traslúcida en lugar de papel rígido */
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(5px);
+    
+    padding: 12px;
+    /* Bordes redondeados como un cristal pulido por el agua */
+    border-radius: 15px; 
+    
+    /* Borde de luz etérea */
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    
+    /* Sombra de aura: profundidad suave con un destello amatista */
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.1),
+        0 0 15px rgba(216, 180, 254, 0.3);
+    
+    /* Rotación más fluida y menos "torcida" */
+    transform: rotate(-2deg); 
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    object-fit: cover;
+    
+    /* Un ligero filtro onírico para la foto */
+    filter: brightness(1.05) saturate(1.1);
+}
+
+/* Efecto al pasar el ratón: El espejo se aclara y levita */
+.img-reproductor:hover {
+    transform: rotate(0deg) translateY(-8px) scale(1.05);
+    filter: brightness(1.1) saturate(1.2);
+    box-shadow: 
+        0 15px 35px rgba(216, 180, 254, 0.5),
+        0 0 25px rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   AJUSTE PORTALS: CONTENEDOR DEL LIBRO MAS COMPACTO Y CENTRADO
+   ========================================================================== */
+.portals-page .album-navegacion-container {
+    width: min(94vw, 64rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.portals-page .libros {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 3rem 1.5rem !important;
+    gap: 0 !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+}
+
+.portals-page .seccion-libro {
+    width: fit-content !important;
+    max-width: min(92vw, 34rem) !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+}
+
+.portals-page .seccion-libro::before {
+    inset: 0.65rem !important;
+}
+
+/* === BLOQUE SUPERIOR DE USUARIO UNIFICADO === */
+.contenedor-derecha {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    gap: 0.85rem !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn { order: 1 !important; }
+.contenedor-derecha .seccion-usuario { order: 2 !important; }
+.contenedor-derecha .contenedor-ayuda-global,
+.contenedor-derecha .info { order: 3 !important; }
+
+.contenedor-derecha > .perfil-editor-btn,
+.contenedor-derecha .seccion-usuario,
+.contenedor-derecha .contenedor-ayuda-global,
+.contenedor-derecha .info {
+    width: 7rem !important;
+    min-width: 7rem !important;
+    max-width: 7rem !important;
+    min-height: 6.15rem !important;
+    display: grid !important;
+    grid-template-rows: 3.45rem 1.8rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+}
+
+.contenedor-derecha .contenedor-perfil {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: grid !important;
+    grid-template-rows: 3.45rem 1.8rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn .perfil-editor-avatar,
+.contenedor-derecha .seccion-usuario .icono-pixel,
+.contenedor-derecha .info .icono-pixel,
+.contenedor-derecha .boton-ayuda-global,
+.contenedor-derecha .boton-ayuda-global img.icono-pixel {
+    width: 3.05rem !important;
+    height: 3.05rem !important;
+    max-width: 3.05rem !important;
+    max-height: 3.05rem !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    align-self: center !important;
+    justify-self: center !important;
+}
+
+.contenedor-derecha .seccion-usuario .icono-pixel {
+    transform: translateY(0.35rem) !important;
+}
+
+.contenedor-derecha .boton-ayuda-global {
+    display: block !important;
+    overflow: visible !important;
+    animation: none !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn span,
+.contenedor-derecha .btn-logout,
+.contenedor-derecha .texto-ayuda-subtitulado,
+.contenedor-derecha .btn-info-texto {
+    width: 6.15rem !important;
+    min-width: 6.15rem !important;
+    max-width: 6.15rem !important;
+    min-height: 1.75rem !important;
+    margin: 0 !important;
+    padding: 0.35rem 0.25rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #0b0204 !important;
+    color: #66dbff !important;
+    border: 0.125rem solid #ff7fa7 !important;
+    border-radius: 0 !important;
+    box-shadow: 0.25rem 0.25rem 0 #1a0005, 0.38rem 0.38rem 0 #b3002d !important;
+    font-family: 'Press Start 2P', 'Courier New', monospace !important;
+    font-size: 0.46rem !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+}
+/* === FIN BLOQUE SUPERIOR DE USUARIO UNIFICADO === */

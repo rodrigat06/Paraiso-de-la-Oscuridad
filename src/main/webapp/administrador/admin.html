@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Administrador - Paraíso de la Oscuridad</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="admin.css?v=admin-guard-1">
+    <link rel="icon" type="image/x-icon" href="../recursos/global/img-index/Wikisingers.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../Assets/js/sql-storage.js"></script>
+</head>
+<body>
+    <aside class="barra-admin">
+        <a class="marca-admin" href="../Menú.html">
+            <img src="../recursos/global/img-index/Wikisingers.png" alt="Paraíso de la Oscuridad">
+            <span>Admin</span>
+        </a>
+        <button data-vista="resumen" class="activo">Resumen</button>
+        <button data-vista="comentarios">Comentarios</button>
+        <button data-vista="usuarios">Usuarios</button>
+        <button data-vista="artistas">Artistas</button>
+        <button data-vista="moderacion">Moderación</button>
+        <button id="salir-admin" class="peligro">Salir</button>
+    </aside>
+
+    <main class="panel-admin">
+        <header class="cabecera-admin">
+            <div>
+                <h1 id="titulo-vista">Resumen</h1>
+                <p>Control rápido de usuarios, comentarios, artistas y moderación.</p>
+            </div>
+            <a href="../Menú.html" class="boton-secundario">Volver al menú</a>
+        </header>
+
+        <section class="vista activa" id="vista-resumen">
+            <div class="metricas-admin">
+                <article><strong id="metric-usuarios">0</strong><span>usuarios</span></article>
+                <article><strong id="metric-comentarios">0</strong><span>comentarios</span></article>
+                <article><strong id="metric-bloqueados">0</strong><span>bloqueados</span></article>
+                <article><strong id="metric-advertencias">0</strong><span>advertencias</span></article>
+            </div>
+            <section class="tarjeta-admin panel-destacado">
+                <h2>Actividad reciente</h2>
+                <div id="actividad-reciente" class="lista-admin"></div>
+            </section>
+        </section>
+
+        <section class="vista" id="vista-comentarios">
+            <article class="tarjeta-admin">
+                <h2>Comentarios de canciones</h2>
+                <p>Resumen de todos los comentarios y valoraciones guardados en canciones.</p>
+                <div id="lista-comentarios" class="lista-admin"></div>
+            </article>
+        </section>
+
+        <section class="vista" id="vista-usuarios">
+            <article class="tarjeta-admin">
+                <h2>Usuarios registrados</h2>
+                <p>Bloquea cuentas problemáticas o deja una advertencia visible en el panel.</p>
+                <div id="lista-usuarios" class="lista-admin"></div>
+            </article>
+        </section>
+
+        <section class="vista" id="vista-artistas">
+            <div class="grid-admin-doble">
+                <article class="tarjeta-admin">
+                    <h2>Artistas oficiales</h2>
+                    <p>Ocultar quita el artista del menú para usuarios normales.</p>
+                    <div id="lista-oficiales" class="lista-admin"></div>
+                </article>
+                <article class="tarjeta-admin">
+                    <h2>Artistas personalizados</h2>
+                    <p>Artistas creados desde la opción de añadir.</p>
+                    <div id="lista-personalizados" class="lista-admin"></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="vista" id="vista-moderacion">
+            <article class="tarjeta-admin">
+                <h2>Moderación</h2>
+                <p>Usuarios bloqueados y advertencias activas.</p>
+                <div id="lista-moderacion" class="lista-admin"></div>
+            </article>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+    <script src="admin.js?v=admin-guard-1"></script>
+
+<script src="../Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+

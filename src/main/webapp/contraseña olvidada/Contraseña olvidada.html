@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Paraiso de la Oscuridad | Reclamar Alma Perdida</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/Contraseñaolvidada.css">
+    <link rel="icon" type="image/x-icon" href="img/Wikisingers.png">
+    <script src="../Assets/js/sql-storage.js"></script>
+</head>
+<body>
+    <div class="contenedor-volver-global">
+        <a href="../Inicio de Sesion/Inicio de Sesion.html" class="boton-volver-global">
+            <img src="../recursos/global/img-index/volver.png" alt="Volver">
+        </a>
+        <p class="texto-ayuda-subtitulado">volver</p>
+    </div>
+    
+    <div class="contenedor-ayuda-global">
+        <a href="#" class="boton-ayuda-global" id="disparador-ayuda">
+            <img src="../recursos/global/img-index/Informacion.png" alt="InformaciÃ³n">
+        </a>
+        <p class="texto-ayuda-subtitulado">Guia</p>
+
+        <div class="pantalla-ayuda-modal" id="modal-ayuda-visual">
+            <div class="cuerpo-ayuda-retro">
+                <h2>Manual para recuperar la entrada al paraiso</h2>
+                <div class="galeria-explicativa">
+                    <div class="tarjeta-instruccion">
+                        <img src="img/ataud.png" alt="Paso 1: El Vuelo">
+                        <p>Para continuar en este <span>oscuro paraiso</span> introduzca su <span>alma</span>(Correo electrónico) y asi realizara otro <span>pacto de sangre</span>(contraseña).</p>
+                    </div>
+                </div>
+                <button class="ritual-btn">Entendí­ el ritual</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="caja0 recover-container">
+        <div class="caja recover-box">
+            <img src="img/Wikisingers.png" alt="Paraiso de la Oscuridad Logo" class="logo">
+            <h1 id="tituloProceso">EXHUMACION
+            </h1>
+            <p id="recoverIntro">Introduce tu correo para rastrear tu pacto y forjar un nuevo pacto de sangre.</p>
+
+            <p id="mensajeExito" class="success-text hidden" aria-live="polite"></p>
+            <p id="error" class="error-text hidden" aria-live="polite"></p>
+
+            <form id="checkAccountForm" method="POST">
+                <div class="grupo">
+                    <input type="email" id="recoverEmail" placeholder="Introducir alma existente..." required>
+                </div>
+                <button type="submit" class="Iniciar">Rastrear pacto</button>
+            </form>
+
+            <form id="resetPasswordForm" class="hidden" method="POST">
+                <div class="grupo">
+                    <input type="password" id="newPassword" placeholder="Nuevo pacto de sangre" minlength="6" required>
+                </div>
+                <div class="grupo">
+                    <input type="password" id="confirmPassword" placeholder="Confirmar pacto de sangre" minlength="6" required>
+                </div>
+                <button type="submit" class="Iniciar">Forjar nuevo pacto</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/Contraseña olvidada.js"></script>
+<script src="../Assets/js/heart-animation.js?v=heart-index-1"></script>
+
+<script src="../Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

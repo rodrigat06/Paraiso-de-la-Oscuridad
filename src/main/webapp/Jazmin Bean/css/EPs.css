@@ -1,0 +1,468 @@
+﻿/* ============================================================
+   PUNTO 1: CONFIGURACIÃ“N GLOBAL Y BODY
+   Estilo base del sitio: fondo degradado rosa-lila, fuentes y propiedades generales
+   ============================================================ */
+body {
+    background: linear-gradient(135deg, #FFD1DC 0%, #E6E6FA 100%);
+    background-attachment: fixed;
+    overflow-x: hidden;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+
+/* ============================================================
+   PUNTO 2: NAVEGACIÃ“N Y POSICIONAMIENTO (IZQUIERDA Y DERECHA)
+   Barras de navegaciÃ³n superior: menÃº/atrÃ¡s a la izquierda, info/perfil a la derecha
+   ============================================================ */
+
+/* NavegaciÃ³n Superior Izquierda (Menú y Atrás) */
+.navegacion-superior {
+    position: absolute;
+    top: 1rem;
+    left: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    align-items: flex-end;
+}
+
+.item-navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    width: 6rem;
+}
+
+/* NavegaciÃ³n Superior Derecha (Info y Perfil) */
+.info,
+.seccion-usuario {
+    position: relative;
+    right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6.5rem;
+}
+
+.contenedor-perfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 6rem;
+}
+
+/* ============================================================
+   PUNTO 3: ESTILOS DE ICONOS Y EFECTOS HOVER
+   TamaÃ±os, transiciones y animaciones de iconos pixelados
+   ============================================================ */
+
+.icono-pixel {
+    width: 100%;
+    height: 4rem;
+    object-fit: contain;
+    image-rendering: pixelated;
+    transition: transform 0.3s ease;
+    margin-bottom: 0.5rem;
+}
+
+/* TamaÃ±os especÃ­ficos para Perfil e Info */
+.contenedor-perfil .icono-pixel,
+.info .icono-pixel {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+.seccion-usuario .icono-pixel,
+.info .icono-pixel {
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+}
+
+/* Animaciones Hover - Movimiento hacia arriba */
+.item-navegacion:hover .icono-pixel,
+.seccion-usuario:hover .icono-pixel {
+    transform: translateY(-0.3rem);
+}
+
+/* AnimaciÃ³n de latido constante para el icono info */
+@keyframes latidoConstante {
+    0% { transform: scale(1); }
+    10% { transform: scale(1.12); }
+    20% { transform: scale(1); }
+    30% { transform: scale(1.08); }
+    40% { transform: scale(1); }
+    100% { transform: scale(1); }
+}
+
+.info .icono-pixel {
+    animation: latidoConstante 1s ease-in-out infinite;
+}
+
+.logo-sitio:hover img {
+    transform: translateY(0.5rem);
+}
+
+/* ============================================================
+   PUNTO 4: BOTONES Y ETIQUETAS DE TEXTO (PÃLDORAS/BADGES)
+   Estilos para botones, etiquetas de menÃº y badges coloridos
+   ============================================================ */
+
+.texto-menu,
+.btn-logout,
+.btn-info-texto {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.75rem;
+    font-weight: 900;
+    color: white;
+    background-color: #E68E9E;
+    padding: 0.2rem 1rem;
+    border-radius: 2rem;
+    box-shadow: 0 0.25rem 0 #d47a8a;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/* BotÃ³n Atrás (Azul) */
+.btn-atras .texto-menu {
+    background-color: #BDE0FE;
+    box-shadow: 0 0.25rem 0 #a2c6e4;
+}
+
+/* BotÃ³n Información (Lila pastel) */
+.btn-info-texto {
+    background-color: #D8BFD8 !important;
+    box-shadow: 0 0.25rem 0 #b194b1 !important;
+    font-size: 0.65rem !important;
+    line-height: 1.2;
+}
+
+/* BotÃ³n Cerrar Sesión (MarrÃ³n oscuro) */
+.btn-logout {
+    background-color: #5D4350 !important;
+    box-shadow: 0 0.25rem 0 #3d2c35 !important;
+    font-size: 0.65rem !important;
+}
+
+/* Contenedor derecha (agrupa Info y Perfil) */
+.contenedor-derecha {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 1000;
+    align-items: flex-start;
+}
+
+.bloque-columna {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 6.5rem;
+}
+  
+
+/* ============================================================
+   PUNTO 5: SECCIÓN BUSCADOR Y ANIMACIONES
+   Buscador central, input, botÃ³n y conejitos saltadores
+   ============================================================ */
+
+.contenedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    gap: 1.5rem;
+}
+
+.buscador {
+    width: 20rem;
+    height: 3rem;
+    background: white;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    border: 0.15rem solid #FFB6C1;
+    z-index: 5;
+}
+
+.buscador:focus-within {
+    border-color: #E68E9E;
+    box-shadow: 0 0.25rem 1.2rem rgba(230, 142, 158, 0.4);
+    transform: translateY(-0.2rem);
+}
+
+/* Input del Buscador */
+#mibuscador {
+    border: none;
+    outline: none;
+    background: transparent;
+    height: 3rem;
+    font-size: 1.1rem;
+    flex: 1;
+    padding-left: 0.5rem;
+    font-family: 'Playfair Display', serif;
+    color: #555;
+}
+
+#mibuscador::placeholder {
+    color: #E68E9E;
+    font-style: italic;
+    opacity: 0.7;
+}
+
+/* BotÃ³n del Buscador */
+.buscador button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.buscador button:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+.busca {
+    width: 1.6rem;
+    height: 1.6rem;
+    display: block;
+    filter: sepia(1) saturate(5) hue-rotate(300deg) brightness(0.9);
+}
+
+/* Conejitos animados */
+.conejito,
+.conejito2 {
+    width: 4rem;
+    height: auto;
+}
+
+.conejito {
+    animation: saltar 0.6s ease-in-out infinite;
+}
+
+.conejito2 {
+    transform: scaleX(-1);
+    animation: saltarEspejo 0.6s ease-in-out infinite;
+}
+
+/* AnimaciÃ³n de salto normal */
+@keyframes saltar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-1rem); }
+}
+
+/* AnimaciÃ³n de salto espejo */
+@keyframes saltarEspejo {
+    0%, 100% { transform: scaleX(-1) translateY(0); }
+    50% { transform: scaleX(-1) translateY(-1rem); }
+}
+
+/* ============================================================
+   PUNTO 6: ENCABEZADO Y MENÃšS DESPLEGABLES
+   Barra de navegaciÃ³n con iconos animados (gÃ©neros, mood, etc.)
+   ============================================================ */
+
+.Encabezado {
+    background-color: #FFB6C1;
+    width: 90%; /* No ocupa todo el ancho, parece una etiqueta */
+    margin: 3% auto 0 auto; /* Centrado */
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 1.5rem 0;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 0px rgba(230, 142, 158, 0.3); /* Sombra sÃ³lida estilo pixel */
+    border: 3px dashed #ffffff; /* Efecto de recorte o costura */
+}
+
+.Encabezado img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+details {
+    position: relative;
+    width: fit-content;
+}
+
+summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+summary p {
+    color: #E68E9E;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: #ffe4e8;
+    margin-top: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    text-align: center !important;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+/* --- MENÃš DE NAVEGACIÃ“N INFERIOR (Opcional) --- */
+.Encabezado {
+    background-color: #FFB6C1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    margin-top: 2%;
+    padding: 1rem 0;
+}
+
+.enlace-nav {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.enlace-nav img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+.enlace-nav p {
+    margin-top: 0.5rem;
+    color: #E68E9E;
+    font-weight: bold;
+    font-size: 0.9rem;
+    background-color: #ffe4e8;
+    padding: 2px 8px;
+    border-radius: 1.5px;
+}
+
+.enlace-nav:hover {
+    transform: scale(1.1) translateY(-0.3rem);
+}
+
+
+
+/* === BLOQUE SUPERIOR DE USUARIO UNIFICADO === */
+.contenedor-derecha {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    gap: 0.85rem !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn { order: 1 !important; }
+.contenedor-derecha .seccion-usuario { order: 2 !important; }
+.contenedor-derecha .contenedor-ayuda-global,
+.contenedor-derecha .info { order: 3 !important; }
+
+.contenedor-derecha > .perfil-editor-btn,
+.contenedor-derecha .seccion-usuario,
+.contenedor-derecha .contenedor-ayuda-global,
+.contenedor-derecha .info {
+    width: 7rem !important;
+    min-width: 7rem !important;
+    max-width: 7rem !important;
+    min-height: 6.15rem !important;
+    display: grid !important;
+    grid-template-rows: 3.45rem 1.8rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+}
+
+.contenedor-derecha .contenedor-perfil {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: grid !important;
+    grid-template-rows: 3.45rem 1.8rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn .perfil-editor-avatar,
+.contenedor-derecha .seccion-usuario .icono-pixel,
+.contenedor-derecha .info .icono-pixel,
+.contenedor-derecha .boton-ayuda-global,
+.contenedor-derecha .boton-ayuda-global img.icono-pixel {
+    width: 3.05rem !important;
+    height: 3.05rem !important;
+    max-width: 3.05rem !important;
+    max-height: 3.05rem !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    align-self: center !important;
+    justify-self: center !important;
+}
+
+.contenedor-derecha .seccion-usuario .icono-pixel {
+    transform: translateY(0.35rem) !important;
+}
+
+.contenedor-derecha .boton-ayuda-global {
+    display: block !important;
+    overflow: visible !important;
+    animation: none !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn span,
+.contenedor-derecha .btn-logout,
+.contenedor-derecha .texto-ayuda-subtitulado,
+.contenedor-derecha .btn-info-texto {
+    width: 6.15rem !important;
+    min-width: 6.15rem !important;
+    max-width: 6.15rem !important;
+    min-height: 1.75rem !important;
+    margin: 0 !important;
+    padding: 0.35rem 0.25rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #0b0204 !important;
+    color: #66dbff !important;
+    border: 0.125rem solid #ff7fa7 !important;
+    border-radius: 0 !important;
+    box-shadow: 0.25rem 0.25rem 0 #1a0005, 0.38rem 0.38rem 0 #b3002d !important;
+    font-family: 'Press Start 2P', 'Courier New', monospace !important;
+    font-size: 0.46rem !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+}
+/* === FIN BLOQUE SUPERIOR DE USUARIO UNIFICADO === */

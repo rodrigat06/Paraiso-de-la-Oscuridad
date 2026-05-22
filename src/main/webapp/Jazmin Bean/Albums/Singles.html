@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- El título que sale arriba en la pestaña del navegador -->
+  <title>Jazmin Bean - Singles</title>
+
+  <!-- Para que el navegador entienda bien las tildes y la 'ñ' -->
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!-- Todas las hojas de estilo (CSS) que le dan los colores y el diseño cute a la página -->
+  <link rel="stylesheet" href="../css/Melanie Martinez.css">
+  <link rel="stylesheet" href="../css/melanie-theme.css">
+  <link rel="stylesheet" href="../css/secciones-extra.css?v=vinyl-real-3">
+
+  <!-- El iconito pequeño (favicon) que aparece al lado del título en la pestaña -->
+  <link rel="icon" type="image/x-icon" href="../../img index/Wikisingers.png">
+
+  <!-- Para que la página se adapte bien y no se vea minúscula en pantallas de móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/jazmin-theme.css">
+    <script src="../../Assets/js/sql-storage.js"></script>
+</head>
+
+<body class="jazmin-seccion">
+  <!-- El contenedor grande que envuelve absolutamente todo el contenido de la página -->
+  <div class="contenedor-maestro">
+
+    <!-- BARRA DE NAVEGACIÓN SUPERIOR IZQUIERDA: Los botones para moverse por la web -->
+    <div class="navegacion-superior">
+      <!-- Botón que te devuelve al menú principal -->
+      <a href="../../Menú.html" class="item-navegacion">
+        <img src="../../img index/Wikisingers.png" alt="Menú" class="icono-pixel">
+        <span class="texto-menu">Menú</span>
+      </a>
+      <!-- Botón para ir a la página anterior (atrás) -->
+      <a href="../Jazmin Bean.html" class="item-navegacion btn-atras">
+        <img src="../../img index/volver.png" alt="Atrás" class="icono-pixel">
+        <span class="texto-menu">Atrás</span>
+      </a>
+    </div>
+
+    <!-- ESQUINA SUPERIOR DERECHA: Información de la página y control de usuario -->
+    <div class="contenedor-derecha">
+      <!-- Botón que probablemente abre una ventana o pestaña con la info del sitio -->
+      <div class="info"><img src="../../img index/Informacion.png" alt="Info" class="icono-pixel"><a href="#" class="btn-info-texto">Guia</a></div>
+      <!-- Zona del perfil de usuario con el botón para salir de la cuenta -->
+      <div class="seccion-usuario">
+        <div class="contenedor-perfil">
+          <img src="../../img index/Perfil.png" alt="Perfil" class="icono-pixel">
+          <a href="../../index.html" class="btn-logout">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- EL BUSCADOR: La barra para filtrar los singles, adornada con imágenes a los lados -->
+    <div class="contenedor">
+      <!-- Imagen decorativa izquierda (conejito/notas) -->
+      <img src="../img/cordero 1 .png" class="conejito" alt="deco">
+      
+      <!-- La cajita blanca para escribir y el botón con la lupa para buscar -->
+      <div class="buscador">
+        <input type="text" id="mibuscador" placeholder="Buscar el ritual...">
+        <button onclick="Ejecutar()">
+          <img class="busca" src="../../img index/Buscador.png" alt="icon">
+        </button>
+      </div>
+      
+      <!-- Imagen decorativa derecha (conejito/notas) -->
+      <img src="../img/cordero 2.png" class="conejito2" alt="deco">
+    </div>
+
+    <!-- MENÚ DE CATEGORÍAS (HEADER): Los cuatro botones grandes con gifs animados para navegar -->
+    <header class="Encabezado">
+      <!-- Enlace a la sección de Álbumes -->
+      <div class="item-encabezado">
+        <a href="Albums.html" class="enlace-nav">
+          <img src="../gifs/Albumes.gif" alt="Albums" class="icono-pixel">
+          <p>Albums</p>
+        </a>
+      </div>
+      <!-- Enlace a la sección de EPs -->
+      <div class="item-encabezado">
+        <a href="EPs.html" class="enlace-nav">
+          <img src="../gifs/Singles.gif" alt="EPs" class="icono-pixel">
+          <p>EPs</p>
+        </a>
+      </div>
+      <!-- Enlace a la sección de Significados de las canciones -->
+      <div class="item-encabezado">
+        <a href="../significados.html" class="enlace-nav">
+          <img src="../gifs/Singles.gif" alt="Significados" class="icono-pixel">
+          <p>Significados</p>
+        </a>
+      </div>
+      <!-- Enlace a la sección de la Biografía del artista -->
+      <div class="item-encabezado">
+        <a href="../biografia.html" class="enlace-nav">
+          <img src="../gifs/Singles.gif" alt="Biografia" class="icono-pixel">
+          <p>Biografia</p>
+        </a>
+      </div>
+    </header>
+  <main class="seccion-extra seccion-extra--sin-cabecera">
+    <section class="cd-grid">
+      <article class="cd-card" data-genero="Alternative Metal" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir WORLWIDE TORTURE">
+          <img src="../img/worlwide torture.jpg" alt="WORLWIDE TORTURE">
+        </button>
+        <h3>WORLWIDE TORTURE</h3>
+        <p class="estado-audio">Audio preparado: worlwide-torture.mp3</p>
+        <audio preload="none"><source src="../audio/worlwide torture.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Industrial Pop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir WAR ZONE URCHIN">
+          <img src="../img/war zone.jpg" alt="WAR ZONE URCHIN">
+        </button>
+        <h3>WAR ZONE URCHIN</h3>
+        <p class="estado-audio">Audio preparado: war-zone-urchin.mp3</p>
+        <audio preload="none"><source src="../audio/warzone urchin.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Electro-Industrial" data-mood="Energía">
+        <button type="button" class="cd-boton" aria-label="Reproducir PESTICIDES">
+          <img src="../img/pesticides.jpg" alt="PESTICIDES">
+        </button>
+        <h3>PESTICIDES</h3>
+        <p class="estado-audio">Audio preparado: pesticides.mp3</p>
+        <audio preload="none"><source src="../audio/pesticides.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Industrial Metal" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir SUPER SLAUGHTER">
+          <img src="../img/super slaughter.jpg" alt="SUPER SLAUGHTER">
+        </button>
+        <h3>SUPER SLAUGHTER</h3>
+        <p class="estado-audio">Audio preparado: super-slaughter.mp3</p>
+        <audio preload="none"><source src="../audio/super slawgther.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Dark Pop" data-mood="Amor">
+        <button type="button" class="cd-boton" aria-label="Reproducir YANDERE">
+          <img src="../img/yandere.jpg" alt="YANDERE">
+        </button>
+        <h3>YANDERE</h3>
+        <p class="estado-audio">Audio preparado: yandere.mp3</p>
+        <audio preload="none"><source src="../audio/yandere.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Trap Metal" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir MONSTER TRUCK">
+          <img src="../img/monster truck.jpg" alt="MONSTER TRUCK">
+        </button>
+        <h3>MONSTER TRUCK</h3>
+        <p class="estado-audio">Audio preparado: monster-truck.mp3</p>
+        <audio preload="none"><source src="../audio/monster truck.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Rock" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir R U LOOKING 4 ME NOW">
+          <img src="../img/are u lookin 4 me now.jpg" alt="R U LOOKING 4 ME NOW">
+        </button>
+        <h3>R U LOOKING 4 ME NOW</h3>
+        <p class="estado-audio">Audio preparado: r-u-looking-4-me-now.mp3</p>
+        <audio preload="none"><source src="../audio/r u looking 4 me now.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Experimental Pop" data-mood="Fiesta">
+        <button type="button" class="cd-boton" aria-label="Reproducir PUPPY POUND">
+          <img src="../img/puppy pound.jpg" alt="PUPPY POUND">
+        </button>
+        <h3>PUPPY POUND</h3>
+        <p class="estado-audio">Audio preparado: puppy-pound.mp3</p>
+        <audio preload="none"><source src="../audio/puppy pound.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Trap Metal" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir CARNAGE">
+          <img src="../img/carnage.jpg" alt="CARNAGE">
+        </button>
+        <h3>CARNAGE</h3>
+        <p class="estado-audio">Audio preparado: carnage.mp3</p>
+        <audio preload="none"><source src="../audio/carnage.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Avant-Pop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir PIGGIE">
+          <img src="../img/piggie.jpg" alt="PIGGIE">
+        </button>
+        <h3>PIGGIE</h3>
+        <p class="estado-audio">Audio preparado: piggie.mp3</p>
+        <audio preload="none"><source src="../audio/piggie.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir FAVOURITE TOY">
+          <img src="../img/favourite toy.jpg" alt="FAVOURITE TOY">
+        </button>
+        <h3>FAVOURITE TOY</h3>
+        <p class="estado-audio">Audio preparado: favourite-toy.mp3</p>
+        <audio preload="none"><source src="../audio/favourite toy.mp3" type="audio/mpeg"></audio>
+      </article>
+
+           <article class="cd-card" data-genero="Alternative Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir TERRIFIED">
+          <img src="../img/terrified.jpg" alt="TERRIFIED">
+        </button>
+        <h3>TERRIFIED</h3>
+        <p class="estado-audio">Audio preparado: terrified.mp3</p>
+        <audio preload="none"><source src="../audio/terrified.mp3" type="audio/mpeg"></audio>
+      </article>
+
+                <article class="cd-card" data-genero="Alternative Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir YOU KNOW WHAT YOU'VE DONE">
+          <img src="../img/you know what yove done.jpg" alt="YOU KNOW WHAT YOU'VE DONE">
+        </button>
+        <h3>YOU KNOW WHAT YOU'VE DONE</h3>
+        <p class="estado-audio">Audio preparado: you know what you've done.mp3</p>
+        <audio preload="none"><source src="../audio/you know what you've done.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Rock" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir IT'S NOT MY FAULT(IT'S YOURS)">
+          <img src="../img/its not may fault (its yours).jpg" alt="IT'S NOT MY FAULT(IT'S YOURS)">
+        </button>
+        <h3>IT'S NOT MY FAULT(IT'S YOURS)</h3>
+        <p class="estado-audio">Audio preparado: its-not-my-fault-its-yours.mp3</p>
+        <audio preload="none"><source src="../audio/its not my fault (its yours).mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir DARLING">
+          <img src="../img/darling.jpg" alt="DARLING">
+        </button>
+        <h3>DARLING</h3>
+        <p class="estado-audio">Audio preparado: darling.mp3</p>
+        <audio preload="none"><source src="../audio/darling.mp3" type="audio/mpeg"></audio>
+      </article>
+    </section>
+  </main>
+  </div>
+
+  <!-- ARCHIVOS DE JAVASCRIPT: Los scripts encargados de que funcionen los botones, el reproductor, la info y el historial -->
+  <!-- Controla la lógica de reproducción de los CDs/canciones -->
+  <script src="../../Assets/js/admin-content.js?v=admin-content-1"></script>
+  <script src="../js/singles-cd.js?v=vinyl-real-3"></script>
+  <!-- Controla la ventana emergente de información de la página -->
+<script src="../../Assets/js/page-info.js"></script>
+  <!-- Hace funcionar el botón de "Atrás" para regresar de forma segura -->
+<script src="../../Assets/js/profile-editor.js?v=perfil-cuenta-3"></script>
+<script src="../../Assets/js/history-back.js"></script>
+  <!-- Permite la funcionalidad de guardar canciones en favoritos -->
+  <script src="../../Assets/js/favorites.js"></script>
+<script src="../../Assets/js/heart-animation.js?v=heart-index-1"></script>
+
+<script src="../../Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,566 @@
+﻿:root {
+    --jazmin-black: #050105;
+    --jazmin-panel: #12030d;
+    --jazmin-ink: #210018;
+    --jazmin-pink: #ff5aa7;
+    --jazmin-baby: #ffb5dc;
+    --jazmin-acid: #dfff4f;
+    --jazmin-mint: #7dffcb;
+    --jazmin-cyan: #66dbff;
+    --jazmin-white: #fff7fb;
+    --jazmin-shadow: #080008;
+}
+
+body {
+    background:
+        repeating-linear-gradient(0deg, rgba(255,255,255,0.07) 0 0.0625rem, transparent 0.0625rem 0.32rem),
+        linear-gradient(135deg, #11020c 0%, #ff8fba 48%, #230018 100%) !important;
+    color: var(--jazmin-white) !important;
+}
+
+body::before {
+    background:
+        repeating-linear-gradient(90deg, rgba(5,1,5,0.16) 0 0.08rem, transparent 0.08rem 0.55rem),
+        linear-gradient(180deg, rgba(223,255,79,0.14), transparent 36%, rgba(255,90,167,0.18)) !important;
+    mix-blend-mode: normal !important;
+}
+
+.contenedor-maestro {
+    filter: drop-shadow(0 0 0.75rem rgba(5,1,5,0.28));
+}
+
+.texto-menu,
+.btn-logout,
+.btn-info-texto,
+summary p,
+.item-encabezado p,
+.album-card p,
+.album-card h2,
+.btn-borrar-todo,
+.cerrar-btn,
+.reproducir-btn,
+.boton-libro,
+.controles-libro button {
+    letter-spacing: 0 !important;
+}
+
+.texto-menu,
+.btn-logout,
+.btn-info-texto {
+    background: var(--jazmin-black) !important;
+    color: var(--jazmin-acid) !important;
+    border-color: var(--jazmin-pink) !important;
+    box-shadow: 0.25rem 0.25rem 0 var(--jazmin-shadow), 0.42rem 0.42rem 0 var(--jazmin-mint) !important;
+}
+
+.btn-atras .texto-menu,
+.btn-info-texto {
+    background: #8f0033 !important;
+    color: var(--jazmin-white) !important;
+    border-color: var(--jazmin-acid) !important;
+    box-shadow: 0.25rem 0.25rem 0 var(--jazmin-shadow), 0.42rem 0.42rem 0 var(--jazmin-cyan) !important;
+}
+
+.icono-pixel,
+.conejito,
+.conejito2,
+.enlace-nav img,
+.album-card img,
+.carrusel-img {
+    filter: saturate(1.18) contrast(1.08) drop-shadow(0.22rem 0.22rem 0 var(--jazmin-shadow)) !important;
+}
+
+.buscador {
+    background: var(--jazmin-black) !important;
+    border-color: var(--jazmin-acid) !important;
+    box-shadow: 0.38rem 0.38rem 0 var(--jazmin-shadow), 0.58rem 0.58rem 0 rgba(255,90,167,0.62) !important;
+}
+
+#mibuscador {
+    color: var(--jazmin-white) !important;
+}
+
+#mibuscador::placeholder {
+    color: var(--jazmin-baby) !important;
+}
+
+.buscador:focus-within {
+    border-color: var(--jazmin-mint) !important;
+    box-shadow: 0.38rem 0.38rem 0 var(--jazmin-shadow), 0 0 0 0.25rem rgba(223,255,79,0.2), 0 0 1.1rem rgba(125,255,203,0.55) !important;
+}
+
+.Encabezado,
+.grid-albums,
+.seccion-extra__titulo,
+.buscador-artista,
+.nav-artista-personalizado,
+.escenario-artista,
+.editor-artista {
+    border-color: var(--jazmin-pink) !important;
+    outline-color: var(--jazmin-acid) !important;
+    background: rgba(5,1,5,0.92) !important;
+    box-shadow: 0.5rem 0.5rem 0 var(--jazmin-shadow), 0.75rem 0.75rem 0 rgba(125,255,203,0.35) !important;
+}
+
+.item-encabezado p,
+summary p,
+.album-card p,
+.album-card h2,
+.seccion-extra__titulo,
+.titulo-vista h2,
+.bio-hero-visual h1,
+.significado-ficha-activa h2 {
+    color: var(--jazmin-acid) !important;
+    text-shadow: 0.16rem 0.16rem 0 var(--jazmin-shadow), 0.28rem 0.28rem 0 #8f0033 !important;
+}
+
+.item-encabezado:hover p,
+details:hover summary p,
+.album-card:hover p,
+.album-card:hover h2 {
+    background: #8f0033 !important;
+    color: var(--jazmin-white) !important;
+    border-color: var(--jazmin-mint) !important;
+}
+
+.album-card,
+.disco-card,
+.bio-card,
+.bio-capitulo,
+.significado-card,
+.significado-ficha-activa,
+.significados-indice,
+.significados-buscador-panel,
+.libro-ep,
+.libro-fisico,
+.ep-libro-fisico {
+    background: linear-gradient(135deg, rgba(5,1,5,0.98), rgba(33,0,24,0.94)) !important;
+    border-color: var(--jazmin-pink) !important;
+    box-shadow: 0.5rem 0.5rem 0 var(--jazmin-shadow), 0.78rem 0.78rem 0 rgba(223,255,79,0.28) !important;
+}
+
+.album-card:hover,
+.disco-card:hover,
+.bio-card:hover,
+.bio-capitulo:hover,
+.significado-card:hover {
+    border-color: var(--jazmin-acid) !important;
+    box-shadow: 0.5rem 0.5rem 0 var(--jazmin-shadow), 0 0 1.2rem rgba(255,90,167,0.62), 0 0 0 0.18rem rgba(125,255,203,0.18) !important;
+}
+
+.album-card > img:first-child,
+.bio-hero-visual img,
+.bio-galeria img,
+.disco-imagen-link img,
+.disco-imagen-btn img,
+.carrusel-img {
+    border: 0.18rem solid var(--jazmin-white) !important;
+    box-shadow: 0.35rem 0.35rem 0 var(--jazmin-shadow), 0 0 0 0.16rem var(--jazmin-pink) !important;
+}
+
+.carrusel-ventana {
+    border: 0.25rem double var(--jazmin-pink) !important;
+    background: var(--jazmin-black) !important;
+    box-shadow: 0.6rem 0.6rem 0 var(--jazmin-shadow), 0.9rem 0.9rem 0 rgba(223,255,79,0.28) !important;
+}
+
+.carrusel-img {
+    object-fit: cover !important;
+    background: var(--jazmin-panel) !important;
+}
+
+.lista,
+.significados-buscador-panel,
+.significados-indice {
+    border-color: var(--jazmin-mint) !important;
+}
+
+.lista a,
+.significado-cancion-btn,
+.significados-personalizados-indice button {
+    background: var(--jazmin-panel) !important;
+    color: var(--jazmin-white) !important;
+    border-color: rgba(255,90,167,0.72) !important;
+}
+
+.lista a:hover,
+.significado-cancion-btn:hover,
+.significado-cancion-btn.activo,
+.significados-personalizados-indice button:hover,
+.significados-personalizados-indice button.activo {
+    background: var(--jazmin-acid) !important;
+    color: var(--jazmin-black) !important;
+    border-color: var(--jazmin-white) !important;
+}
+
+.cd-card h3 {
+    color: var(--vinyl-title, var(--jazmin-acid)) !important;
+    text-shadow: 0.14rem 0.14rem 0 var(--jazmin-shadow), 0.25rem 0.25rem 0 #8f0033 !important;
+}
+
+.cd-card::before {
+    background: color-mix(in srgb, var(--vinyl-shadow, var(--jazmin-shadow)) 85%, transparent) !important;
+}
+
+.cd-boton {
+    border-color: var(--vinyl-primary, var(--jazmin-pink)) !important;
+}
+
+.bio-etiqueta-visual,
+.disco-card .tipo,
+.enlace-ep,
+.estado-audio {
+    background: #8f0033 !important;
+    color: var(--jazmin-white) !important;
+    border-color: var(--jazmin-acid) !important;
+}
+
+.letra-box,
+.sentido-box,
+.significado-bloque-texto,
+.libro-paginas,
+.panel-artista {
+    background: rgba(18,3,13,0.94) !important;
+    border-color: var(--jazmin-mint) !important;
+}
+
+@media (max-width: 48rem) {
+    .Encabezado {
+        width: min(94%, 38rem) !important;
+    }
+
+    .buscador {
+        width: min(22rem, 78vw) !important;
+    }
+}
+
+.Encabezado {
+    background:
+        linear-gradient(135deg, rgba(255,181,220,0.24), rgba(255,90,167,0.16) 42%, rgba(125,255,203,0.12)),
+        rgba(33,0,24,0.82) !important;
+    border-color: var(--jazmin-acid) !important;
+    outline-color: var(--jazmin-pink) !important;
+    box-shadow: 0.5rem 0.5rem 0 rgba(8,0,8,0.72), 0 0 1.4rem rgba(255,90,167,0.42), inset 0 0 2.4rem rgba(255,181,220,0.16) !important;
+}
+
+.Encabezado::before {
+    content: "";
+    position: absolute;
+    inset: 0.35rem;
+    pointer-events: none;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,0.05) 0 0.08rem, transparent 0.08rem 0.65rem);
+    opacity: 0.75;
+}
+
+.Encabezado .item-encabezado,
+.Encabezado .enlace-nav {
+    position: relative;
+    z-index: 1;
+}
+
+.Encabezado .enlace-nav img {
+    background: rgba(255,247,251,0.08) !important;
+    border-radius: 50% !important;
+    padding: 0.25rem !important;
+    filter: saturate(1.28) contrast(1.12) drop-shadow(0 0 0.5rem rgba(223,255,79,0.35)) drop-shadow(0.2rem 0.2rem 0 var(--jazmin-shadow)) !important;
+}
+
+.item-encabezado p {
+    background: rgba(18,3,13,0.88) !important;
+    color: var(--jazmin-acid) !important;
+    border-color: var(--jazmin-pink) !important;
+    box-shadow: 0.18rem 0.18rem 0 var(--jazmin-shadow), 0.3rem 0.3rem 0 rgba(125,255,203,0.55) !important;
+}
+
+body.jazmin-seccion .jazmin-significados {
+    width: min(72rem, 92%);
+    margin: 2rem auto 4rem;
+    padding: 0;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+body.jazmin-seccion .significados-portada {
+    display: grid;
+    align-items: center;
+    margin: 0 auto 1.4rem;
+    padding: 1.2rem;
+    background: rgba(12, 1, 8, 0.86);
+    border: 0.18rem solid var(--jazmin-pink);
+    box-shadow: 0.45rem 0.45rem 0 var(--jazmin-shadow), 0.7rem 0.7rem 0 rgba(125, 255, 203, 0.54);
+}
+
+body.jazmin-seccion .significados-portada__texto {
+    display: grid;
+    gap: 0.65rem;
+    max-width: 52rem;
+    margin: 0 auto;
+    text-align: center;
+}
+
+body.jazmin-seccion .significados-portada h1 {
+    margin: 0;
+    color: var(--jazmin-white);
+    font-family: 'Press Start 2P', monospace;
+    font-size: clamp(1rem, 2.1vw, 1.65rem);
+    line-height: 1.45;
+    text-shadow: 0.16rem 0.16rem 0 var(--jazmin-black), 0.28rem 0.28rem 0 #c70072;
+}
+
+body.jazmin-seccion .significados-portada p {
+    margin: 0;
+    color: var(--jazmin-baby);
+    font-size: clamp(0.8rem, 1.45vw, 1rem);
+    line-height: 1.7;
+}
+
+body.jazmin-seccion .significados-portada .etiqueta-seccion {
+    color: var(--jazmin-acid);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.62rem;
+    text-transform: uppercase;
+}
+
+body.jazmin-seccion .significados-archivo {
+    width: 100%;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+
+body.jazmin-seccion .significados-buscador-panel,
+body.jazmin-seccion .significados-indice,
+body.jazmin-seccion .significado-ficha-activa {
+    border-color: var(--jazmin-pink) !important;
+    background: rgba(9, 1, 7, 0.92) !important;
+    box-shadow: 0.32rem 0.32rem 0 var(--jazmin-shadow) !important;
+}
+
+body.jazmin-seccion .significados-layout-fijo {
+    grid-template-columns: minmax(15rem, 24%) minmax(0, 1fr);
+    gap: 1rem;
+}
+
+body.jazmin-seccion .significados-indice {
+    max-height: 38rem;
+    overflow: auto;
+}
+
+body.jazmin-seccion .significado-cancion-btn {
+    border-color: var(--jazmin-pink) !important;
+    background: rgba(255, 181, 220, 0.08) !important;
+    color: var(--jazmin-white) !important;
+}
+
+body.jazmin-seccion .significado-cancion-btn:hover,
+body.jazmin-seccion .significado-cancion-btn.activo {
+    background: var(--jazmin-pink) !important;
+    color: var(--jazmin-black) !important;
+    box-shadow: 0.2rem 0.2rem 0 var(--jazmin-acid) !important;
+}
+
+body.jazmin-seccion .significado-cancion-btn span,
+body.jazmin-seccion .significado-ficha-activa header p,
+body.jazmin-seccion .significados-indice h3,
+body.jazmin-seccion .significados-buscador-panel label {
+    color: var(--jazmin-acid) !important;
+}
+
+body.jazmin-seccion .significado-ficha-activa h2 {
+    color: var(--jazmin-cyan) !important;
+    font-size: clamp(0.95rem, 2vw, 1.35rem) !important;
+    line-height: 1.55;
+}
+
+body.jazmin-seccion .significado-bloque-texto {
+    background: rgba(255, 247, 251, 0.96) !important;
+    color: #170012 !important;
+    border-color: var(--jazmin-mint) !important;
+}
+
+body.jazmin-seccion .significado-bloque-texto h4 {
+    color: #c70072 !important;
+}
+
+@media (max-width: 56rem) {
+    body.jazmin-seccion .jazmin-significados {
+        width: 94%;
+        margin-top: 1rem;
+    }
+
+    body.jazmin-seccion .significados-layout-fijo {
+        grid-template-columns: 1fr;
+    }
+
+    body.jazmin-seccion .significados-indice {
+        max-height: none;
+        position: static;
+    }
+}
+
+body.jazmin-seccion .significado-dos-columnas--solo {
+    grid-template-columns: 1fr !important;
+}
+
+body.jazmin-seccion .significado-dos-columnas--solo .significado-bloque-texto {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+
+.panel-admin-contenido {
+    width: min(68rem, 92%);
+    margin: 1.2rem auto;
+    padding: 0.8rem;
+    background: rgba(8, 1, 7, 0.92);
+    border: 0.18rem solid var(--jazmin-pink);
+    box-shadow: 0.35rem 0.35rem 0 var(--jazmin-shadow), 0.55rem 0.55rem 0 rgba(125, 255, 203, 0.55);
+    color: var(--jazmin-white);
+}
+
+.admin-toggle-contenido,
+.admin-form-contenido button,
+.admin-lista-contenido button {
+    padding: 0.65rem 0.85rem;
+    background: #8f0033;
+    color: var(--jazmin-white);
+    border: 0.15rem solid var(--jazmin-acid);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    line-height: 1.4;
+    cursor: pointer;
+    box-shadow: 0.18rem 0.18rem 0 var(--jazmin-shadow);
+}
+
+.admin-toggle-contenido:hover,
+.admin-form-contenido button:hover,
+.admin-lista-contenido button:hover {
+    background: var(--jazmin-pink);
+    color: var(--jazmin-black);
+    transform: translateY(-0.08rem);
+}
+
+.admin-form-contenido {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.9rem;
+}
+
+.admin-form-contenido[hidden] {
+    display: none;
+}
+
+.admin-form-contenido label {
+    display: grid;
+    gap: 0.35rem;
+    color: var(--jazmin-acid);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    line-height: 1.5;
+}
+
+.admin-form-contenido input,
+.admin-form-contenido textarea {
+    width: 100%;
+    min-height: 2.4rem;
+    padding: 0.65rem;
+    background: #fff7fb;
+    color: #180012;
+    border: 0.15rem solid var(--jazmin-pink);
+    font: inherit;
+    font-family: Arial, sans-serif;
+    font-size: 0.9rem;
+}
+
+.admin-form-contenido textarea {
+    min-height: 6rem;
+    resize: vertical;
+}
+
+.admin-form-acciones {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.admin-lista-contenido {
+    display: grid;
+    gap: 0.55rem;
+    margin-top: 0.9rem;
+}
+
+.admin-lista-contenido article {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto auto;
+    gap: 0.65rem;
+    align-items: center;
+    padding: 0.65rem;
+    background: rgba(255, 181, 220, 0.1);
+    border: 0.12rem solid rgba(255, 90, 167, 0.72);
+}
+
+.admin-lista-contenido strong {
+    color: var(--jazmin-white);
+}
+
+.admin-lista-contenido span {
+    color: var(--jazmin-acid);
+}
+
+.canciones-admin-libro {
+    width: min(64rem, 92%);
+    margin: 1.5rem auto;
+    padding: 1rem;
+    background: rgba(8, 1, 7, 0.9);
+    border: 0.18rem solid var(--jazmin-pink);
+    box-shadow: 0.35rem 0.35rem 0 var(--jazmin-shadow);
+}
+
+.canciones-admin-libro h2 {
+    margin: 0 0 0.9rem;
+    color: var(--jazmin-acid);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.85rem;
+}
+
+.canciones-admin-libro > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+    gap: 0.8rem;
+}
+
+.cancion-admin-card {
+    display: grid;
+    grid-template-columns: 5rem minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 0.75rem;
+    background: #fff7fb;
+    color: #190014;
+    border: 0.16rem solid var(--jazmin-mint);
+}
+
+.cancion-admin-card img {
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border: 0.12rem solid var(--jazmin-black);
+}
+
+.cancion-admin-card h3,
+.cancion-admin-card p {
+    margin: 0 0 0.4rem;
+}
+
+.cancion-admin-card audio {
+    width: 100%;
+}
+
+@media (max-width: 48rem) {
+    .admin-form-contenido,
+    .admin-lista-contenido article,
+    .cancion-admin-card {
+        grid-template-columns: 1fr;
+    }
+}
+

@@ -1,0 +1,191 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Melanie Martinez - Singles</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="../css/Melanie Martinez.css">
+  <link rel="stylesheet" href="../css/melanie-theme.css">
+  <link rel="stylesheet" href="../css/secciones-extra.css?v=vinyl-melanie-2">
+  <link rel="icon" type="image/x-icon" href="../../img index/Wikisingers.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="../../Assets/js/sql-storage.js"></script>
+</head>
+<body class="melanie-seccion">
+  <div class="contenedor-maestro">
+    
+    <div class="navegacion-superior">
+      <a href="../../Menú.html" class="item-navegacion">
+        <img src="../../img index/Wikisingers.png" alt="Menú" class="icono-pixel">
+        <span class="texto-menu">Menú</span>
+      </a>
+      <a href="../Melanie Martinez.html" class="item-navegacion btn-atras">
+        <img src="../../img index/volver.png" alt="Atrás" class="icono-pixel">
+        <span class="texto-menu">Atrás</span>
+      </a>
+    </div>
+
+    <div class="contenedor-derecha">
+      <div class="info">
+        <img src="../../img index/Informacion.png" alt="Info" class="icono-pixel">
+        <a href="#" class="btn-info-texto">Información Página</a>
+      </div>
+      <div class="seccion-usuario">
+        <div class="contenedor-perfil">
+          <img src="../../img index/Perfil.png" alt="Perfil" class="icono-pixel">
+          <a href="../../index.html" class="btn-logout">Cerrar Sesión</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <img src="../img/Melanie notas.png" class="conejito" alt="deco">
+      <div class="buscador">
+        <input type="text" id="mibuscador" placeholder="Buscar el ritual que quieras...">
+        <button onclick="Ejecutar()">
+          <img class="busca" src="../../img index/Buscador.png" alt="icon">
+        </button>
+      </div>
+      <img src="../img/Melanie notas.png" class="conejito2" alt="deco">
+    </div>
+
+    <header class="Encabezado">
+      <div class="item-encabezado">
+        <a href="Albums.html" class="enlace-nav">
+          <img src="../gifs/Albumes .gif" alt="Albums" class="icono-pixel">
+          <p>Albums</p>
+        </a>
+      </div>
+      <div class="item-encabezado">
+        <a href="EPs.html" class="enlace-nav">
+          <img src="../gifs/Eps.gif" alt="EPs" class="icono-pixel">
+          <p>EPs</p>
+        </a>
+      </div>
+      <div class="item-encabezado">
+        <a href="../significados.html" class="enlace-nav">
+          <img src="../gifs/merchandaising.gif" alt="Significados" class="icono-pixel">
+          <p>Significados</p>
+        </a>
+      </div>
+      <div class="item-encabezado">
+        <a href="../biografia.html" class="enlace-nav">
+          <img src="../gifs/Biografia.gif" alt="Biografia" class="icono-pixel">
+          <p>Biografia</p>
+        </a>
+      </div>
+    </header>
+  <main class="seccion-extra seccion-extra--sin-cabecera">
+    <section class="cd-grid">
+      <article class="cd-card" data-genero="Dark Pop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir DOLLHOUSE">
+          <img src="../img/dollhouse single.jpg" alt="DOLLHOUSE">
+        </button>
+        <h3>DOLLHOUSE</h3>
+        <p class="estado-audio">Audio preparado: DOLLHOUSE.mp3</p>
+        <audio preload="none"><source src="../audio/DOLLHOUSE.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir PITY PARTY">
+          <img src="../img/pity party single.jpg" alt="PITY PARTY">
+        </button>
+        <h3>PITY PARTY</h3>
+        <p class="estado-audio">Audio preparado: Pity Party.mp3</p>
+        <audio preload="none"><source src="../audio/Pity Party.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Electropop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir SOAP">
+          <img src="../img/soap single.jpg" alt="SOAP">
+        </button>
+        <h3>SOAP</h3>
+        <p class="estado-audio">Audio preparado: Soap.mp3</p>
+        <audio preload="none"><source src="../audio/Soap.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Pop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir SIPPY CUP">
+          <img src="../img/sippy cup single.jpg" alt="SIPPY CUP">
+        </button>
+        <h3>SIPPY CUP</h3>
+        <p class="estado-audio">Audio preparado: Sippy Cup.mp3</p>
+        <audio preload="none"><source src="../audio/Sippy Cup.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Dark Cabaret" data-mood="Amor">
+        <button type="button" class="cd-boton" aria-label="Reproducir GINGERBREADMAN">
+          <img src="../img/giggerbread çman single.jpg" alt="GINGERBREADMAN">
+        </button>
+        <h3>GINGERBREADMAN</h3>
+        <p class="estado-audio">Audio preparado: Gingerbread Man.mp3</p>
+        <audio preload="none"><source src="../audio/gingerbreadman.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Pop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir COPY CAT">
+          <img src="../img/copy cat single.jpg" alt="COPY CAT">
+        </button>
+        <h3>COPY CAT</h3>
+        <p class="estado-audio">Audio preparado: Copy Cat.mp3</p>
+        <audio preload="none"><source src="../audio/copycat.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Electropop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir FIRE DRILL">
+          <img src="../img/fire drill single.jpg" alt="FIRE DRILL">
+        </button>
+        <h3>FIRE DRILL</h3>
+        <p class="estado-audio">Audio preparado: FIRE DRILL.mp3</p>
+        <audio preload="none"><source src="../audio/FIRE DRILL.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Alternative Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir VOID">
+          <img src="../img/void single.jpg" alt="VOID">
+        </button>
+        <h3>VOID</h3>
+        <p class="estado-audio">Audio preparado: void.mp3</p>
+        <audio preload="none"><source src="../audio/void.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Dark Pop" data-mood="Rabia">
+        <button type="button" class="cd-boton" aria-label="Reproducir POSSESSION">
+          <img src="../img/possesion single.jpg" alt="POSSESSION">
+        </button>
+        <h3>POSSESSION</h3>
+        <p class="estado-audio">Audio preparado: Possession.mp3</p>
+        <audio preload="none"><source src="../audio/possession.mp3" type="audio/mpeg"></audio>
+      </article>
+
+      <article class="cd-card" data-genero="Pop" data-mood="Triste">
+        <button type="button" class="cd-boton" aria-label="Reproducir DISNEY PRINCESS">
+          <img src="../img/disney princess single.jpg" alt="DISNEY PRINCESS">
+        </button>
+        <h3>DISNEY PRINCESS</h3>
+        <p class="estado-audio">Audio preparado: Disney Princess.mp3</p>
+        <audio preload="none"><source src="../audio/disney princess.mp3" type="audio/mpeg"></audio>
+      </article>
+    </section>
+  </main>
+  </div>
+
+
+  <script src="../../Assets/js/admin-content.js?v=admin-content-1"></script>
+  <script src="../js/singles-cd.js?v=vinyl-melanie-2"></script>
+  <script src="../../Assets/js/page-info.js"></script>
+  <script src="../../Assets/js/profile-editor.js?v=perfil-cuenta-3"></script>
+  <script src="../../Assets/js/history-back.js"></script>
+  <script src="../../Assets/js/favorites.js"></script>
+  <script src="../../Assets/js/heart-animation.js?v=heart-index-1"></script>
+  <script src="../../Assets/js/site-footer.js?v=footer-1"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

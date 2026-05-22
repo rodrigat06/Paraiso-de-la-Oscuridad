@@ -1,0 +1,3303 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik+Glitch&family=Special+Elite&display=swap');
+
+:root {
+    --melanie-black: #0b0204;
+    --melanie-panel: #140509;
+    --melanie-red: #b3002d;
+    --melanie-pink: #ff7fa7;
+    --melanie-soft: #fca4be;
+    --melanie-blue: #66dbff;
+    --melanie-shadow: #1a0005;
+    --melanie-brown: #4a2836;
+}
+
+body {
+    background: linear-gradient(45deg, #E68E9E, #FFB6C1, #d66d7e) !important;
+    background-attachment: fixed !important;
+    color: #ffffff;
+    font-family: 'Press Start 2P', 'Courier New', monospace !important;
+    overflow-x: hidden !important;
+}
+
+.navegacion-superior {
+    top: 0.85rem !important;
+    left: 1.15rem !important;
+    gap: 1.15rem !important;
+}
+
+.contenedor-derecha {
+    top: 0.85rem !important;
+    right: 1.15rem !important;
+}
+
+.item-navegacion,
+.info,
+.seccion-usuario,
+.contenedor-perfil {
+    width: 5.25rem !important;
+    min-width: 5.25rem !important;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(circle at 16% 20%, rgba(102, 219, 255, 0.18), transparent 19rem),
+        radial-gradient(circle at 84% 68%, rgba(179, 0, 45, 0.24), transparent 18rem),
+        repeating-linear-gradient(0deg, rgba(11, 2, 4, 0.08) 0 1px, transparent 1px 5px);
+}
+
+.contenedor-maestro,
+.album-navegacion-container,
+.libros,
+.seccion-libro,
+.carrusel-ventana,
+.grid-albums {
+    position: relative;
+    z-index: 1;
+}
+
+.texto-menu,
+.btn-logout,
+.btn-info-texto,
+summary p,
+.item-encabezado p,
+.album-card h2,
+.album-card p,
+.btn-borrar-todo,
+.cerrar-btn,
+.reproducir-btn,
+.controles-libro button,
+.boton-libro,
+button {
+    font-family: 'Press Start 2P', monospace !important;
+}
+
+.texto-menu,
+.btn-logout,
+.btn-info-texto {
+    background: var(--melanie-black) !important;
+    color: var(--melanie-blue) !important;
+    border: 2px solid var(--melanie-pink) !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 var(--melanie-shadow), 6px 6px 0 var(--melanie-red) !important;
+    font-size: 0.46rem !important;
+    line-height: 1.45 !important;
+    padding: 0.4rem 0.42rem !important;
+    text-shadow: none !important;
+}
+
+.btn-atras .texto-menu,
+.btn-info-texto {
+    color: #ffffff !important;
+    background: var(--melanie-red) !important;
+    border-color: var(--melanie-blue) !important;
+    box-shadow: 4px 4px 0 var(--melanie-shadow), 6px 6px 0 var(--melanie-blue) !important;
+}
+
+.contenedor-derecha {
+    gap: 1.25rem !important;
+    filter: drop-shadow(0 0 6px rgba(179, 0, 45, 0.35));
+}
+
+.icono-pixel {
+    height: 3.25rem !important;
+    margin-bottom: 0.38rem !important;
+}
+
+.contenedor-perfil .icono-pixel,
+.info .icono-pixel,
+.seccion-usuario .icono-pixel {
+    width: 3.2rem !important;
+    height: 3.2rem !important;
+}
+
+.icono-pixel,
+.conejito,
+.conejito2,
+.enlace-nav img,
+.album-card img {
+    image-rendering: pixelated;
+    filter: drop-shadow(3px 3px 0 rgba(11, 2, 4, 0.75));
+}
+
+.contenedor {
+    margin-top: 4.65rem !important;
+    gap: 1rem !important;
+}
+
+.buscador {
+    background: var(--melanie-black) !important;
+    border: 3px solid var(--melanie-pink) !important;
+    border-radius: 0 !important;
+    box-shadow: 6px 6px 0 var(--melanie-shadow), 9px 9px 0 rgba(179, 0, 45, 0.45) !important;
+    width: min(19rem, 54vw) !important;
+    height: 2.75rem !important;
+    padding: 0 0.85rem !important;
+}
+
+#mibuscador {
+    color: #ffffff !important;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 0.6rem !important;
+    height: 2.75rem !important;
+}
+
+#mibuscador::placeholder {
+    color: var(--melanie-pink) !important;
+    font-style: normal !important;
+}
+
+.buscador:focus-within {
+    border-color: var(--melanie-blue) !important;
+    box-shadow: 6px 6px 0 var(--melanie-shadow), 0 0 16px rgba(102, 219, 255, 0.55) !important;
+}
+
+.Encabezado {
+    background: var(--melanie-black) !important;
+    border: 4px double var(--melanie-pink) !important;
+    outline: 2px solid var(--melanie-red);
+    border-radius: 0 !important;
+    box-shadow: 8px 8px 0 var(--melanie-shadow), 12px 12px 0 rgba(179, 0, 45, 0.4) !important;
+    width: min(86%, 58rem) !important;
+    padding: 1rem 1.4rem !important;
+    gap: clamp(1rem, 3.5vw, 3rem) !important;
+    box-sizing: border-box !important;
+}
+
+.Encabezado img,
+.enlace-nav img {
+    width: 4rem !important;
+    height: 4rem !important;
+}
+
+summary p,
+.item-encabezado p {
+    background: var(--melanie-panel) !important;
+    color: var(--melanie-blue) !important;
+    border: 2px solid var(--melanie-pink);
+    border-radius: 0 !important;
+    box-shadow: 3px 3px 0 var(--melanie-shadow);
+    font-size: 0.48rem !important;
+    line-height: 1.4 !important;
+    padding: 0.4rem 0.5rem !important;
+    text-shadow: none !important;
+}
+
+details:hover summary p,
+.item-encabezado:hover p {
+    background: var(--melanie-red) !important;
+    color: #ffffff !important;
+    border-color: var(--melanie-blue);
+    animation: melanieShake 0.16s steps(1) infinite;
+}
+
+.lista {
+    background: var(--melanie-panel) !important;
+    border: 3px solid var(--melanie-pink) !important;
+    border-radius: 0 !important;
+    box-shadow: 6px 6px 0 var(--melanie-shadow), 9px 9px 0 rgba(102, 219, 255, 0.45) !important;
+}
+
+.lista a {
+    color: #ffffff !important;
+    background: var(--melanie-black) !important;
+    border: 2px solid var(--melanie-brown) !important;
+    border-radius: 0 !important;
+    font-size: 0.52rem !important;
+    line-height: 1.5 !important;
+}
+
+.lista a:hover {
+    background: var(--melanie-blue) !important;
+    color: var(--melanie-black) !important;
+    border-color: #ffffff !important;
+}
+
+.album-card {
+    background: var(--melanie-black) !important;
+    border: 4px double var(--melanie-pink) !important;
+    border-radius: 0 !important;
+    box-shadow: 8px 8px 0 var(--melanie-shadow), 12px 12px 0 rgba(255, 127, 167, 0.48) !important;
+    width: min(18rem, 82vw) !important;
+    padding: 1rem !important;
+    box-sizing: border-box !important;
+}
+
+.grid-albums {
+    gap: clamp(1.4rem, 4vw, 3rem) !important;
+    padding: 2rem 1rem !important;
+    box-sizing: border-box !important;
+}
+
+.album-card img {
+    max-height: 15rem !important;
+    object-fit: cover !important;
+}
+
+.album-card > img:first-child {
+    margin-bottom: 1.15rem !important;
+}
+
+.album-card:hover {
+    border-color: var(--melanie-blue) !important;
+    box-shadow: 8px 8px 0 var(--melanie-shadow), 0 0 18px rgba(102, 219, 255, 0.65) !important;
+}
+
+.album-card h2,
+.album-card p {
+    color: #ffffff !important;
+    text-shadow: 2px 2px 0 var(--melanie-shadow), 4px 4px 0 var(--melanie-pink);
+}
+
+.album-card h2 {
+    font-size: 0.82rem !important;
+    line-height: 1.35 !important;
+    margin: 0.75rem 0 1.2rem !important;
+}
+
+.album-card p {
+    color: var(--melanie-blue) !important;
+    font-size: 0.52rem !important;
+    line-height: 1.55 !important;
+    margin: 0.85rem 0 !important;
+}
+
+.album-card h2 + img,
+.album-card p + img {
+    margin-top: 1rem !important;
+}
+
+.carrusel-img {
+    border-radius: 0 !important;
+    border: 4px solid #ffffff !important;
+    box-shadow: 7px 7px 0 var(--melanie-shadow), 10px 10px 0 rgba(255, 127, 167, 0.55);
+    width: clamp(9.5rem, 15vw, 12.25rem) !important;
+    height: clamp(9.5rem, 15vw, 12.25rem) !important;
+    margin: 0.45rem !important;
+}
+
+.carrusel-ventana {
+    margin-top: 1.4rem !important;
+}
+
+.libro-fisico,
+.libro-wrapper {
+    filter: drop-shadow(10px 10px 0 rgba(11, 2, 4, 0.55));
+}
+
+.album-navegacion-container {
+    width: min(94vw, 72rem) !important;
+    margin: 2rem auto 0 !important;
+    padding: 1.5rem 0 2.5rem !important;
+    box-sizing: border-box !important;
+    isolation: isolate;
+}
+
+.libro-wrapper,
+.seccion-libro {
+    max-width: min(88vw, 56rem) !important;
+}
+
+.seccion-libro {
+    position: relative;
+    padding: 1.35rem !important;
+    border: 3px solid rgba(255, 127, 167, 0.85);
+    background:
+        linear-gradient(90deg, rgba(11, 2, 4, 0.92), rgba(20, 5, 9, 0.72)),
+        repeating-linear-gradient(0deg, rgba(102, 219, 255, 0.08) 0 1px, transparent 1px 6px);
+    box-shadow:
+        8px 8px 0 var(--melanie-shadow),
+        -6px -6px 0 rgba(102, 219, 255, 0.55),
+        inset 0 0 22px rgba(255, 127, 167, 0.22);
+}
+
+.seccion-libro::before {
+    content: "";
+    position: absolute;
+    inset: 0.55rem;
+    border: 1px dashed rgba(102, 219, 255, 0.6);
+    pointer-events: none;
+}
+
+.libro-fisico {
+    transform-origin: top center;
+    border-radius: 0 !important;
+    transition: transform 0.65s cubic-bezier(0.2, 0.8, 0.2, 1), filter 0.35s ease !important;
+}
+
+.libro-fisico:hover {
+    filter:
+        drop-shadow(12px 12px 0 rgba(11, 2, 4, 0.62))
+        drop-shadow(0 0 18px rgba(255, 127, 167, 0.45));
+}
+
+.libro-fisico.abierto {
+    filter:
+        drop-shadow(14px 14px 0 rgba(11, 2, 4, 0.58))
+        drop-shadow(0 0 24px rgba(102, 219, 255, 0.38));
+}
+
+.libro-fisico::before {
+    box-shadow:
+        4px 0 0 rgba(255, 255, 255, 0.68),
+        8px 0 0 rgba(102, 219, 255, 0.55),
+        12px 0 0 rgba(255, 127, 167, 0.5),
+        18px 14px 0 rgba(11, 2, 4, 0.55) !important;
+}
+
+.lomo {
+    background:
+        linear-gradient(180deg, var(--melanie-red), var(--melanie-brown) 48%, var(--melanie-black)) !important;
+    border-right: 3px solid var(--melanie-blue) !important;
+    box-shadow:
+        inset -4px 0 0 rgba(11, 2, 4, 0.65),
+        0 0 16px rgba(255, 127, 167, 0.55) !important;
+}
+
+.lomo::before,
+.lomo::after {
+    background: var(--melanie-blue) !important;
+    box-shadow: 0 0 10px rgba(102, 219, 255, 0.85) !important;
+}
+
+.flecha-izquierda img,
+.flecha-derecha img {
+    max-width: clamp(2.6rem, 5vw, 4.25rem) !important;
+}
+
+.hoja .cara,
+.cara,
+.frontal,
+.trasera {
+    border-color: var(--melanie-pink) !important;
+}
+
+.hoja {
+    filter: drop-shadow(4px 4px 0 rgba(11, 2, 4, 0.38));
+}
+
+.cara {
+    background:
+        linear-gradient(135deg, rgba(255, 244, 248, 0.96), rgba(255, 209, 220, 0.92)),
+        repeating-linear-gradient(0deg, rgba(179, 0, 45, 0.08) 0 1px, transparent 1px 18px) !important;
+    border: 3px solid var(--melanie-pink) !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, 0.5),
+        inset 12px 0 18px rgba(74, 40, 54, 0.12),
+        4px 4px 0 rgba(11, 2, 4, 0.28) !important;
+}
+
+.cara.trasera,
+.trasera {
+    background:
+        linear-gradient(135deg, rgba(255, 228, 236, 0.96), rgba(230, 230, 250, 0.9)),
+        repeating-linear-gradient(90deg, rgba(102, 219, 255, 0.08) 0 1px, transparent 1px 16px) !important;
+}
+
+.tapa-frontal .cara.frontal,
+.tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 22%, rgba(102, 219, 255, 0.3), transparent 7rem),
+        linear-gradient(145deg, var(--melanie-black), var(--melanie-panel) 48%, var(--melanie-red)) !important;
+    border: 4px double var(--melanie-pink) !important;
+    box-shadow:
+        inset 0 0 0 4px rgba(255, 255, 255, 0.08),
+        inset 0 0 28px rgba(255, 127, 167, 0.28),
+        6px 6px 0 var(--melanie-shadow) !important;
+}
+
+.tapa-frontal .cara.frontal h3,
+.cara.frontal h3 {
+    color: #ffffff !important;
+    font-size: clamp(0.82rem, 1.5vw, 1.12rem) !important;
+    line-height: 1.45 !important;
+    text-shadow:
+        2px 2px 0 var(--melanie-shadow),
+        4px 4px 0 var(--melanie-pink),
+        6px 6px 0 var(--melanie-red) !important;
+}
+
+.cara.frontal p,
+.cara p {
+    color: #3b2030 !important;
+    line-height: 1.65 !important;
+}
+
+.tapa-frontal .cara.frontal p,
+.tapa-frontal .frontal p {
+    color: var(--melanie-blue) !important;
+    text-shadow: 1px 1px 0 var(--melanie-shadow);
+}
+
+.cara img,
+.cara.frontal img,
+.tapa-frontal .cara.frontal img {
+    border: 3px solid #ffffff !important;
+    box-shadow:
+        5px 5px 0 var(--melanie-shadow),
+        8px 8px 0 rgba(255, 127, 167, 0.55) !important;
+    background: var(--melanie-black);
+    padding: 0.25rem;
+    box-sizing: border-box;
+}
+
+.cara img:hover,
+.cara.frontal img:hover {
+    border-color: var(--melanie-blue) !important;
+    box-shadow:
+        5px 5px 0 var(--melanie-shadow),
+        0 0 18px rgba(102, 219, 255, 0.65) !important;
+}
+
+.numero-pag {
+    right: 0.75rem !important;
+    bottom: 0.65rem !important;
+    color: var(--melanie-black) !important;
+    background: rgba(102, 219, 255, 0.78);
+    border: 2px solid var(--melanie-red);
+    box-shadow: 2px 2px 0 #ffffff;
+    padding: 0.18rem 0.32rem;
+    text-shadow: none !important;
+}
+
+.contenedor-audio,
+audio {
+    filter: drop-shadow(3px 3px 0 rgba(11, 2, 4, 0.55));
+}
+
+.controles-libro button,
+.boton-libro,
+.btn-borrar-todo,
+.reproducir-btn {
+    background: var(--melanie-red) !important;
+    color: #ffffff !important;
+    border: 3px solid var(--melanie-pink) !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 var(--melanie-shadow) !important;
+}
+
+.controles-libro {
+    gap: 0.85rem !important;
+    margin-top: 1.25rem !important;
+    padding: 0.65rem 0.9rem !important;
+    background: rgba(11, 2, 4, 0.72);
+    border: 2px solid rgba(255, 127, 167, 0.65);
+    box-shadow: 5px 5px 0 rgba(11, 2, 4, 0.45);
+}
+
+.btn-libro,
+#btnLibro {
+    min-width: 3rem;
+    min-height: 2.6rem;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 0.9rem !important;
+    font-size: 0.58rem !important;
+    line-height: 1.35 !important;
+}
+
+.controles-libro button:hover,
+.boton-libro:hover,
+.btn-borrar-todo:hover,
+.reproducir-btn:hover {
+    background: var(--melanie-blue) !important;
+    color: var(--melanie-black) !important;
+    border-color: #ffffff !important;
+    animation: melanieShake 0.12s steps(1) infinite;
+}
+
+.flecha-izquierda img,
+.flecha-derecha img,
+.flecha-izquierda,
+.flecha-derecha {
+    filter: drop-shadow(4px 4px 0 var(--melanie-shadow)) drop-shadow(0 0 8px rgba(102, 219, 255, 0.45));
+}
+
+.flecha-izquierda,
+.flecha-derecha {
+    opacity: 0.92;
+    transition: transform 0.18s steps(2), opacity 0.18s steps(2), filter 0.18s steps(2);
+}
+
+.flecha-izquierda:hover,
+.flecha-derecha:hover {
+    opacity: 1;
+    transform: translateY(-3px) scale(1.05);
+    filter:
+        drop-shadow(5px 5px 0 var(--melanie-shadow))
+        drop-shadow(0 0 14px rgba(102, 219, 255, 0.78));
+}
+
+.info {
+    cursor: pointer;
+}
+
+.pantalla-ayuda-modal {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(252, 164, 190, 0.85);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s steps(1);
+}
+
+.pantalla-ayuda-modal.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cuerpo-ayuda-retro {
+    width: min(42rem, 90vw);
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2rem 1.5rem;
+    background: var(--melanie-panel);
+    border: 4px double var(--melanie-pink);
+    outline: 2px solid var(--melanie-red);
+    box-shadow: 8px 8px 0 var(--melanie-blue), -8px -8px 0 var(--melanie-pink);
+    text-align: center;
+}
+
+.cuerpo-ayuda-retro h2 {
+    margin: 0 0 1.5rem;
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 var(--melanie-brown), 4px 4px 0 var(--melanie-pink), 6px 6px 0 var(--melanie-red);
+}
+
+.galeria-explicativa {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.tarjeta-instruccion {
+    flex: 1 1 14rem;
+    background: var(--melanie-black);
+    border: 3px solid var(--melanie-pink);
+    box-shadow: 4px 4px 0 var(--melanie-brown);
+    padding: 1rem;
+}
+
+.tarjeta-instruccion p {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.58rem;
+    line-height: 1.8;
+}
+
+.tarjeta-instruccion span {
+    color: var(--melanie-blue);
+}
+
+.indice-artista-guia {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 0.9rem;
+    margin-top: 1rem;
+}
+
+.indice-artista-guia a {
+    display: grid;
+    grid-template-columns: 4rem minmax(0, 1fr);
+    align-items: center;
+    gap: 0.85rem;
+    min-height: 6rem;
+    padding: 0.85rem;
+    background: linear-gradient(135deg, rgba(255, 127, 167, 0.14), transparent 55%), var(--melanie-black);
+    border: 3px solid var(--melanie-pink);
+    box-shadow: 4px 4px 0 var(--melanie-shadow), 7px 7px 0 rgba(102, 219, 255, 0.5);
+    text-align: left;
+    text-decoration: none;
+    transition: transform 0.12s steps(1), border-color 0.12s steps(1);
+}
+
+.indice-artista-guia a:nth-child(1) { border-color: var(--melanie-blue); }
+.indice-artista-guia a:nth-child(2) { border-color: var(--melanie-pink); }
+.indice-artista-guia a:nth-child(3) { border-color: var(--melanie-red); }
+.indice-artista-guia a:nth-child(4) { border-color: #ffffff; }
+
+.indice-artista-guia a:hover,
+.indice-artista-guia a:focus-visible {
+    transform: translate(-0.15rem, -0.15rem);
+    outline: 0;
+    border-color: #ffffff;
+    box-shadow: 4px 4px 0 var(--melanie-shadow), 8px 8px 0 var(--melanie-blue);
+}
+
+.indice-artista-guia img {
+    width: 3.5rem;
+    height: 3.5rem;
+    object-fit: contain;
+    image-rendering: pixelated;
+    justify-self: center;
+    filter: drop-shadow(0 0 0.35rem var(--melanie-pink));
+}
+
+.indice-artista-guia h3 {
+    margin: 0 0 0.4rem;
+    color: var(--melanie-blue);
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.62rem;
+    line-height: 1.35;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 var(--melanie-red);
+}
+
+.indice-artista-guia p {
+    margin: 0;
+    color: #ffffff;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.55rem;
+    line-height: 1.65;
+}
+
+.item-encabezado {
+    cursor: pointer;
+}
+
+.item-encabezado .enlace-nav {
+    width: 100%;
+    height: 100%;
+    display: grid !important;
+    justify-items: center;
+    align-items: center;
+    gap: 0.45rem;
+    text-decoration: none !important;
+    position: relative;
+    z-index: 2;
+}
+
+.item-encabezado:hover,
+.item-encabezado:focus-within {
+    transform: translateY(-0.18rem);
+}
+
+.item-encabezado:hover p,
+.item-encabezado:focus-within p {
+    border-color: #ffffff !important;
+    box-shadow: 0.2rem 0.2rem 0 var(--melanie-shadow), 0.36rem 0.36rem 0 var(--melanie-blue) !important;
+}
+
+.cerrar-ayuda-btn,
+.ritual-btn {
+    margin-top: 1.6rem;
+    background: var(--melanie-red) !important;
+    color: #ffffff !important;
+    border: 3px solid var(--melanie-pink) !important;
+    border-radius: 0 !important;
+    box-shadow: 4px 4px 0 var(--melanie-shadow) !important;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace !important;
+    font-size: 0.65rem;
+    line-height: 1.45;
+    text-transform: uppercase;
+}
+
+.cerrar-ayuda-btn:hover,
+.ritual-btn:hover {
+    background: var(--melanie-blue) !important;
+    color: var(--melanie-black) !important;
+    border-color: #ffffff !important;
+}
+
+@keyframes melanieShake {
+    0% { transform: translate(0, 0); }
+    25% { transform: translate(-1px, 1px); }
+    50% { transform: translate(1px, -1px); }
+    75% { transform: translate(-1px, -1px); }
+    100% { transform: translate(0, 0); }
+}
+
+@media (max-width: 760px) {
+    .navegacion-superior,
+    .contenedor-derecha {
+        position: static !important;
+        margin: 1rem auto !important;
+        justify-content: center !important;
+        flex-wrap: wrap !important;
+    }
+
+    .contenedor {
+        margin-top: 1rem !important;
+        padding: 0 1rem;
+        box-sizing: border-box;
+    }
+
+    .buscador {
+        width: min(19rem, 82vw) !important;
+    }
+
+    .Encabezado {
+        width: 88% !important;
+        gap: 1rem !important;
+        flex-wrap: wrap !important;
+    }
+
+    .item-navegacion,
+    .info,
+    .seccion-usuario,
+    .contenedor-perfil {
+        width: 4.8rem !important;
+        min-width: 4.8rem !important;
+    }
+
+    .icono-pixel,
+    .contenedor-perfil .icono-pixel,
+    .info .icono-pixel,
+    .seccion-usuario .icono-pixel {
+        width: 2.85rem !important;
+        height: 2.85rem !important;
+    }
+
+    .texto-menu,
+    .btn-logout,
+    .btn-info-texto {
+        font-size: 0.4rem !important;
+    }
+
+    .album-card {
+        width: min(17rem, 88vw) !important;
+    }
+
+    .album-card img {
+        max-height: 13rem !important;
+    }
+
+    .album-card > img:first-child {
+        margin-bottom: 0.9rem !important;
+    }
+
+    .album-card h2 {
+        margin: 0.65rem 0 1rem !important;
+    }
+
+    .carrusel-img {
+        width: 8.5rem !important;
+        height: 8.5rem !important;
+    }
+}
+
+@media (min-width: 1100px) {
+    .libro-fisico {
+        transform: scale(0.92);
+    }
+}
+
+/* ==========================================================================
+   CRY BABY: LIBRO INFANTIL PASTEL
+   ========================================================================= */
+.cry-baby-page {
+    background:
+        radial-gradient(circle at 14% 18%, rgba(255, 255, 255, 0.55), transparent 9rem),
+        radial-gradient(circle at 84% 20%, rgba(189, 224, 254, 0.5), transparent 10rem),
+        linear-gradient(45deg, #ffd1dc, #fff0f5 44%, #e6e6fa) !important;
+}
+
+.cry-baby-page::before {
+    background:
+        radial-gradient(ellipse at 18% 84%, rgba(255, 255, 255, 0.65) 0 4rem, transparent 4.2rem),
+        radial-gradient(ellipse at 72% 78%, rgba(255, 255, 255, 0.48) 0 5rem, transparent 5.2rem),
+        repeating-linear-gradient(0deg, rgba(230, 142, 158, 0.08) 0 1px, transparent 1px 8px) !important;
+}
+
+.cry-baby-page .seccion-libro {
+    border: 4px solid #ffffff;
+    border-radius: 2rem;
+    background:
+        radial-gradient(circle at 20% 24%, rgba(255, 255, 255, 0.78), transparent 7rem),
+        linear-gradient(135deg, rgba(255, 209, 220, 0.92), rgba(230, 230, 250, 0.88)) !important;
+    box-shadow:
+        0 0 0 5px #ff9ebb,
+        10px 10px 0 #e68e9e,
+        inset 0 0 24px rgba(255, 255, 255, 0.72) !important;
+}
+
+.cry-baby-page .seccion-libro::before {
+    inset: 0.9rem;
+    border: 3px dashed rgba(102, 219, 255, 0.75);
+    border-radius: 1.4rem;
+}
+
+.cry-baby-page .libro-fisico,
+.cry-baby-page .libro-wrapper {
+    filter:
+        drop-shadow(10px 10px 0 rgba(230, 142, 158, 0.55))
+        drop-shadow(0 0 18px rgba(255, 255, 255, 0.8)) !important;
+}
+
+.cry-baby-page .libro-fisico::before {
+    border-radius: 1.2rem !important;
+    box-shadow:
+        4px 0 0 #ffffff,
+        8px 0 0 #bde0fe,
+        12px 0 0 #ffd1dc,
+        16px 8px 0 rgba(230, 142, 158, 0.32) !important;
+}
+
+.cry-baby-page .lomo {
+    background:
+        linear-gradient(180deg, #ff9ebb, #ffd1dc 48%, #bde0fe) !important;
+    border-right: 4px solid #ffffff !important;
+    border-radius: 1.2rem 0 0 1.2rem !important;
+    box-shadow:
+        inset -4px 0 0 rgba(230, 142, 158, 0.4),
+        0 0 14px rgba(255, 255, 255, 0.95) !important;
+}
+
+.cry-baby-page .lomo::before,
+.cry-baby-page .lomo::after {
+    background: #ffffff !important;
+    box-shadow: 0 0 10px rgba(102, 219, 255, 0.75) !important;
+}
+
+.cry-baby-page .cara {
+    background:
+        radial-gradient(circle at 16% 16%, rgba(255, 255, 255, 0.7), transparent 4rem),
+        linear-gradient(135deg, #fff8fb, #ffe4ec 55%, #f5f0ff),
+        repeating-linear-gradient(0deg, rgba(255, 158, 187, 0.16) 0 1px, transparent 1px 19px) !important;
+    border: 4px solid #ffffff !important;
+    border-radius: 1.1rem !important;
+    box-shadow:
+        inset 0 0 0 4px rgba(255, 209, 220, 0.75),
+        inset 10px 0 16px rgba(230, 142, 158, 0.12),
+        5px 5px 0 rgba(230, 142, 158, 0.45) !important;
+}
+
+.cry-baby-page .cara.trasera,
+.cry-baby-page .trasera {
+    background:
+        radial-gradient(circle at 82% 20%, rgba(189, 224, 254, 0.42), transparent 5rem),
+        linear-gradient(135deg, #fff7fb, #f8eaff 58%, #ffe4ec) !important;
+}
+
+.cry-baby-page .tapa-frontal .cara.frontal,
+.cry-baby-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.75), transparent 5rem),
+        radial-gradient(circle at 82% 18%, rgba(189, 224, 254, 0.55), transparent 5rem),
+        linear-gradient(145deg, #ffd1dc, #ff9ebb 56%, #e6e6fa) !important;
+    border: 6px solid #ffffff !important;
+    border-radius: 1.4rem !important;
+    box-shadow:
+        inset 0 0 0 5px rgba(255, 240, 245, 0.8),
+        inset 0 0 30px rgba(255, 255, 255, 0.62),
+        8px 8px 0 #e68e9e !important;
+}
+
+.cry-baby-page .tapa-frontal .cara.frontal h3,
+.cry-baby-page .cara.frontal h3 {
+    color: #ffffff !important;
+    background: #ff9ebb;
+    border: 4px solid #ffffff;
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    box-shadow: 4px 4px 0 #bde0fe;
+    font-family: 'Comic Sans MS', 'Press Start 2P', cursive !important;
+    font-size: clamp(1rem, 2vw, 1.35rem) !important;
+    letter-spacing: 0.04em;
+    text-shadow: 2px 2px 0 #e68e9e !important;
+}
+
+.cry-baby-page .tapa-frontal .cara.frontal p,
+.cry-baby-page .tapa-frontal .frontal p {
+    color: #7d5f78 !important;
+    background: rgba(255, 255, 255, 0.68);
+    border-radius: 1rem;
+    padding: 0.35rem 0.7rem;
+    text-shadow: none !important;
+}
+
+.cry-baby-page .cara.frontal p,
+.cry-baby-page .cara p {
+    color: #7d5f78 !important;
+    font-family: 'Comic Sans MS', 'Courier New', cursive !important;
+    font-size: 0.9rem !important;
+    font-weight: 700;
+    line-height: 1.5 !important;
+}
+
+.cry-baby-page .cara img,
+.cry-baby-page .cara.frontal img,
+.cry-baby-page .tapa-frontal .cara.frontal img {
+    border: 7px solid #ffffff !important;
+    border-radius: 1.15rem !important;
+    padding: 0.25rem;
+    background: #fff8fb;
+    box-shadow:
+        5px 5px 0 #bde0fe,
+        8px 8px 0 rgba(230, 142, 158, 0.42) !important;
+}
+
+.cry-baby-page .numero-pag {
+    color: #ffffff !important;
+    background: #ff9ebb;
+    border: 3px solid #ffffff;
+    border-radius: 999px;
+    box-shadow: 2px 2px 0 #bde0fe;
+}
+
+.cry-baby-page .controles-libro {
+    background: rgba(255, 255, 255, 0.68);
+    border: 4px solid #ffffff;
+    border-radius: 999px;
+    box-shadow: 6px 6px 0 rgba(230, 142, 158, 0.55);
+}
+
+.cry-baby-page .btn-libro,
+.cry-baby-page #btnLibro {
+    background: #ff9ebb !important;
+    color: #ffffff !important;
+    border: 4px solid #ffffff !important;
+    border-radius: 999px !important;
+    box-shadow: 4px 4px 0 #bde0fe !important;
+    font-family: 'Comic Sans MS', 'Press Start 2P', cursive !important;
+}
+
+.cry-baby-page .btn-libro:hover,
+.cry-baby-page #btnLibro:hover {
+    background: #bde0fe !important;
+    color: #7d5f78 !important;
+    box-shadow: 4px 4px 0 #ff9ebb !important;
+}
+
+/* ==========================================================================
+   K-12: CUADERNO DE INSTITUTO / LIBRETA ESCOLAR
+   ========================================================================= */
+.k12-page {
+    background:
+        linear-gradient(90deg, rgba(189, 224, 254, 0.2) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(189, 224, 254, 0.2) 1px, transparent 1px),
+        linear-gradient(45deg, #f7d7df, #f4edf8 48%, #dfefff) !important;
+    background-size: 38px 38px, 38px 38px, auto !important;
+}
+
+.k12-page::before {
+    background:
+        linear-gradient(90deg, transparent 0 5.4rem, rgba(179, 0, 45, 0.22) 5.4rem 5.55rem, transparent 5.55rem),
+        repeating-linear-gradient(0deg, rgba(102, 219, 255, 0.14) 0 1px, transparent 1px 24px) !important;
+}
+
+.k12-page .seccion-libro {
+    background:
+        linear-gradient(90deg, rgba(179, 0, 45, 0.18) 0 0.24rem, transparent 0.24rem),
+        repeating-linear-gradient(0deg, rgba(102, 219, 255, 0.16) 0 1px, transparent 1px 24px),
+        linear-gradient(135deg, #fffdf7, #fff7fb 55%, #eef6ff) !important;
+    border: 4px solid #ffffff;
+    border-radius: 0.55rem;
+    box-shadow:
+        0 0 0 5px #bde0fe,
+        10px 10px 0 rgba(74, 40, 54, 0.35),
+        inset 0 0 24px rgba(255, 255, 255, 0.72) !important;
+}
+
+.k12-page .seccion-libro::before {
+    inset: 0.75rem;
+    border: 2px dashed rgba(230, 142, 158, 0.75);
+    border-radius: 0.35rem;
+}
+
+.k12-page .libro-fisico,
+.k12-page .libro-wrapper {
+    filter:
+        drop-shadow(10px 10px 0 rgba(74, 40, 54, 0.35))
+        drop-shadow(0 0 14px rgba(189, 224, 254, 0.55)) !important;
+}
+
+.k12-page .libro-fisico::before {
+    box-shadow:
+        4px 0 0 #ffffff,
+        8px 0 0 #e6e6fa,
+        12px 0 0 #bde0fe,
+        16px 8px 0 rgba(74, 40, 54, 0.24) !important;
+}
+
+.k12-page .lomo {
+    width: 1.55rem !important;
+    left: -1.55rem !important;
+    background:
+        repeating-linear-gradient(0deg, #ffffff 0 12px, #bde0fe 12px 18px, #ffffff 18px 30px),
+        linear-gradient(180deg, #d5eaff, #ffffff) !important;
+    border: 3px solid #7d5f78 !important;
+    border-right: 0 !important;
+    border-radius: 1rem 0 0 1rem !important;
+    box-shadow:
+        inset -3px 0 0 rgba(74, 40, 54, 0.18),
+        -4px 0 0 rgba(102, 219, 255, 0.35) !important;
+}
+
+.k12-page .lomo::before {
+    content: "";
+    position: absolute;
+    left: 0.36rem;
+    top: 1rem;
+    width: 0.52rem;
+    height: calc(100% - 2rem);
+    background:
+        repeating-linear-gradient(0deg, #7d5f78 0 0.34rem, transparent 0.34rem 1.45rem) !important;
+    box-shadow: none !important;
+}
+
+.k12-page .lomo::after {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.k12-page .cara {
+    background:
+        linear-gradient(90deg, transparent 0 3.8rem, rgba(179, 0, 45, 0.32) 3.8rem 3.95rem, transparent 3.95rem),
+        repeating-linear-gradient(0deg, transparent 0 1.35rem, rgba(102, 219, 255, 0.45) 1.35rem 1.44rem),
+        linear-gradient(135deg, #fffef9, #fff9fc 54%, #eef6ff) !important;
+    border: 3px solid #d7cfe0 !important;
+    border-radius: 0.35rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, 0.7),
+        inset 12px 0 18px rgba(74, 40, 54, 0.08),
+        5px 5px 0 rgba(74, 40, 54, 0.22) !important;
+}
+
+.k12-page .cara.trasera,
+.k12-page .trasera {
+    background:
+        linear-gradient(90deg, transparent 0 3.8rem, rgba(179, 0, 45, 0.24) 3.8rem 3.95rem, transparent 3.95rem),
+        repeating-linear-gradient(0deg, transparent 0 1.35rem, rgba(102, 219, 255, 0.32) 1.35rem 1.44rem),
+        #fffefa !important;
+}
+
+.k12-page .tapa-frontal .cara.frontal,
+.k12-page .tapa-frontal .frontal {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.55) 0 3.8rem, rgba(179, 0, 45, 0.5) 3.8rem 4rem, transparent 4rem),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.16) 0 1px, transparent 1px 28px),
+        linear-gradient(145deg, #e68e9e, #ffd1dc 50%, #bde0fe) !important;
+    border: 5px solid #ffffff !important;
+    border-radius: 0.5rem !important;
+    box-shadow:
+        inset 0 0 0 4px rgba(125, 95, 120, 0.18),
+        8px 8px 0 rgba(74, 40, 54, 0.28) !important;
+}
+
+.k12-page .tapa-frontal .cara.frontal::before {
+    content: "PROPERTY OF K-12";
+    position: absolute;
+    top: 1.1rem;
+    right: 1.2rem;
+    color: #7d5f78;
+    background: rgba(255, 255, 255, 0.72);
+    border: 2px solid #7d5f78;
+    padding: 0.3rem 0.45rem;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 0.62rem;
+    transform: rotate(2deg);
+}
+
+.k12-page .tapa-frontal .cara.frontal h3,
+.k12-page .cara.frontal h3 {
+    color: #7d5f78 !important;
+    background: #ffffff;
+    border: 3px solid #7d5f78;
+    border-radius: 0.25rem;
+    padding: 0.45rem 0.8rem;
+    box-shadow: 4px 4px 0 #bde0fe;
+    font-family: 'Courier New', 'Press Start 2P', monospace !important;
+    font-size: clamp(1rem, 2vw, 1.3rem) !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-shadow: none !important;
+}
+
+.k12-page .cara p,
+.k12-page .cara.frontal p {
+    color: #3d2c35 !important;
+    font-family: 'Courier New', monospace !important;
+    font-size: 0.86rem !important;
+    font-weight: 700;
+    line-height: 1.55 !important;
+}
+
+.k12-page .cara img,
+.k12-page .cara.frontal img,
+.k12-page .tapa-frontal .cara.frontal img {
+    border: 0.55rem solid #ffffff !important;
+    border-bottom-width: 1.2rem !important;
+    border-radius: 0.2rem !important;
+    background: #ffffff;
+    box-shadow:
+        4px 4px 0 rgba(74, 40, 54, 0.28),
+        7px 7px 0 rgba(189, 224, 254, 0.65) !important;
+    transform: rotate(-1deg);
+}
+
+.k12-page .cara img:hover,
+.k12-page .cara.frontal img:hover {
+    transform: rotate(1deg) scale(1.02);
+    box-shadow:
+        4px 4px 0 rgba(74, 40, 54, 0.28),
+        0 0 16px rgba(102, 219, 255, 0.65) !important;
+}
+
+.k12-page .numero-pag {
+    color: #7d5f78 !important;
+    background: #ffffff;
+    border: 2px solid #7d5f78;
+    border-radius: 0.2rem;
+    box-shadow: 2px 2px 0 #bde0fe;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+}
+
+.k12-page .controles-libro {
+    background: rgba(255, 255, 255, 0.78);
+    border: 3px solid #7d5f78;
+    border-radius: 0.35rem;
+    box-shadow: 6px 6px 0 rgba(74, 40, 54, 0.24);
+}
+
+.k12-page .btn-libro,
+.k12-page #btnLibro {
+    background: #ffffff !important;
+    color: #7d5f78 !important;
+    border: 3px solid #7d5f78 !important;
+    border-radius: 0.25rem !important;
+    box-shadow: 4px 4px 0 #bde0fe !important;
+    font-family: 'Courier New', 'Press Start 2P', monospace !important;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.k12-page .btn-libro:hover,
+.k12-page #btnLibro:hover {
+    background: #ffd1dc !important;
+    color: #3d2c35 !important;
+    box-shadow: 4px 4px 0 #e68e9e !important;
+}
+
+/* ==========================================================================
+   PORTALS: BOSQUE FEERICO / NINFAS / HADAS
+   ========================================================================= */
+.portals-page {
+    background:
+        radial-gradient(circle at 50% 20%, rgba(178, 255, 214, 0.34), transparent 12rem),
+        radial-gradient(circle at 20% 72%, rgba(216, 180, 254, 0.34), transparent 12rem),
+        linear-gradient(45deg, #1d3b2a, #74518f 48%, #e68e9e) !important;
+}
+
+.portals-page::before {
+    background:
+        radial-gradient(circle at 12% 20%, rgba(255, 245, 166, 0.42) 0 0.18rem, transparent 0.22rem),
+        radial-gradient(circle at 68% 30%, rgba(178, 255, 214, 0.42) 0 0.16rem, transparent 0.22rem),
+        radial-gradient(circle at 82% 76%, rgba(216, 180, 254, 0.42) 0 0.2rem, transparent 0.26rem),
+        repeating-linear-gradient(120deg, rgba(178, 255, 214, 0.08) 0 1px, transparent 1px 18px) !important;
+    background-size: 9rem 9rem, 11rem 11rem, 8rem 8rem, auto !important;
+}
+
+.portals-page .seccion-libro {
+    border: 4px solid rgba(178, 255, 214, 0.8);
+    border-radius: 1.35rem;
+    background:
+        radial-gradient(circle at 50% 34%, rgba(255, 245, 166, 0.28), transparent 9rem),
+        radial-gradient(circle at 18% 82%, rgba(216, 180, 254, 0.28), transparent 8rem),
+        linear-gradient(135deg, rgba(18, 45, 30, 0.94), rgba(64, 37, 82, 0.86)) !important;
+    box-shadow:
+        0 0 0 4px rgba(216, 180, 254, 0.38),
+        0 0 28px rgba(178, 255, 214, 0.4),
+        10px 10px 0 rgba(8, 18, 12, 0.6),
+        inset 0 0 34px rgba(255, 245, 166, 0.16) !important;
+}
+
+.portals-page .seccion-libro::before {
+    inset: 0.9rem;
+    border: 2px dotted rgba(255, 245, 166, 0.72);
+    border-radius: 1rem;
+}
+
+.portals-page .libro-fisico,
+.portals-page .libro-wrapper {
+    filter:
+        drop-shadow(12px 12px 0 rgba(8, 18, 12, 0.62))
+        drop-shadow(0 0 24px rgba(178, 255, 214, 0.45))
+        drop-shadow(0 0 18px rgba(216, 180, 254, 0.35)) !important;
+}
+
+.portals-page .libro-fisico::before {
+    box-shadow:
+        4px 0 0 rgba(236, 255, 226, 0.82),
+        8px 0 0 rgba(178, 255, 214, 0.68),
+        12px 0 0 rgba(216, 180, 254, 0.62),
+        16px 8px 0 rgba(8, 18, 12, 0.5) !important;
+}
+
+.portals-page .lomo {
+    width: 1.8rem !important;
+    left: -1.8rem !important;
+    background:
+        repeating-linear-gradient(30deg, rgba(178, 255, 214, 0.35) 0 0.35rem, transparent 0.35rem 0.8rem),
+        linear-gradient(180deg, #244d34, #402552 55%, #152719) !important;
+    border: 3px solid rgba(178, 255, 214, 0.9) !important;
+    border-right: 0 !important;
+    border-radius: 1.2rem 0 0 1.2rem !important;
+    box-shadow:
+        inset -4px 0 0 rgba(8, 18, 12, 0.55),
+        0 0 16px rgba(178, 255, 214, 0.55) !important;
+}
+
+.portals-page .lomo::before {
+    content: "";
+    position: absolute;
+    top: 0.8rem;
+    left: 0.42rem;
+    width: 0.72rem;
+    height: calc(100% - 1.6rem);
+    border-radius: 999px;
+    background:
+        radial-gradient(circle at 50% 8%, #fff5a6 0 0.2rem, transparent 0.24rem),
+        radial-gradient(circle at 50% 28%, #b2ffd6 0 0.2rem, transparent 0.24rem),
+        radial-gradient(circle at 50% 48%, #d8b4fe 0 0.2rem, transparent 0.24rem),
+        radial-gradient(circle at 50% 68%, #fff5a6 0 0.2rem, transparent 0.24rem),
+        radial-gradient(circle at 50% 88%, #b2ffd6 0 0.2rem, transparent 0.24rem) !important;
+    box-shadow: 0 0 14px rgba(255, 245, 166, 0.65) !important;
+}
+
+.portals-page .lomo::after {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.portals-page .cara {
+    background:
+        radial-gradient(circle at 82% 12%, rgba(255, 245, 166, 0.3), transparent 5rem),
+        radial-gradient(circle at 15% 85%, rgba(178, 255, 214, 0.28), transparent 5rem),
+        linear-gradient(135deg, #f6ffe9, #f5e7ff 52%, #ffe4ee),
+        repeating-linear-gradient(120deg, rgba(36, 77, 52, 0.08) 0 1px, transparent 1px 18px) !important;
+    border: 3px solid rgba(178, 255, 214, 0.9) !important;
+    border-radius: 1.05rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, 0.48),
+        inset 12px 0 22px rgba(64, 37, 82, 0.12),
+        5px 5px 0 rgba(8, 18, 12, 0.32) !important;
+}
+
+.portals-page .cara.trasera,
+.portals-page .trasera {
+    background:
+        radial-gradient(circle at 75% 22%, rgba(216, 180, 254, 0.34), transparent 5rem),
+        linear-gradient(135deg, #f1ffe8, #fff2f8 58%, #efe0ff) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal,
+.portals-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 32%, rgba(255, 245, 166, 0.48), transparent 6rem),
+        radial-gradient(circle at 50% 54%, rgba(178, 255, 214, 0.42), transparent 9rem),
+        linear-gradient(145deg, #183322, #5a3f73 54%, #e68e9e) !important;
+    border: 4px double rgba(178, 255, 214, 0.95) !important;
+    border-radius: 1.35rem !important;
+    box-shadow:
+        inset 0 0 0 5px rgba(255, 245, 166, 0.1),
+        inset 0 0 38px rgba(178, 255, 214, 0.28),
+        8px 8px 0 rgba(8, 18, 12, 0.62) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal::before {
+    content: "";
+    position: absolute;
+    inset: 1.1rem;
+    border-radius: 999px;
+    border: 2px solid rgba(255, 245, 166, 0.35);
+    box-shadow:
+        0 0 24px rgba(255, 245, 166, 0.28),
+        inset 0 0 28px rgba(178, 255, 214, 0.2);
+    pointer-events: none;
+}
+
+.portals-page .tapa-frontal .cara.frontal h3,
+.portals-page .cara.frontal h3 {
+    color: #fff5a6 !important;
+    background: rgba(24, 51, 34, 0.78);
+    border: 2px solid rgba(178, 255, 214, 0.9);
+    border-radius: 999px;
+    padding: 0.45rem 0.85rem;
+    box-shadow: 0 0 15px rgba(178, 255, 214, 0.5);
+    font-family: 'Special Elite', 'Press Start 2P', serif !important;
+    font-size: clamp(1rem, 2vw, 1.35rem) !important;
+    letter-spacing: 0.08em;
+    text-shadow: 2px 2px 0 #402552 !important;
+}
+
+.portals-page .cara.frontal p,
+.portals-page .cara p {
+    color: #2b3f2f !important;
+    font-family: 'Special Elite', 'Courier New', serif !important;
+    font-size: 0.9rem !important;
+    line-height: 1.58 !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal p,
+.portals-page .tapa-frontal .frontal p {
+    color: #f6ffe9 !important;
+    background: rgba(64, 37, 82, 0.56);
+    border-radius: 999px;
+    padding: 0.35rem 0.75rem;
+    text-shadow: 1px 1px 0 #183322;
+}
+
+.portals-page .cara img,
+.portals-page .cara.frontal img,
+.portals-page .tapa-frontal .cara.frontal img {
+    border: 3px solid rgba(246, 255, 233, 0.9) !important;
+    border-radius: 1.35rem !important;
+    background: rgba(24, 51, 34, 0.48);
+    padding: 0.3rem;
+    box-shadow:
+        0 0 0 2px rgba(178, 255, 214, 0.35),
+        0 0 20px rgba(216, 180, 254, 0.42),
+        5px 5px 0 rgba(8, 18, 12, 0.42) !important;
+}
+
+.portals-page .cara img:hover,
+.portals-page .cara.frontal img:hover {
+    transform: rotate(0deg) scale(1.035);
+    box-shadow:
+        0 0 0 2px rgba(255, 245, 166, 0.55),
+        0 0 28px rgba(178, 255, 214, 0.68),
+        5px 5px 0 rgba(8, 18, 12, 0.42) !important;
+}
+
+.portals-page .numero-pag {
+    color: #183322 !important;
+    background: rgba(178, 255, 214, 0.88);
+    border: 2px solid rgba(64, 37, 82, 0.7);
+    border-radius: 999px;
+    box-shadow: 0 0 12px rgba(255, 245, 166, 0.55);
+}
+
+.portals-page .controles-libro {
+    background: rgba(24, 51, 34, 0.72);
+    border: 3px solid rgba(178, 255, 214, 0.82);
+    border-radius: 999px;
+    box-shadow:
+        0 0 18px rgba(178, 255, 214, 0.35),
+        6px 6px 0 rgba(8, 18, 12, 0.48);
+}
+
+.portals-page .btn-libro,
+.portals-page #btnLibro {
+    background: linear-gradient(135deg, #244d34, #74518f) !important;
+    color: #fff5a6 !important;
+    border: 3px solid #b2ffd6 !important;
+    border-radius: 999px !important;
+    box-shadow: 0 0 14px rgba(178, 255, 214, 0.45), 4px 4px 0 rgba(8, 18, 12, 0.55) !important;
+    font-family: 'Special Elite', 'Press Start 2P', serif !important;
+}
+
+.portals-page .btn-libro:hover,
+.portals-page #btnLibro:hover {
+    background: linear-gradient(135deg, #b2ffd6, #d8b4fe) !important;
+    color: #183322 !important;
+    border-color: #fff5a6 !important;
+}
+
+/* ==========================================================================
+   PORTALS: BOSQUE ORGANICO Y EXTRAÃ‘O
+   ========================================================================== */
+.portals-page {
+    background:
+        radial-gradient(circle at 50% 18%, rgba(111, 70, 93, 0.34), transparent 12rem),
+        radial-gradient(circle at 12% 72%, rgba(80, 106, 57, 0.28), transparent 11rem),
+        radial-gradient(circle at 88% 80%, rgba(47, 25, 38, 0.36), transparent 13rem),
+        linear-gradient(135deg, #11180f, #2b1a28 48%, #151f12) !important;
+}
+
+.portals-page::before {
+    background:
+        repeating-linear-gradient(115deg, rgba(171, 119, 95, 0.06) 0 1px, transparent 1px 16px),
+        radial-gradient(circle at 26% 20%, rgba(168, 111, 133, 0.18) 0 0.28rem, transparent 0.34rem),
+        radial-gradient(circle at 72% 32%, rgba(126, 143, 78, 0.18) 0 0.22rem, transparent 0.3rem),
+        radial-gradient(circle at 62% 78%, rgba(89, 49, 67, 0.24) 0 0.35rem, transparent 0.42rem) !important;
+    background-size: auto, 8rem 8rem, 10rem 10rem, 7rem 7rem !important;
+}
+
+.portals-page .seccion-libro {
+    border: 4px solid rgba(80, 106, 57, 0.88);
+    border-radius: 0.85rem;
+    background:
+        radial-gradient(circle at 50% 42%, rgba(168, 111, 133, 0.2), transparent 8rem),
+        radial-gradient(circle at 18% 82%, rgba(54, 74, 42, 0.42), transparent 8rem),
+        linear-gradient(145deg, rgba(13, 24, 12, 0.96), rgba(47, 25, 38, 0.93) 58%, rgba(17, 24, 15, 0.98)) !important;
+    box-shadow:
+        0 0 0 4px rgba(47, 25, 38, 0.72),
+        0 0 30px rgba(80, 106, 57, 0.35),
+        10px 10px 0 rgba(5, 10, 5, 0.72),
+        inset 0 0 38px rgba(168, 111, 133, 0.12) !important;
+}
+
+.portals-page .seccion-libro::before {
+    inset: 0.85rem;
+    border: 2px solid rgba(171, 119, 95, 0.38);
+    border-radius: 34% 66% 42% 58% / 58% 36% 64% 42%;
+    box-shadow:
+        0 0 18px rgba(80, 106, 57, 0.22),
+        inset 0 0 24px rgba(47, 25, 38, 0.44);
+}
+
+.portals-page .libro-fisico,
+.portals-page .libro-wrapper {
+    filter:
+        drop-shadow(14px 14px 0 rgba(5, 10, 5, 0.68))
+        drop-shadow(0 0 24px rgba(80, 106, 57, 0.34))
+        drop-shadow(0 0 14px rgba(168, 111, 133, 0.26)) !important;
+}
+
+.portals-page .libro-fisico::before {
+    background: linear-gradient(90deg, #26301e, #60435a 48%, #b68a77) !important;
+    box-shadow:
+        4px 0 0 rgba(49, 69, 37, 0.88),
+        8px 0 0 rgba(89, 49, 67, 0.78),
+        12px 0 0 rgba(171, 119, 95, 0.7),
+        16px 8px 0 rgba(5, 10, 5, 0.55) !important;
+}
+
+.portals-page .lomo {
+    width: 2rem !important;
+    left: -2rem !important;
+    background:
+        radial-gradient(circle at 50% 18%, rgba(171, 119, 95, 0.55) 0 0.22rem, transparent 0.26rem),
+        radial-gradient(circle at 50% 42%, rgba(126, 143, 78, 0.55) 0 0.18rem, transparent 0.24rem),
+        radial-gradient(circle at 50% 66%, rgba(171, 119, 95, 0.48) 0 0.26rem, transparent 0.32rem),
+        linear-gradient(180deg, #1d2a16, #5b3046 54%, #172111) !important;
+    border: 3px solid rgba(126, 143, 78, 0.82) !important;
+    border-right: 0 !important;
+    border-radius: 45% 0 0 45% / 18% 0 0 18% !important;
+    box-shadow:
+        inset -5px 0 0 rgba(5, 10, 5, 0.58),
+        0 0 14px rgba(80, 106, 57, 0.45) !important;
+}
+
+.portals-page .lomo::before {
+    content: "";
+    position: absolute;
+    top: 0.8rem;
+    left: 0.38rem;
+    width: 0.9rem;
+    height: calc(100% - 1.6rem);
+    border-radius: 999px;
+    background:
+        linear-gradient(90deg, transparent 38%, rgba(171, 119, 95, 0.72) 38% 62%, transparent 62%),
+        repeating-linear-gradient(0deg, rgba(126, 143, 78, 0.78) 0 0.18rem, transparent 0.18rem 1.05rem) !important;
+    box-shadow: 0 0 11px rgba(80, 106, 57, 0.5) !important;
+}
+
+.portals-page .cara {
+    background:
+        radial-gradient(circle at 80% 14%, rgba(168, 111, 133, 0.18), transparent 5rem),
+        radial-gradient(circle at 18% 84%, rgba(80, 106, 57, 0.22), transparent 5rem),
+        linear-gradient(135deg, #c2aa88, #e2c9a5 46%, #b88e7d),
+        repeating-linear-gradient(120deg, rgba(47, 25, 38, 0.08) 0 1px, transparent 1px 16px) !important;
+    border: 3px solid rgba(54, 74, 42, 0.86) !important;
+    border-radius: 0.75rem 1.35rem 0.85rem 1.15rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(74, 45, 36, 0.18),
+        inset 12px 0 24px rgba(47, 25, 38, 0.18),
+        5px 5px 0 rgba(5, 10, 5, 0.4) !important;
+}
+
+.portals-page .cara.trasera,
+.portals-page .trasera {
+    background:
+        radial-gradient(circle at 70% 24%, rgba(126, 143, 78, 0.18), transparent 5rem),
+        linear-gradient(135deg, #6d5143, #d8b596 18%, #c7a486 58%, #3b2630) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal,
+.portals-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 38%, rgba(168, 111, 133, 0.32), transparent 7rem),
+        radial-gradient(circle at 50% 60%, rgba(80, 106, 57, 0.28), transparent 10rem),
+        repeating-linear-gradient(35deg, rgba(171, 119, 95, 0.08) 0 1px, transparent 1px 13px),
+        linear-gradient(145deg, #121c10, #4d2b40 56%, #8f5f67) !important;
+    border: 4px double rgba(171, 119, 95, 0.86) !important;
+    border-radius: 1.2rem 2rem 1.3rem 1.7rem !important;
+    box-shadow:
+        inset 0 0 0 5px rgba(80, 106, 57, 0.16),
+        inset 0 0 42px rgba(47, 25, 38, 0.42),
+        8px 8px 0 rgba(5, 10, 5, 0.68) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal::before {
+    inset: 1rem;
+    border-radius: 48% 52% 43% 57% / 58% 39% 61% 42%;
+    border: 2px solid rgba(171, 119, 95, 0.34);
+    background:
+        radial-gradient(circle at 50% 45%, transparent 0 3.7rem, rgba(80, 106, 57, 0.28) 3.8rem 4rem, transparent 4.1rem);
+    box-shadow:
+        0 0 20px rgba(80, 106, 57, 0.25),
+        inset 0 0 26px rgba(47, 25, 38, 0.35);
+}
+
+.portals-page .tapa-frontal .cara.frontal h3,
+.portals-page .cara.frontal h3 {
+    color: #e8c0b0 !important;
+    background: rgba(18, 28, 16, 0.84);
+    border: 2px solid rgba(171, 119, 95, 0.78);
+    border-radius: 0.65rem 1.1rem 0.75rem 1.25rem;
+    box-shadow: 0 0 14px rgba(80, 106, 57, 0.38);
+    text-shadow: 2px 2px 0 #2f1926 !important;
+}
+
+.portals-page .cara.frontal p,
+.portals-page .cara p {
+    color: #2f2019 !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal p,
+.portals-page .tapa-frontal .frontal p {
+    color: #e6c1b2 !important;
+    background: rgba(47, 25, 38, 0.64);
+    border-radius: 0.65rem 1.05rem 0.7rem 1.15rem;
+    text-shadow: 1px 1px 0 #11180f;
+}
+
+.portals-page .cara img,
+.portals-page .cara.frontal img,
+.portals-page .tapa-frontal .cara.frontal img {
+    border: 3px solid rgba(171, 119, 95, 0.88) !important;
+    border-radius: 0.85rem 1.55rem 0.95rem 1.35rem !important;
+    background: rgba(18, 28, 16, 0.68);
+    filter: saturate(0.95) contrast(1.08) brightness(0.92);
+    box-shadow:
+        0 0 0 2px rgba(54, 74, 42, 0.45),
+        0 0 20px rgba(80, 106, 57, 0.32),
+        5px 5px 0 rgba(5, 10, 5, 0.48) !important;
+}
+
+.portals-page .cara img:hover,
+.portals-page .cara.frontal img:hover {
+    filter: saturate(1.04) contrast(1.12) brightness(1);
+    box-shadow:
+        0 0 0 2px rgba(171, 119, 95, 0.55),
+        0 0 24px rgba(80, 106, 57, 0.52),
+        5px 5px 0 rgba(5, 10, 5, 0.48) !important;
+}
+
+.portals-page .numero-pag {
+    color: #e2c9a5 !important;
+    background: rgba(18, 28, 16, 0.88);
+    border: 2px solid rgba(171, 119, 95, 0.72);
+    border-radius: 0.5rem 0.9rem;
+}
+
+.portals-page .controles-libro {
+    background: rgba(18, 28, 16, 0.8);
+    border: 3px solid rgba(171, 119, 95, 0.78);
+    border-radius: 0.8rem 1.4rem;
+}
+
+.portals-page .btn-libro,
+.portals-page #btnLibro {
+    background: linear-gradient(135deg, #1d2a16, #5b3046) !important;
+    color: #e8c0b0 !important;
+    border: 3px solid #ab775f !important;
+    border-radius: 0.65rem 1rem !important;
+    box-shadow: 0 0 14px rgba(80, 106, 57, 0.35), 4px 4px 0 rgba(5, 10, 5, 0.62) !important;
+}
+
+.portals-page .btn-libro:hover,
+.portals-page #btnLibro:hover {
+    background: linear-gradient(135deg, #ab775f, #506a39) !important;
+    color: #11180f !important;
+    border-color: #e8c0b0 !important;
+}
+
+/* ==========================================================================
+   PORTALS: ESTETICA DEL ALBUM ORIGINAL
+   ========================================================================== */
+.portals-page {
+    background:
+        radial-gradient(circle at 18% 18%, rgba(224, 151, 160, 0.28), transparent 11rem),
+        radial-gradient(circle at 82% 24%, rgba(118, 138, 82, 0.3), transparent 12rem),
+        radial-gradient(circle at 50% 86%, rgba(75, 47, 36, 0.46), transparent 16rem),
+        linear-gradient(135deg, #303f2b, #6f5361 46%, #403024 100%) !important;
+}
+
+.portals-page::before {
+    background:
+        radial-gradient(circle at 22% 30%, rgba(244, 185, 180, 0.22) 0 0.3rem, transparent 0.38rem),
+        radial-gradient(circle at 68% 22%, rgba(205, 181, 110, 0.18) 0 0.22rem, transparent 0.3rem),
+        radial-gradient(circle at 76% 78%, rgba(86, 110, 68, 0.24) 0 0.45rem, transparent 0.55rem),
+        repeating-linear-gradient(115deg, rgba(46, 61, 37, 0.11) 0 1px, transparent 1px 18px) !important;
+    background-size: 8rem 8rem, 10rem 10rem, 7rem 7rem, auto !important;
+}
+
+.portals-page .seccion-libro {
+    border: 4px solid rgba(82, 102, 61, 0.92) !important;
+    border-radius: 1.4rem 2.2rem 1.6rem 2rem !important;
+    background:
+        radial-gradient(circle at 50% 36%, rgba(224, 151, 160, 0.24), transparent 8rem),
+        radial-gradient(circle at 22% 82%, rgba(55, 74, 43, 0.48), transparent 8rem),
+        linear-gradient(145deg, rgba(45, 58, 36, 0.96), rgba(111, 83, 97, 0.9) 54%, rgba(67, 47, 35, 0.96)) !important;
+    box-shadow:
+        0 0 0 4px rgba(58, 43, 32, 0.7),
+        0 0 28px rgba(151, 168, 94, 0.28),
+        10px 10px 0 rgba(37, 28, 21, 0.58),
+        inset 0 0 38px rgba(244, 185, 180, 0.1) !important;
+}
+
+.portals-page .seccion-libro::before {
+    inset: 0.75rem !important;
+    border: 2px dotted rgba(229, 177, 141, 0.46) !important;
+    border-radius: 45% 55% 48% 52% / 58% 44% 56% 42% !important;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 0 4.8rem, rgba(151, 168, 94, 0.2) 4.9rem 5.05rem, transparent 5.15rem);
+}
+
+.portals-page .libro-fisico,
+.portals-page .libro-wrapper {
+    filter:
+        drop-shadow(12px 12px 0 rgba(37, 28, 21, 0.62))
+        drop-shadow(0 0 22px rgba(151, 168, 94, 0.28))
+        drop-shadow(0 0 12px rgba(224, 151, 160, 0.22)) !important;
+}
+
+.portals-page .libro-fisico::before {
+    background: linear-gradient(90deg, #39492d, #7c5966 48%, #c49b7f) !important;
+    box-shadow:
+        4px 0 0 rgba(67, 85, 49, 0.85),
+        8px 0 0 rgba(114, 82, 91, 0.74),
+        12px 0 0 rgba(196, 155, 127, 0.68),
+        16px 8px 0 rgba(37, 28, 21, 0.48) !important;
+}
+
+.portals-page .lomo {
+    background:
+        radial-gradient(circle at 50% 18%, rgba(244, 185, 180, 0.55) 0 0.22rem, transparent 0.28rem),
+        radial-gradient(circle at 50% 44%, rgba(151, 168, 94, 0.58) 0 0.2rem, transparent 0.26rem),
+        radial-gradient(circle at 50% 70%, rgba(229, 177, 141, 0.5) 0 0.26rem, transparent 0.34rem),
+        linear-gradient(180deg, #344329, #775162 56%, #3e3024) !important;
+    border-color: rgba(151, 168, 94, 0.82) !important;
+    border-radius: 1.4rem 0 0 1.4rem !important;
+}
+
+.portals-page .cara {
+    background:
+        radial-gradient(circle at 80% 14%, rgba(224, 151, 160, 0.2), transparent 5rem),
+        radial-gradient(circle at 18% 84%, rgba(93, 116, 69, 0.24), transparent 5rem),
+        linear-gradient(135deg, #d8c09d, #ead2ad 47%, #c99b8a),
+        repeating-linear-gradient(120deg, rgba(75, 47, 36, 0.08) 0 1px, transparent 1px 16px) !important;
+    border-color: rgba(82, 102, 61, 0.88) !important;
+    border-radius: 1rem 1.7rem 1.15rem 1.45rem !important;
+}
+
+.portals-page .cara.trasera,
+.portals-page .trasera {
+    background:
+        radial-gradient(circle at 76% 22%, rgba(151, 168, 94, 0.18), transparent 5rem),
+        linear-gradient(135deg, #735b44, #ddbd98 18%, #d4ab91 58%, #5f3f4d) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal,
+.portals-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 32%, rgba(224, 151, 160, 0.36), transparent 6rem),
+        radial-gradient(circle at 50% 58%, rgba(151, 168, 94, 0.3), transparent 10rem),
+        repeating-linear-gradient(35deg, rgba(229, 177, 141, 0.08) 0 1px, transparent 1px 13px),
+        linear-gradient(145deg, #2f3f29, #7c5966 56%, #b5837f) !important;
+    border: 4px double rgba(229, 177, 141, 0.88) !important;
+    border-radius: 1.5rem 2.4rem 1.55rem 2rem !important;
+    box-shadow:
+        inset 0 0 0 5px rgba(82, 102, 61, 0.16),
+        inset 0 0 42px rgba(75, 47, 36, 0.34),
+        8px 8px 0 rgba(37, 28, 21, 0.58) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal::before {
+    inset: 1rem !important;
+    border-radius: 999px 55% 999px 50% / 58% 999px 52% 999px !important;
+    border: 2px solid rgba(229, 177, 141, 0.38) !important;
+    background:
+        radial-gradient(circle at 50% 45%, transparent 0 3.7rem, rgba(151, 168, 94, 0.24) 3.8rem 4rem, transparent 4.12rem) !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal h3,
+.portals-page .cara.frontal h3 {
+    color: #f1c4b4 !important;
+    background: rgba(47, 63, 41, 0.86) !important;
+    border: 2px solid rgba(229, 177, 141, 0.78) !important;
+    border-radius: 1rem 1.45rem 1.05rem 1.35rem !important;
+    text-shadow: 2px 2px 0 #4b2f24 !important;
+}
+
+.portals-page .cara.frontal p,
+.portals-page .cara p {
+    color: #3e2a20 !important;
+}
+
+.portals-page .tapa-frontal .cara.frontal p,
+.portals-page .tapa-frontal .frontal p {
+    color: #f1c4b4 !important;
+    background: rgba(75, 47, 36, 0.62) !important;
+    border-radius: 0.85rem 1.25rem !important;
+}
+
+.portals-page .cara img,
+.portals-page .cara.frontal img,
+.portals-page .tapa-frontal .cara.frontal img {
+    border-color: rgba(229, 177, 141, 0.88) !important;
+    border-radius: 1rem 1.8rem 1rem 1.55rem !important;
+    background: rgba(47, 63, 41, 0.68) !important;
+    filter: saturate(0.98) contrast(1.06) brightness(0.96);
+}
+
+.portals-page .numero-pag {
+    color: #ead2ad !important;
+    background: rgba(47, 63, 41, 0.9) !important;
+    border-color: rgba(229, 177, 141, 0.72) !important;
+}
+
+.portals-page .controles-libro {
+    background: rgba(47, 63, 41, 0.82) !important;
+    border-color: rgba(229, 177, 141, 0.78) !important;
+}
+
+.portals-page .btn-libro,
+.portals-page #btnLibro {
+    background: linear-gradient(135deg, #344329, #7c5966) !important;
+    color: #f1c4b4 !important;
+    border-color: #e5b18d !important;
+}
+
+.portals-page .btn-libro:hover,
+.portals-page #btnLibro:hover {
+    background: linear-gradient(135deg, #e5b18d, #97a85e) !important;
+    color: #2f3f29 !important;
+}
+
+/* ==========================================================================
+   HADES: LIBRO DE CULTO CEREMONIAL
+   ========================================================================== */
+.hades-page {
+    background:
+        radial-gradient(circle at 50% 18%, rgba(127, 29, 29, 0.28), transparent 13rem),
+        radial-gradient(circle at 12% 78%, rgba(245, 158, 11, 0.12), transparent 10rem),
+        radial-gradient(circle at 86% 76%, rgba(69, 10, 10, 0.32), transparent 12rem),
+        linear-gradient(135deg, #050000, #140506 46%, #050000) !important;
+}
+
+.hades-page::before {
+    background:
+        repeating-linear-gradient(0deg, rgba(245, 158, 11, 0.035) 0 1px, transparent 1px 7px),
+        radial-gradient(circle at 50% 48%, transparent 0 11rem, rgba(127, 29, 29, 0.12) 11.2rem 11.4rem, transparent 11.6rem),
+        radial-gradient(circle at 50% 48%, transparent 0 15rem, rgba(245, 158, 11, 0.09) 15.2rem 15.35rem, transparent 15.55rem) !important;
+}
+
+.hades-page .seccion-libro {
+    border: 4px double rgba(245, 158, 11, 0.78);
+    border-radius: 0.45rem;
+    background:
+        radial-gradient(circle at 50% 44%, rgba(245, 158, 11, 0.18), transparent 9rem),
+        linear-gradient(145deg, rgba(8, 2, 2, 0.96), rgba(45, 9, 9, 0.9) 56%, rgba(5, 0, 0, 0.98)) !important;
+    box-shadow:
+        0 0 0 4px rgba(69, 10, 10, 0.85),
+        0 0 34px rgba(127, 29, 29, 0.48),
+        12px 12px 0 rgba(0, 0, 0, 0.78),
+        inset 0 0 38px rgba(245, 158, 11, 0.12) !important;
+}
+
+.hades-page .seccion-libro::before {
+    inset: 0.85rem;
+    border: 2px solid rgba(245, 158, 11, 0.36);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 1px rgba(127, 29, 29, 0.65),
+        inset 0 0 24px rgba(245, 158, 11, 0.12);
+}
+
+.hades-page .libro-fisico,
+.hades-page .libro-wrapper {
+    filter:
+        drop-shadow(16px 18px 0 rgba(0, 0, 0, 0.72))
+        drop-shadow(0 0 28px rgba(127, 29, 29, 0.55))
+        drop-shadow(0 0 12px rgba(245, 158, 11, 0.2)) !important;
+}
+
+.hades-page .libro-fisico::before {
+    background:
+        linear-gradient(90deg, #180909, #2c1711 50%, #ead8b4) !important;
+    border: 2px solid #1a0505 !important;
+    box-shadow:
+        4px 0 0 #3a1712,
+        8px 0 0 #5b2417,
+        12px 0 0 #1a0505,
+        18px 10px 0 rgba(0, 0, 0, 0.6) !important;
+}
+
+.hades-page .libro-fisico::after {
+    content: "";
+    position: absolute;
+    inset: -0.65rem -0.9rem -0.85rem -0.9rem;
+    border: 2px solid rgba(245, 158, 11, 0.22);
+    border-radius: 0.75rem;
+    box-shadow:
+        0 0 20px rgba(127, 29, 29, 0.35),
+        inset 0 0 18px rgba(245, 158, 11, 0.08);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hades-page .libro-fisico.abierto {
+    transform: translateX(12.5rem) rotateY(0deg) !important;
+    filter:
+        drop-shadow(18px 20px 0 rgba(0, 0, 0, 0.7))
+        drop-shadow(0 0 24px rgba(127, 29, 29, 0.44))
+        drop-shadow(0 0 10px rgba(245, 158, 11, 0.18)) !important;
+}
+
+.hades-page .libro-fisico.abierto::after {
+    opacity: 0;
+}
+
+.hades-page .libro-fisico.abierto .hoja {
+    filter: none !important;
+}
+
+.hades-page .lomo {
+    width: 2rem !important;
+    left: -2rem !important;
+    background:
+        repeating-linear-gradient(0deg, #0b0204 0 0.55rem, #2d0808 0.55rem 0.72rem),
+        linear-gradient(180deg, #050000, #450a0a 48%, #090101) !important;
+    border: 3px solid #7f1d1d !important;
+    border-right: 0 !important;
+    border-radius: 0.35rem 0 0 0.35rem !important;
+    box-shadow:
+        inset -4px 0 0 #050000,
+        0 0 16px rgba(127, 29, 29, 0.7) !important;
+}
+
+.hades-page .lomo::before {
+    content: "";
+    position: absolute;
+    top: 0.75rem;
+    left: 0.45rem;
+    width: 0.8rem;
+    height: calc(100% - 1.5rem);
+    background:
+        radial-gradient(circle at 50% 8%, #d4af37 0 0.18rem, transparent 0.22rem),
+        radial-gradient(circle at 50% 28%, #7f1d1d 0 0.18rem, transparent 0.22rem),
+        radial-gradient(circle at 50% 48%, #d4af37 0 0.18rem, transparent 0.22rem),
+        radial-gradient(circle at 50% 68%, #7f1d1d 0 0.18rem, transparent 0.22rem),
+        radial-gradient(circle at 50% 88%, #d4af37 0 0.18rem, transparent 0.22rem) !important;
+    filter: drop-shadow(0 0 7px rgba(245, 158, 11, 0.62)) !important;
+}
+
+.hades-page .lomo::after {
+    content: "I";
+    color: rgba(245, 158, 11, 0.42);
+    font-family: 'Cinzel', serif;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(127, 29, 29, 0.9);
+    background: transparent !important;
+}
+
+.hades-page .cara {
+    background:
+        radial-gradient(circle at 52% 45%, rgba(127, 29, 29, 0.08), transparent 7rem),
+        linear-gradient(135deg, #2b1512, #ead8b4 12%, #f5e4bf 52%, #d9b98b) !important;
+    border: 3px solid #2a0909 !important;
+    border-radius: 0.35rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(69, 10, 10, 0.24),
+        inset 14px 0 22px rgba(26, 5, 5, 0.32),
+        6px 6px 0 rgba(0, 0, 0, 0.55) !important;
+}
+
+.hades-page .cara.trasera,
+.hades-page .trasera {
+    background:
+        radial-gradient(circle at 30% 25%, rgba(245, 158, 11, 0.16), transparent 5rem),
+        linear-gradient(135deg, #1a0808, #d9b98b 16%, #f0dfbb 56%, #2d0808) !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal,
+.hades-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 46%, rgba(245, 158, 11, 0.22), transparent 7rem),
+        repeating-linear-gradient(45deg, rgba(245, 158, 11, 0.08) 0 1px, transparent 1px 14px),
+        linear-gradient(145deg, #090101, #2d0808 44%, #050000) !important;
+    border: 4px double #d4af37 !important;
+    border-radius: 0.45rem !important;
+    box-shadow:
+        inset 0 0 0 5px rgba(127, 29, 29, 0.36),
+        inset 0 0 42px rgba(245, 158, 11, 0.14),
+        9px 9px 0 rgba(0, 0, 0, 0.78) !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal::before {
+    content: "";
+    position: absolute;
+    inset: 1.05rem;
+    border: 2px solid rgba(245, 158, 11, 0.46);
+    background:
+        linear-gradient(90deg, transparent 48%, rgba(245, 158, 11, 0.38) 48% 52%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(245, 158, 11, 0.28) 48% 52%, transparent 52%);
+    box-shadow:
+        0 0 22px rgba(127, 29, 29, 0.45),
+        inset 0 0 24px rgba(0, 0, 0, 0.48);
+    pointer-events: none;
+}
+
+.hades-page .tapa-frontal .cara.frontal h3,
+.hades-page .cara.frontal h3 {
+    color: #f6d27a !important;
+    background: rgba(5, 0, 0, 0.82);
+    border: 3px double rgba(212, 175, 55, 0.9);
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.9rem;
+    font-family: 'Cinzel', 'Special Elite', serif !important;
+    font-size: clamp(1.05rem, 2vw, 1.45rem) !important;
+    letter-spacing: 0.12em;
+    text-shadow:
+        2px 2px 0 #1a0505,
+        0 0 16px rgba(245, 158, 11, 0.42) !important;
+}
+
+.hades-page .cara p,
+.hades-page .cara.frontal p {
+    color: #26110e !important;
+    font-family: 'Special Elite', 'Courier New', serif !important;
+    font-size: 0.92rem !important;
+    line-height: 1.58 !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal p,
+.hades-page .tapa-frontal .frontal p {
+    color: #ead8b4 !important;
+    background: rgba(69, 10, 10, 0.72);
+    border: 1px solid rgba(212, 175, 55, 0.48);
+    border-radius: 0.25rem;
+    padding: 0.35rem 0.75rem;
+    text-shadow: 1px 1px 0 #050000;
+}
+
+.hades-page .cara img,
+.hades-page .cara.frontal img,
+.hades-page .tapa-frontal .cara.frontal img {
+    border: 3px solid rgba(212, 175, 55, 0.86) !important;
+    border-radius: 0.35rem !important;
+    background: #090101;
+    padding: 0.35rem;
+    filter: sepia(0.2) contrast(1.08) brightness(0.88);
+    box-shadow:
+        0 0 0 2px rgba(69, 10, 10, 0.75),
+        0 0 24px rgba(127, 29, 29, 0.42),
+        5px 5px 0 rgba(0, 0, 0, 0.58) !important;
+}
+
+.hades-page .cara img:hover,
+.hades-page .cara.frontal img:hover {
+    transform: rotate(0deg) scale(1.03);
+    filter: sepia(0.08) contrast(1.12) brightness(0.96);
+    box-shadow:
+        0 0 0 2px rgba(245, 158, 11, 0.62),
+        0 0 28px rgba(127, 29, 29, 0.62),
+        5px 5px 0 rgba(0, 0, 0, 0.58) !important;
+}
+
+.hades-page .numero-pag {
+    color: #ead8b4 !important;
+    background: #1a0505;
+    border: 2px solid rgba(212, 175, 55, 0.72);
+    border-radius: 0.2rem;
+    box-shadow: 0 0 12px rgba(127, 29, 29, 0.5);
+}
+
+.hades-page .controles-libro {
+    background: rgba(5, 0, 0, 0.8);
+    border: 3px double rgba(212, 175, 55, 0.86);
+    border-radius: 0.45rem;
+    box-shadow:
+        0 0 20px rgba(127, 29, 29, 0.42),
+        6px 6px 0 rgba(0, 0, 0, 0.7);
+}
+
+.hades-page .btn-libro,
+.hades-page #btnLibro {
+    background: linear-gradient(135deg, #050000, #450a0a) !important;
+    color: #f6d27a !important;
+    border: 3px double #d4af37 !important;
+    border-radius: 0.28rem !important;
+    box-shadow: 0 0 14px rgba(127, 29, 29, 0.55), 4px 4px 0 #050000 !important;
+    font-family: 'Cinzel', 'Special Elite', serif !important;
+    letter-spacing: 0.08em;
+}
+
+.hades-page .btn-libro:hover,
+.hades-page #btnLibro:hover {
+    background: linear-gradient(135deg, #d4af37, #7f1d1d) !important;
+    color: #050000 !important;
+    border-color: #ead8b4 !important;
+}
+
+/* ==========================================================================
+   HADES: AJUSTE TETRICO, BIZARRO Y COMPACTO
+   ========================================================================== */
+.hades-page {
+    background:
+        radial-gradient(circle at 50% 16%, rgba(126, 12, 46, 0.32), transparent 12rem),
+        radial-gradient(circle at 14% 74%, rgba(23, 3, 8, 0.78), transparent 12rem),
+        radial-gradient(circle at 82% 78%, rgba(64, 0, 24, 0.42), transparent 13rem),
+        linear-gradient(135deg, #020000, #110006 44%, #030000) !important;
+}
+
+.hades-page::before {
+    background:
+        radial-gradient(circle at 22% 24%, rgba(255, 0, 64, 0.12) 0 0.16rem, transparent 0.23rem),
+        radial-gradient(circle at 76% 34%, rgba(255, 226, 150, 0.08) 0 0.12rem, transparent 0.2rem),
+        repeating-linear-gradient(0deg, rgba(255, 0, 64, 0.028) 0 1px, transparent 1px 7px),
+        repeating-linear-gradient(90deg, rgba(255, 226, 150, 0.018) 0 1px, transparent 1px 13px) !important;
+    background-size: 8rem 8rem, 11rem 11rem, auto, auto !important;
+}
+
+.hades-page .album-navegacion-container {
+    width: min(94vw, 64rem) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    overflow: visible !important;
+}
+
+.hades-page .libros {
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    padding: 3rem 1.5rem !important;
+    gap: 0 !important;
+    background: transparent !important;
+    box-sizing: border-box !important;
+}
+
+.hades-page .seccion-libro {
+    width: fit-content !important;
+    max-width: min(92vw, 34rem) !important;
+    margin: 0 auto !important;
+    padding: 1rem !important;
+    border: 4px solid #2b000b !important;
+    border-radius: 0 !important;
+    background:
+        radial-gradient(circle at 50% 48%, rgba(255, 0, 64, 0.18), transparent 7rem),
+        linear-gradient(135deg, rgba(3, 0, 0, 0.98), rgba(40, 0, 12, 0.94) 54%, rgba(6, 0, 0, 0.98)) !important;
+    box-shadow:
+        0 0 0 3px #6e001c,
+        0 0 26px rgba(255, 0, 64, 0.34),
+        9px 9px 0 rgba(0, 0, 0, 0.86),
+        inset 0 0 38px rgba(0, 0, 0, 0.86) !important;
+}
+
+.hades-page .seccion-libro::before {
+    inset: 0.65rem !important;
+    border: 2px dashed rgba(255, 226, 150, 0.25) !important;
+    border-radius: 0 !important;
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(255, 0, 64, 0.16) 48% 52%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 226, 150, 0.08) 48% 52%, transparent 52%);
+    box-shadow:
+        inset 0 0 22px rgba(255, 0, 64, 0.16),
+        0 0 16px rgba(255, 0, 64, 0.18) !important;
+}
+
+.hades-page .libro-fisico,
+.hades-page .libro-wrapper {
+    filter:
+        drop-shadow(13px 13px 0 rgba(0, 0, 0, 0.82))
+        drop-shadow(0 0 24px rgba(255, 0, 64, 0.38))
+        drop-shadow(0 0 10px rgba(255, 226, 150, 0.12)) !important;
+}
+
+.hades-page .libro-fisico::before {
+    background: linear-gradient(90deg, #050000, #23000a 48%, #b58b72) !important;
+    box-shadow:
+        4px 0 0 #120005,
+        8px 0 0 #3c0010,
+        12px 0 0 #060000,
+        16px 8px 0 rgba(0, 0, 0, 0.76) !important;
+}
+
+.hades-page .libro-fisico.abierto {
+    transform: translateX(12.5rem) rotateY(0deg) !important;
+}
+
+.hades-page .lomo {
+    background:
+        repeating-linear-gradient(0deg, #050000 0 0.45rem, #620018 0.45rem 0.58rem, #140004 0.58rem 0.9rem),
+        linear-gradient(180deg, #030000, #37000e 50%, #030000) !important;
+    border-color: #7a001d !important;
+    box-shadow:
+        inset -5px 0 0 #020000,
+        0 0 18px rgba(255, 0, 64, 0.48) !important;
+}
+
+.hades-page .lomo::before {
+    background:
+        radial-gradient(circle at 50% 12%, #ffe296 0 0.13rem, transparent 0.18rem),
+        radial-gradient(circle at 50% 32%, #ff0040 0 0.16rem, transparent 0.22rem),
+        radial-gradient(circle at 50% 52%, #ffe296 0 0.13rem, transparent 0.18rem),
+        radial-gradient(circle at 50% 72%, #ff0040 0 0.16rem, transparent 0.22rem),
+        radial-gradient(circle at 50% 90%, #ffe296 0 0.13rem, transparent 0.18rem) !important;
+}
+
+.hades-page .cara {
+    background:
+        radial-gradient(circle at 18% 20%, rgba(110, 0, 28, 0.18), transparent 5rem),
+        radial-gradient(circle at 82% 78%, rgba(0, 0, 0, 0.24), transparent 6rem),
+        linear-gradient(135deg, #160806, #d7b58e 12%, #c49a75 50%, #3a0b12) !important;
+    border: 3px solid #210006 !important;
+    border-radius: 0.12rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(65, 0, 18, 0.28),
+        inset 18px 0 26px rgba(0, 0, 0, 0.38),
+        5px 5px 0 rgba(0, 0, 0, 0.68) !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal,
+.hades-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 42%, rgba(255, 0, 64, 0.22), transparent 6rem),
+        repeating-linear-gradient(0deg, rgba(255, 226, 150, 0.05) 0 1px, transparent 1px 11px),
+        linear-gradient(145deg, #020000, #2b000b 52%, #0b0002) !important;
+    border: 4px double #7a001d !important;
+    border-radius: 0.08rem !important;
+    box-shadow:
+        inset 0 0 0 5px rgba(0, 0, 0, 0.42),
+        inset 0 0 46px rgba(255, 0, 64, 0.18),
+        8px 8px 0 rgba(0, 0, 0, 0.86) !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal::before {
+    inset: 0.9rem !important;
+    border: 2px solid rgba(255, 226, 150, 0.26) !important;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 0 3rem, rgba(255, 0, 64, 0.22) 3.1rem 3.25rem, transparent 3.35rem),
+        linear-gradient(90deg, transparent 48%, rgba(255, 0, 64, 0.28) 48% 52%, transparent 52%),
+        linear-gradient(0deg, transparent 48%, rgba(255, 226, 150, 0.16) 48% 52%, transparent 52%) !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal h3,
+.hades-page .cara.frontal h3 {
+    color: #ffcad4 !important;
+    background: #050000 !important;
+    border: 3px solid #7a001d !important;
+    border-radius: 0 !important;
+    text-shadow:
+        2px 2px 0 #000000,
+        0 0 14px rgba(255, 0, 64, 0.68) !important;
+}
+
+.hades-page .cara p,
+.hades-page .cara.frontal p {
+    color: #240306 !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal p,
+.hades-page .tapa-frontal .frontal p {
+    color: #f1c6b7 !important;
+    background: rgba(20, 0, 5, 0.78) !important;
+    border-color: rgba(255, 0, 64, 0.42) !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .cara img,
+.hades-page .cara.frontal img,
+.hades-page .tapa-frontal .cara.frontal img {
+    border-color: #7a001d !important;
+    border-radius: 0 !important;
+    background: #030000 !important;
+    filter: sepia(0.45) contrast(1.28) brightness(0.7) saturate(1.2);
+    box-shadow:
+        0 0 0 2px #210006,
+        0 0 22px rgba(255, 0, 64, 0.34),
+        5px 5px 0 rgba(0, 0, 0, 0.78) !important;
+}
+
+.hades-page .numero-pag {
+    color: #ffcad4 !important;
+    background: #030000 !important;
+    border-color: #7a001d !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .controles-libro {
+    background: rgba(3, 0, 0, 0.88) !important;
+    border: 3px solid #7a001d !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .btn-libro,
+.hades-page #btnLibro {
+    background: linear-gradient(135deg, #030000, #520015) !important;
+    color: #ffcad4 !important;
+    border: 3px solid #7a001d !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .btn-libro:hover,
+.hades-page #btnLibro:hover {
+    background: linear-gradient(135deg, #ffcad4, #7a001d) !important;
+    color: #030000 !important;
+}
+
+/* ==========================================================================
+   CRY BABY: ESTETICA DEL ALBUM ORIGINAL
+   ========================================================================== */
+.cry-baby-page {
+    background:
+        radial-gradient(ellipse at 18% 18%, rgba(255, 255, 255, 0.72) 0 5rem, transparent 5.3rem),
+        radial-gradient(ellipse at 78% 20%, rgba(255, 255, 255, 0.52) 0 6rem, transparent 6.3rem),
+        radial-gradient(circle at 18% 84%, rgba(95, 160, 223, 0.24), transparent 10rem),
+        linear-gradient(135deg, #f9c9d7, #f7e4ef 48%, #b9d7f6) !important;
+}
+
+.cry-baby-page::before {
+    background:
+        repeating-linear-gradient(90deg, rgba(230, 142, 158, 0.09) 0 1px, transparent 1px 8px),
+        radial-gradient(ellipse at 12% 72%, rgba(255, 255, 255, 0.72) 0 3.5rem, transparent 3.8rem),
+        radial-gradient(ellipse at 84% 78%, rgba(255, 255, 255, 0.52) 0 4.8rem, transparent 5.1rem) !important;
+}
+
+.cry-baby-page .seccion-libro {
+    border: 5px solid #ffffff !important;
+    border-radius: 2.2rem !important;
+    background:
+        radial-gradient(ellipse at 20% 26%, rgba(255, 255, 255, 0.9), transparent 6rem),
+        linear-gradient(135deg, #ffd8e3, #f9c9d7 52%, #cfe6ff) !important;
+    box-shadow:
+        0 0 0 5px #f497b3,
+        11px 11px 0 #d97792,
+        inset 0 0 30px rgba(255, 255, 255, 0.78) !important;
+}
+
+.cry-baby-page .seccion-libro::before {
+    border: 3px dashed #78b8ee !important;
+    border-radius: 1.65rem !important;
+}
+
+.cry-baby-page .libro-fisico::before {
+    background: linear-gradient(90deg, #ffffff, #ffe8ef 55%, #d9edff) !important;
+}
+
+.cry-baby-page .lomo {
+    background:
+        repeating-linear-gradient(0deg, #ffffff 0 0.5rem, #f497b3 0.5rem 0.68rem, #ffffff 0.68rem 1.2rem),
+        linear-gradient(180deg, #ffd8e3, #b9d7f6) !important;
+}
+
+.cry-baby-page .cara {
+    background:
+        radial-gradient(ellipse at 12% 18%, rgba(255, 255, 255, 0.72) 0 2.4rem, transparent 2.7rem),
+        linear-gradient(135deg, #fffafc, #ffeaf1 58%, #e9f5ff),
+        repeating-linear-gradient(0deg, rgba(120, 184, 238, 0.18) 0 1px, transparent 1px 20px) !important;
+    border-color: #ffffff !important;
+    border-radius: 1.35rem !important;
+}
+
+.cry-baby-page .tapa-frontal .cara.frontal,
+.cry-baby-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(ellipse at 18% 16%, rgba(255, 255, 255, 0.85) 0 4rem, transparent 4.3rem),
+        radial-gradient(ellipse at 78% 22%, rgba(255, 255, 255, 0.62) 0 4.8rem, transparent 5.1rem),
+        linear-gradient(145deg, #ffd3df, #f497b3 58%, #b9d7f6) !important;
+    border: 6px solid #ffffff !important;
+    border-radius: 1.7rem !important;
+}
+
+.cry-baby-page .tapa-frontal .cara.frontal h3,
+.cry-baby-page .cara.frontal h3 {
+    background: #f497b3 !important;
+    color: #ffffff !important;
+    border: 4px solid #ffffff !important;
+    border-radius: 999px !important;
+    box-shadow: 4px 4px 0 #78b8ee !important;
+    text-shadow: 2px 2px 0 #d97792 !important;
+}
+
+.cry-baby-page .cara p,
+.cry-baby-page .cara.frontal p {
+    color: #6f5873 !important;
+}
+
+.cry-baby-page .cara img,
+.cry-baby-page .cara.frontal img,
+.cry-baby-page .tapa-frontal .cara.frontal img {
+    border: 8px solid #ffffff !important;
+    border-bottom-width: 1.25rem !important;
+    border-radius: 1.35rem !important;
+    background: #fffafd !important;
+    box-shadow:
+        5px 5px 0 #78b8ee,
+        9px 9px 0 rgba(217, 119, 146, 0.42) !important;
+}
+
+.cry-baby-page .numero-pag,
+.cry-baby-page .btn-libro,
+.cry-baby-page #btnLibro {
+    background: #f497b3 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.cry-baby-page .controles-libro {
+    background: rgba(255, 255, 255, 0.74) !important;
+    border-color: #ffffff !important;
+}
+
+/* ==========================================================================
+   K-12: ESTETICA DEL ALBUM ORIGINAL
+   ========================================================================== */
+.k12-page {
+    background:
+        linear-gradient(90deg, rgba(142, 178, 210, 0.22) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(142, 178, 210, 0.2) 1px, transparent 1px),
+        radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.5), transparent 11rem),
+        linear-gradient(135deg, #e9b6c1, #f5dce6 48%, #d8e8f6) !important;
+    background-size: 38px 38px, 38px 38px, auto, auto !important;
+}
+
+.k12-page .seccion-libro {
+    background:
+        linear-gradient(90deg, transparent 0 4.8rem, rgba(179, 0, 45, 0.25) 4.8rem 5rem, transparent 5rem),
+        repeating-linear-gradient(0deg, transparent 0 1.45rem, rgba(142, 178, 210, 0.38) 1.45rem 1.53rem),
+        linear-gradient(135deg, #fffdf9, #f9edf3 55%, #eaf4ff) !important;
+    border: 4px solid #fff8fb !important;
+    border-radius: 0.45rem !important;
+    box-shadow:
+        0 0 0 5px #91b7d8,
+        10px 10px 0 rgba(93, 67, 80, 0.36),
+        inset 0 0 24px rgba(255, 255, 255, 0.72) !important;
+}
+
+.k12-page .lomo {
+    background:
+        repeating-linear-gradient(0deg, #fefefe 0 0.65rem, #91b7d8 0.65rem 0.85rem, #fefefe 0.85rem 1.35rem) !important;
+    border-color: #6f5873 !important;
+}
+
+.k12-page .cara {
+    background:
+        linear-gradient(90deg, transparent 0 3.7rem, rgba(179, 0, 45, 0.28) 3.7rem 3.86rem, transparent 3.86rem),
+        repeating-linear-gradient(0deg, #fffdf9 0 1.35rem, rgba(142, 178, 210, 0.5) 1.35rem 1.43rem),
+        #fffdf9 !important;
+    border-color: #d9cdd8 !important;
+}
+
+.k12-page .tapa-frontal .cara.frontal,
+.k12-page .tapa-frontal .frontal {
+    background:
+        linear-gradient(90deg, rgba(255, 255, 255, 0.58) 0 3.8rem, rgba(179, 0, 45, 0.42) 3.8rem 4rem, transparent 4rem),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.24) 0 1px, transparent 1px 30px),
+        linear-gradient(145deg, #d88c9c, #f4c7d1 50%, #b9d2e8) !important;
+    border-color: #ffffff !important;
+}
+
+.k12-page .tapa-frontal .cara.frontal::before {
+    content: "K-12";
+    top: 1rem;
+    right: 1rem;
+    color: #5d4350;
+    background: rgba(255, 255, 255, 0.76);
+    border: 2px solid #5d4350;
+}
+
+.k12-page .tapa-frontal .cara.frontal h3,
+.k12-page .cara.frontal h3 {
+    color: #5d4350 !important;
+    background: #fffdf9 !important;
+    border-color: #5d4350 !important;
+    box-shadow: 4px 4px 0 #91b7d8 !important;
+}
+
+.k12-page .cara img,
+.k12-page .cara.frontal img,
+.k12-page .tapa-frontal .cara.frontal img {
+    border: 0.6rem solid #ffffff !important;
+    border-bottom-width: 1.35rem !important;
+    background: #ffffff !important;
+    filter: saturate(0.95) contrast(1.03);
+}
+
+.k12-page .controles-libro,
+.k12-page .btn-libro,
+.k12-page #btnLibro,
+.k12-page .numero-pag {
+    border-color: #5d4350 !important;
+}
+
+/* ==========================================================================
+   HADES: ESTETICA TETRICA DEL ALBUM
+   ========================================================================== */
+.hades-page {
+    background:
+        radial-gradient(circle at 50% 14%, rgba(155, 0, 48, 0.28), transparent 12rem),
+        radial-gradient(circle at 12% 80%, rgba(0, 0, 0, 0.78), transparent 14rem),
+        radial-gradient(circle at 86% 74%, rgba(75, 0, 28, 0.38), transparent 13rem),
+        linear-gradient(135deg, #020000, #130005 48%, #040000) !important;
+}
+
+.hades-page .seccion-libro {
+    background:
+        radial-gradient(circle at 50% 44%, rgba(255, 0, 64, 0.18), transparent 7rem),
+        linear-gradient(145deg, #030000, #28000b 58%, #050000) !important;
+    border: 4px solid #4d0014 !important;
+    border-radius: 0 !important;
+    box-shadow:
+        0 0 0 3px #110005,
+        0 0 30px rgba(255, 0, 64, 0.32),
+        10px 10px 0 rgba(0, 0, 0, 0.88),
+        inset 0 0 40px rgba(0, 0, 0, 0.9) !important;
+}
+
+.hades-page .seccion-libro::before {
+    border: 2px solid rgba(255, 202, 212, 0.18) !important;
+    border-radius: 0 !important;
+    background:
+        linear-gradient(45deg, transparent 48%, rgba(255, 0, 64, 0.14) 48% 52%, transparent 52%),
+        linear-gradient(-45deg, transparent 48%, rgba(255, 202, 212, 0.08) 48% 52%, transparent 52%) !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal,
+.hades-page .tapa-frontal .frontal {
+    background:
+        radial-gradient(circle at 50% 38%, rgba(255, 0, 64, 0.22), transparent 6rem),
+        repeating-linear-gradient(0deg, rgba(255, 202, 212, 0.04) 0 1px, transparent 1px 10px),
+        linear-gradient(145deg, #030000, #2b000b 56%, #080002) !important;
+    border-color: #7a001d !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .cara {
+    background:
+        radial-gradient(circle at 20% 16%, rgba(122, 0, 29, 0.18), transparent 5rem),
+        linear-gradient(135deg, #140505, #c6a17e 14%, #b48668 52%, #30070d) !important;
+    border-color: #220006 !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .tapa-frontal .cara.frontal h3,
+.hades-page .cara.frontal h3 {
+    color: #ffcad4 !important;
+    background: #030000 !important;
+    border-color: #7a001d !important;
+    border-radius: 0 !important;
+}
+
+.hades-page .cara img,
+.hades-page .cara.frontal img,
+.hades-page .tapa-frontal .cara.frontal img {
+    border-color: #7a001d !important;
+    border-radius: 0 !important;
+    filter: sepia(0.45) contrast(1.3) brightness(0.72) saturate(1.15);
+}
+
+/* ==========================================================================
+   IMAGENES OPCIONALES EN LA PARTE TRASERA DE CADA HOJA
+   ========================================================================== */
+.cara.trasera.tiene-imagen-trasera,
+.trasera.tiene-imagen-trasera {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1.4rem !important;
+    overflow: hidden !important;
+}
+
+.imagen-trasera-hoja {
+    display: block !important;
+    width: min(86%, 18rem) !important;
+    max-height: 78% !important;
+    object-fit: contain !important;
+    margin: auto !important;
+    position: relative;
+    z-index: 2;
+}
+
+.cry-baby-page .imagen-trasera-hoja {
+    border: 8px solid #ffffff !important;
+    border-bottom-width: 1.25rem !important;
+    border-radius: 1.25rem !important;
+    background: #fffafd !important;
+    box-shadow: 5px 5px 0 #78b8ee, 9px 9px 0 rgba(217, 119, 146, 0.42) !important;
+}
+
+.k12-page .imagen-trasera-hoja {
+    border: 0.6rem solid #ffffff !important;
+    border-bottom-width: 1.35rem !important;
+    border-radius: 0.2rem !important;
+    background: #ffffff !important;
+    box-shadow: 4px 4px 0 rgba(93, 67, 80, 0.3), 7px 7px 0 rgba(145, 183, 216, 0.65) !important;
+}
+
+.portals-page .imagen-trasera-hoja {
+    border: 3px solid rgba(229, 177, 141, 0.88) !important;
+    border-radius: 1rem 1.8rem 1rem 1.55rem !important;
+    background: rgba(47, 63, 41, 0.68) !important;
+    padding: 0.35rem;
+    filter: saturate(0.98) contrast(1.06) brightness(0.96);
+    box-shadow: 0 0 0 2px rgba(82, 102, 61, 0.45), 0 0 18px rgba(151, 168, 94, 0.28) !important;
+}
+
+.hades-page .imagen-trasera-hoja {
+    border: 3px solid #7a001d !important;
+    border-radius: 0 !important;
+    background: #030000 !important;
+    padding: 0.35rem;
+    filter: sepia(0.45) contrast(1.3) brightness(0.72) saturate(1.15);
+    box-shadow: 0 0 0 2px #210006, 0 0 22px rgba(255, 0, 64, 0.34) !important;
+}
+
+/* ==========================================================================
+   CORRECCION: HOJA IZQUIERDA SIN EFECTO ESPEJO
+   ========================================================================== */
+.hoja,
+.hoja .cara,
+.cara {
+    transform-style: preserve-3d !important;
+}
+
+.hoja .cara,
+.cara {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
+
+.hoja .cara.frontal,
+.cara.frontal {
+    transform: rotateY(0deg) translateZ(0.2px);
+}
+
+.hoja .cara.trasera,
+.cara.trasera,
+.trasera {
+    transform: rotateY(180deg) translateZ(0.2px) !important;
+}
+
+.hoja.girada .cara.frontal {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.hoja.girada .cara.trasera {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.hoja.girada .cara.trasera:not(.tiene-imagen-trasera)::before {
+    content: "AÃ‘ADE UNA IMAGEN";
+    position: absolute;
+    inset: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 0.8rem;
+    opacity: 0.28;
+    letter-spacing: 0.08em;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   TRASERAS LISTAS PARA IMAGEN EN TODOS LOS ALBUMES
+   ========================================================================== */
+.cry-baby-page .hoja.girada .cara.frontal,
+.k12-page .hoja.girada .cara.frontal,
+.portals-page .hoja.girada .cara.frontal,
+.hades-page .hoja.girada .cara.frontal {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+}
+
+.cry-baby-page .hoja.girada .cara.trasera,
+.k12-page .hoja.girada .cara.trasera,
+.portals-page .hoja.girada .cara.trasera,
+.hades-page .hoja.girada .cara.trasera {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+    transform: rotateY(180deg) translateZ(1px) !important;
+}
+
+.cry-baby-page .hoja.girada .cara.trasera:not(.tiene-imagen-trasera)::before {
+    content: "ANADIR IMAGEN";
+    color: #ffffff;
+    background: rgba(244, 151, 179, 0.28);
+    border: 4px dashed rgba(255, 255, 255, 0.62);
+    border-radius: 1.4rem;
+    text-shadow: 2px 2px 0 rgba(217, 119, 146, 0.45);
+}
+
+.k12-page .hoja.girada .cara.trasera:not(.tiene-imagen-trasera)::before {
+    content: "ANADIR IMAGEN";
+    color: #5d4350;
+    background:
+        repeating-linear-gradient(0deg, rgba(145, 183, 216, 0.18) 0 1px, transparent 1px 22px),
+        rgba(255, 255, 255, 0.55);
+    border: 3px solid rgba(93, 67, 80, 0.42);
+    border-radius: 0.2rem;
+}
+
+.portals-page .hoja.girada .cara.trasera:not(.tiene-imagen-trasera)::before {
+    content: "ANADIR IMAGEN";
+    color: #ead2ad;
+    background: rgba(47, 63, 41, 0.44);
+    border: 3px dotted rgba(229, 177, 141, 0.58);
+    border-radius: 1rem 1.8rem 1rem 1.55rem;
+    text-shadow: 2px 2px 0 rgba(75, 47, 36, 0.55);
+}
+
+.hades-page .hoja.girada .cara.trasera:not(.tiene-imagen-trasera)::before {
+    content: "ANADIR IMAGEN";
+    color: #ffcad4;
+    background: rgba(3, 0, 0, 0.52);
+    border: 3px solid rgba(122, 0, 29, 0.62);
+    border-radius: 0;
+    text-shadow: 0 0 12px rgba(255, 0, 64, 0.58);
+}
+
+/* ==========================================================================
+   REPARACION DE HOJA IZQUIERDA EN CRY BABY, K-12 Y PORTALS
+   ========================================================================== */
+.cry-baby-page .hoja.girada .cara.frontal,
+.k12-page .hoja.girada .cara.frontal,
+.portals-page .hoja.girada .cara.frontal {
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.cry-baby-page .hoja.girada .cara.trasera,
+.k12-page .hoja.girada .cara.trasera,
+.portals-page .hoja.girada .cara.trasera {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: rotateY(180deg) translateZ(1px) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+}
+
+.cry-baby-page .tapa-frontal.hoja.girada .cara.trasera,
+.cry-baby-page .hoja.girada .cara.trasera {
+    background:
+        radial-gradient(ellipse at 18% 18%, rgba(255, 255, 255, 0.72) 0 4rem, transparent 4.3rem),
+        linear-gradient(135deg, #fffafc, #ffeaf1 58%, #e9f5ff) !important;
+    border: 4px solid #ffffff !important;
+    border-radius: 1.35rem !important;
+    box-shadow:
+        inset 0 0 0 4px rgba(255, 209, 220, 0.72),
+        inset 18px 0 28px rgba(230, 142, 158, 0.12),
+        5px 5px 0 rgba(230, 142, 158, 0.42) !important;
+}
+
+.k12-page .tapa-frontal.hoja.girada .cara.trasera,
+.k12-page .hoja.girada .cara.trasera {
+    background:
+        linear-gradient(90deg, transparent 0 3.7rem, rgba(179, 0, 45, 0.24) 3.7rem 3.86rem, transparent 3.86rem),
+        repeating-linear-gradient(0deg, #fffdf9 0 1.35rem, rgba(142, 178, 210, 0.42) 1.35rem 1.43rem),
+        #fffdf9 !important;
+    border: 3px solid #d9cdd8 !important;
+    border-radius: 0.35rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(255, 255, 255, 0.7),
+        inset 14px 0 22px rgba(93, 67, 80, 0.08),
+        5px 5px 0 rgba(93, 67, 80, 0.22) !important;
+}
+
+.portals-page .tapa-frontal.hoja.girada .cara.trasera,
+.portals-page .hoja.girada .cara.trasera {
+    background:
+        radial-gradient(circle at 80% 14%, rgba(224, 151, 160, 0.16), transparent 5rem),
+        radial-gradient(circle at 18% 84%, rgba(93, 116, 69, 0.2), transparent 5rem),
+        linear-gradient(135deg, #d8c09d, #ead2ad 47%, #c99b8a) !important;
+    border: 3px solid rgba(82, 102, 61, 0.88) !important;
+    border-radius: 1rem 1.7rem 1.15rem 1.45rem !important;
+    box-shadow:
+        inset 0 0 0 3px rgba(74, 45, 36, 0.18),
+        inset 18px 0 28px rgba(75, 47, 36, 0.16),
+        5px 5px 0 rgba(37, 28, 21, 0.4) !important;
+}
+
+.cry-baby-page .tapa-frontal.hoja.girada .cara.trasera::before,
+.k12-page .tapa-frontal.hoja.girada .cara.trasera::before,
+.portals-page .tapa-frontal.hoja.girada .cara.trasera::before {
+    background: none !important;
+    box-shadow: none !important;
+}
+
+/* ==========================================================================
+   PAGINA IZQUIERDA REAL PARA IMAGENES TRASERAS
+   ========================================================================== */
+.pagina-izquierda-visual {
+    position: absolute;
+    top: 0;
+    left: calc(-100% + 0.08rem);
+    width: 100%;
+    height: 100%;
+    z-index: 29;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.libro-fisico.abierto .pagina-izquierda-visual.activa {
+    display: flex;
+}
+
+.pagina-izquierda-visual span {
+    position: relative;
+    z-index: 2;
+    font-family: 'Courier New', monospace;
+    font-weight: 900;
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+    opacity: 0.38;
+    text-align: center;
+}
+
+.pagina-izquierda-visual img {
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(76%, 18rem);
+    max-height: 72%;
+    object-fit: contain;
+}
+
+.cry-baby-page .pagina-izquierda-visual {
+    padding: 3rem 2.5rem;
+    background:
+        radial-gradient(ellipse at 18% 18%, rgba(255, 255, 255, 0.72) 0 4rem, transparent 4.3rem),
+        linear-gradient(135deg, #fffafc, #ffeaf1 58%, #e9f5ff) !important;
+    border: 4px solid #ffffff;
+    border-radius: 1.35rem 0 0 1.35rem;
+    box-shadow:
+        inset -18px 0 28px rgba(230, 142, 158, 0.16),
+        5px 5px 0 rgba(230, 142, 158, 0.42);
+}
+
+.cry-baby-page .pagina-izquierda-visual span {
+    color: #e68e9e;
+}
+
+.cry-baby-page .pagina-izquierda-visual img {
+    border: 8px solid #ffffff;
+    border-bottom-width: 1.25rem;
+    border-radius: 1.25rem;
+    background: #fffafd;
+    box-shadow: 5px 5px 0 #78b8ee, 9px 9px 0 rgba(217, 119, 146, 0.42);
+}
+
+.k12-page .pagina-izquierda-visual {
+    padding: 3rem 2.5rem;
+    background:
+        linear-gradient(90deg, transparent 0 3.7rem, rgba(179, 0, 45, 0.24) 3.7rem 3.86rem, transparent 3.86rem),
+        repeating-linear-gradient(0deg, #fffdf9 0 1.35rem, rgba(142, 178, 210, 0.42) 1.35rem 1.43rem),
+        #fffdf9 !important;
+    border: 3px solid #d9cdd8;
+    border-radius: 0.35rem 0 0 0.35rem;
+    box-shadow:
+        inset -14px 0 22px rgba(93, 67, 80, 0.08),
+        5px 5px 0 rgba(93, 67, 80, 0.22);
+}
+
+.k12-page .pagina-izquierda-visual span {
+    color: #5d4350;
+}
+
+.k12-page .pagina-izquierda-visual img {
+    border: 0.6rem solid #ffffff;
+    border-bottom-width: 1.35rem;
+    border-radius: 0.2rem;
+    background: #ffffff;
+    box-shadow: 4px 4px 0 rgba(93, 67, 80, 0.3), 7px 7px 0 rgba(145, 183, 216, 0.65);
+}
+
+.portals-page .pagina-izquierda-visual {
+    padding: 2.5rem;
+    background:
+        radial-gradient(circle at 80% 14%, rgba(224, 151, 160, 0.16), transparent 5rem),
+        radial-gradient(circle at 18% 84%, rgba(93, 116, 69, 0.2), transparent 5rem),
+        linear-gradient(135deg, #d8c09d, #ead2ad 47%, #c99b8a) !important;
+    border: 3px solid rgba(82, 102, 61, 0.88);
+    border-radius: 1rem 0 0 1.45rem;
+    box-shadow:
+        inset -18px 0 28px rgba(75, 47, 36, 0.16),
+        5px 5px 0 rgba(37, 28, 21, 0.4);
+}
+
+.portals-page .pagina-izquierda-visual span {
+    color: #52663d;
+}
+
+.portals-page .pagina-izquierda-visual img {
+    border: 3px solid rgba(229, 177, 141, 0.88);
+    border-radius: 1rem 1.8rem 1rem 1.55rem;
+    background: rgba(47, 63, 41, 0.68);
+    padding: 0.35rem;
+    box-shadow: 0 0 0 2px rgba(82, 102, 61, 0.45), 0 0 18px rgba(151, 168, 94, 0.28);
+}
+
+.hades-page .pagina-izquierda-visual {
+    padding: 2.5rem;
+    background:
+        radial-gradient(circle at 20% 16%, rgba(122, 0, 29, 0.18), transparent 5rem),
+        linear-gradient(135deg, #140505, #c6a17e 14%, #b48668 52%, #30070d) !important;
+    border: 3px solid #220006;
+    border-radius: 0;
+    box-shadow:
+        inset -18px 0 28px rgba(0, 0, 0, 0.38),
+        5px 5px 0 rgba(0, 0, 0, 0.68);
+}
+
+.hades-page .pagina-izquierda-visual span {
+    color: #7a001d;
+}
+
+.hades-page .pagina-izquierda-visual img {
+    border: 3px solid #7a001d;
+    border-radius: 0;
+    background: #030000;
+    padding: 0.35rem;
+    filter: sepia(0.45) contrast(1.3) brightness(0.72) saturate(1.15);
+    box-shadow: 0 0 0 2px #210006, 0 0 22px rgba(255, 0, 64, 0.34);
+}
+
+/* ==========================================================================
+   TRANSICION REALISTA AL PASAR PAGINA
+   ========================================================================== */
+.libro-fisico {
+    perspective: 2600px !important;
+}
+
+.hoja {
+    transform-origin: left center !important;
+    transform-style: preserve-3d !important;
+    transition:
+        transform 1.18s cubic-bezier(0.18, 0.72, 0.18, 1),
+        filter 1.18s ease,
+        box-shadow 1.18s ease !important;
+    will-change: transform, filter;
+}
+
+.hoja::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 8;
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.34),
+            rgba(255, 255, 255, 0.18) 18%,
+            transparent 42%,
+            rgba(0, 0, 0, 0.2) 100%);
+    transition: opacity 0.35s ease;
+    mix-blend-mode: multiply;
+}
+
+.hoja::after {
+    transition: opacity 0.35s ease, width 0.35s ease !important;
+}
+
+.hoja.pasando-adelante {
+    animation: pasarPáginaAdelante 1.18s cubic-bezier(0.18, 0.72, 0.18, 1) both;
+    filter:
+        drop-shadow(-18px 12px 12px rgba(0, 0, 0, 0.28))
+        drop-shadow(10px 0 6px rgba(255, 255, 255, 0.16)) !important;
+}
+
+.hoja.pasando-atras {
+    animation: pasarPáginaAtras 1.18s cubic-bezier(0.18, 0.72, 0.18, 1) both;
+    filter:
+        drop-shadow(18px 12px 12px rgba(0, 0, 0, 0.28))
+        drop-shadow(-10px 0 6px rgba(255, 255, 255, 0.16)) !important;
+}
+
+.hoja.pasando-adelante::before,
+.hoja.pasando-atras::before {
+    animation: brilloPasoPágina 1.18s ease both;
+}
+
+.hoja.pasando-adelante .cara,
+.hoja.pasando-atras .cara {
+    box-shadow:
+        inset 18px 0 28px rgba(0, 0, 0, 0.16),
+        inset -10px 0 18px rgba(255, 255, 255, 0.14) !important;
+}
+
+@keyframes pasarPáginaAdelante {
+    0% {
+        transform: rotateY(0deg) translateZ(0) skewY(0deg);
+    }
+    18% {
+        transform: rotateY(-28deg) translateZ(18px) skewY(-0.7deg);
+    }
+    48% {
+        transform: rotateY(-96deg) translateZ(38px) skewY(-1.35deg);
+    }
+    74% {
+        transform: rotateY(-154deg) translateZ(18px) skewY(-0.55deg);
+    }
+    100% {
+        transform: rotateY(-180deg) translateZ(0) skewY(0deg);
+    }
+}
+
+@keyframes pasarPáginaAtras {
+    0% {
+        transform: rotateY(-180deg) translateZ(0) skewY(0deg);
+    }
+    22% {
+        transform: rotateY(-148deg) translateZ(18px) skewY(0.55deg);
+    }
+    52% {
+        transform: rotateY(-84deg) translateZ(38px) skewY(1.35deg);
+    }
+    78% {
+        transform: rotateY(-26deg) translateZ(18px) skewY(0.7deg);
+    }
+    100% {
+        transform: rotateY(0deg) translateZ(0) skewY(0deg);
+    }
+}
+
+@keyframes brilloPasoPágina {
+    0%, 100% { opacity: 0; }
+    18% { opacity: 0.24; }
+    48% { opacity: 0.54; }
+    74% { opacity: 0.3; }
+}
+
+/* ==========================================================================
+   PASO DE PAGINA MAS SOLIDO Y FLUIDO
+   ========================================================================== */
+.hoja.pasando-adelante,
+.hoja.pasando-atras {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.hoja.pasando-adelante .cara,
+.hoja.pasando-atras .cara,
+.hoja.pasando-adelante .cara.frontal,
+.hoja.pasando-atras .cara.frontal,
+.hoja.pasando-adelante .cara.trasera,
+.hoja.pasando-atras .cara.trasera {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.hoja.pasando-adelante {
+    animation: pasarPáginaAdelanteSolido 1.55s cubic-bezier(0.22, 0.02, 0.18, 1) both !important;
+    filter:
+        drop-shadow(-24px 16px 18px rgba(0, 0, 0, 0.34))
+        drop-shadow(8px 0 8px rgba(255, 255, 255, 0.12)) !important;
+}
+
+.hoja.pasando-atras {
+    animation: pasarPáginaAtrasSolido 1.55s cubic-bezier(0.22, 0.02, 0.18, 1) both !important;
+    filter:
+        drop-shadow(24px 16px 18px rgba(0, 0, 0, 0.34))
+        drop-shadow(-8px 0 8px rgba(255, 255, 255, 0.12)) !important;
+}
+
+.hoja.pasando-adelante::before,
+.hoja.pasando-atras::before {
+    background:
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.22) 0%,
+            rgba(0, 0, 0, 0.08) 12%,
+            rgba(255, 255, 255, 0.18) 42%,
+            rgba(0, 0, 0, 0.2) 100%) !important;
+    mix-blend-mode: multiply !important;
+    animation: sombraRealistaPágina 1.55s ease both !important;
+}
+
+.hoja.pasando-adelante .cara::after,
+.hoja.pasando-atras .cara::after {
+    opacity: 0.75 !important;
+    width: 64px !important;
+}
+
+@keyframes pasarPáginaAdelanteSolido {
+    0% {
+        transform: rotateY(0deg) translateZ(0) scaleX(1);
+    }
+    15% {
+        transform: rotateY(-20deg) translateZ(12px) scaleX(0.992);
+    }
+    34% {
+        transform: rotateY(-58deg) translateZ(34px) scaleX(0.965);
+    }
+    52% {
+        transform: rotateY(-102deg) translateZ(46px) scaleX(0.94);
+    }
+    73% {
+        transform: rotateY(-148deg) translateZ(26px) scaleX(0.972);
+    }
+    100% {
+        transform: rotateY(-180deg) translateZ(0) scaleX(1);
+    }
+}
+
+@keyframes pasarPáginaAtrasSolido {
+    0% {
+        transform: rotateY(-180deg) translateZ(0) scaleX(1);
+    }
+    15% {
+        transform: rotateY(-154deg) translateZ(14px) scaleX(0.988);
+    }
+    36% {
+        transform: rotateY(-112deg) translateZ(42px) scaleX(0.956);
+    }
+    56% {
+        transform: rotateY(-68deg) translateZ(42px) scaleX(0.948);
+    }
+    78% {
+        transform: rotateY(-22deg) translateZ(16px) scaleX(0.985);
+    }
+    100% {
+        transform: rotateY(0deg) translateZ(0) scaleX(1);
+    }
+}
+
+@keyframes sombraRealistaPágina {
+    0%, 100% { opacity: 0; }
+    18% { opacity: 0.22; }
+    48% { opacity: 0.38; }
+    70% { opacity: 0.26; }
+}
+
+/* ==========================================================================
+   RESTAURAR ANIMACION ORIGINAL DE PASO DE PAGINA
+   ========================================================================== */
+.cry-baby-page .hoja,
+.k12-page .hoja {
+    transform-origin: left !important;
+    transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    filter: none !important;
+}
+
+.portals-page .hoja {
+    transform-origin: left !important;
+    transition: transform 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) !important;
+    filter: none !important;
+}
+
+.hades-page .hoja {
+    transform-origin: left !important;
+    transition: transform 1.8s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    filter: none !important;
+}
+
+.cry-baby-page .hoja.girada,
+.k12-page .hoja.girada,
+.portals-page .hoja.girada {
+    transform: rotateY(-180deg) !important;
+}
+
+.hades-page .hoja.girada {
+    transform: rotateY(-180deg) scale(1.01) !important;
+}
+
+.hoja.pasando-adelante,
+.hoja.pasando-atras {
+    animation: none !important;
+}
+
+.hoja.pasando-adelante::before,
+.hoja.pasando-atras::before,
+.hoja::before {
+    animation: none !important;
+}
+
+/* ==========================================================================
+   RESTAURAR FLIP ORIGINAL DE LAS CARAS
+   ========================================================================== */
+.cry-baby-page .hoja.girada .cara.frontal,
+.k12-page .hoja.girada .cara.frontal,
+.portals-page .hoja.girada .cara.frontal,
+.hades-page .hoja.girada .cara.frontal,
+.hoja.girada .cara.frontal {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.cry-baby-page .hoja .cara.frontal,
+.k12-page .hoja .cara.frontal,
+.portals-page .hoja .cara.frontal,
+.hades-page .hoja .cara.frontal,
+.hoja .cara.frontal {
+    transform: rotateY(0deg) !important;
+}
+
+.cry-baby-page .hoja .cara.trasera,
+.k12-page .hoja .cara.trasera,
+.portals-page .hoja .cara.trasera,
+.hades-page .hoja .cara.trasera,
+.hoja .cara.trasera {
+    transform: rotateY(180deg) !important;
+}
+
+.cry-baby-page .hoja .cara,
+.k12-page .hoja .cara,
+.portals-page .hoja .cara,
+.hades-page .hoja .cara,
+.hoja .cara {
+    backface-visibility: hidden !important;
+    -webkit-backface-visibility: hidden !important;
+}
+
+.pagina-izquierda-visual {
+    display: none !important;
+}
+
+/* ==========================================================================
+   MOSTRAR IMAGEN TRASERA SOLO CUANDO EXISTA
+   ========================================================================== */
+.libro-fisico.abierto .pagina-izquierda-visual.activa.con-imagen {
+    display: flex !important;
+}
+
+.libro-fisico.abierto .pagina-izquierda-visual.activa:not(.con-imagen) {
+    display: none !important;
+}
+
+
+
+
+/* === BLOQUE SUPERIOR DE USUARIO UNIFICADO === */
+.contenedor-derecha {
+    display: flex !important;
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    gap: 0.85rem !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn { order: 1 !important; }
+.contenedor-derecha .seccion-usuario { order: 2 !important; }
+.contenedor-derecha .contenedor-ayuda-global,
+.contenedor-derecha .info { order: 3 !important; }
+
+.contenedor-derecha > .perfil-editor-btn,
+.contenedor-derecha .seccion-usuario,
+.contenedor-derecha .contenedor-ayuda-global,
+.contenedor-derecha .info {
+    width: 7rem !important;
+    min-width: 7rem !important;
+    max-width: 7rem !important;
+    min-height: 6.15rem !important;
+    display: grid !important;
+    grid-template-rows: 3.45rem 1.8rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    right: auto !important;
+    top: auto !important;
+}
+
+.contenedor-derecha .contenedor-perfil {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: grid !important;
+    grid-template-rows: 3.45rem 1.8rem !important;
+    justify-items: center !important;
+    align-items: center !important;
+    gap: 0.35rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn .perfil-editor-avatar,
+.contenedor-derecha .seccion-usuario .icono-pixel,
+.contenedor-derecha .info .icono-pixel,
+.contenedor-derecha .boton-ayuda-global,
+.contenedor-derecha .boton-ayuda-global img.icono-pixel {
+    width: 3.05rem !important;
+    height: 3.05rem !important;
+    max-width: 3.05rem !important;
+    max-height: 3.05rem !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    object-fit: contain !important;
+    align-self: center !important;
+    justify-self: center !important;
+}
+
+.contenedor-derecha .seccion-usuario .icono-pixel {
+    transform: translateY(0.35rem) !important;
+}
+
+.contenedor-derecha .boton-ayuda-global {
+    display: block !important;
+    overflow: visible !important;
+    animation: none !important;
+}
+
+.contenedor-derecha > .perfil-editor-btn span,
+.contenedor-derecha .btn-logout,
+.contenedor-derecha .texto-ayuda-subtitulado,
+.contenedor-derecha .btn-info-texto {
+    width: 6.15rem !important;
+    min-width: 6.15rem !important;
+    max-width: 6.15rem !important;
+    min-height: 1.75rem !important;
+    margin: 0 !important;
+    padding: 0.35rem 0.25rem !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: #0b0204 !important;
+    color: #66dbff !important;
+    border: 0.125rem solid #ff7fa7 !important;
+    border-radius: 0 !important;
+    box-shadow: 0.25rem 0.25rem 0 #1a0005, 0.38rem 0.38rem 0 #b3002d !important;
+    font-family: 'Press Start 2P', 'Courier New', monospace !important;
+    font-size: 0.46rem !important;
+    line-height: 1.45 !important;
+    text-align: center !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    white-space: normal !important;
+    overflow: hidden !important;
+}
+/* === FIN BLOQUE SUPERIOR DE USUARIO UNIFICADO === */
