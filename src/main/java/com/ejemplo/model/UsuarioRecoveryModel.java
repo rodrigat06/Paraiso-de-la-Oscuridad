@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 public class UsuarioRecoveryModel {
 
     public String obtenerNombrePorEmail(String email) throws Exception {
+        SchemaModel.asegurarSchema();
         String cleanEmail = normalizarEmail(email);
         if (cleanEmail.isBlank()) {
             return null;
@@ -29,6 +30,7 @@ public class UsuarioRecoveryModel {
     }
 
     public boolean cambiarPassword(String email, String password) throws Exception {
+        SchemaModel.asegurarSchema();
         String cleanEmail = normalizarEmail(email);
         String cleanPassword = password == null ? "" : password.trim();
 

@@ -26,11 +26,7 @@
     let emailValidado = "";
 
     const authUrl = (path) => {
-        const { origin } = window.location;
-        const base = origin.includes("localhost:8080") || origin.includes("127.0.0.1:8080")
-            ? origin
-            : "http://localhost:8080";
-        return `${base}${path}`;
+        return `${window.location.origin}${path}`;
     };
 
     const pintarCuentaEncontrada = (email) => {

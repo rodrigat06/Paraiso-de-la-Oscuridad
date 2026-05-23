@@ -42,7 +42,15 @@ public class AuthLoginController extends HttpServlet {
             sb.append(line);
         }
 
-        JsonObject obj = Json.createReader(new StringReader(sb.toString())).readObject();
+        JsonObject obj;
+        try {
+            obj = Json.createReader(new StringReader(sb.toString())).readObject();
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.setContentType("application/json; charset=UTF-8");
+            response.getWriter().print("{\"ok\": false, \"mensaje\": \"Solicitud no valida\"}");
+            return;
+        }
         String email = obj.getString("email");
         String password = obj.getString("password");
 
@@ -51,23 +59,29 @@ public class AuthLoginController extends HttpServlet {
         response.setContentType("application/json");
         PrintWriter out = response.getWriter();
 
-        if (model.estaBloqueado(email)) {
-            out.print("{\"ok\": false, \"mensaje\": \"Cuenta bloqueada. Contacta con el administrador\"}");
-            return;
-        }
+        try {
+            if (model.estaBloqueado(email)) {
+                out.print("{\"ok\": false, \"mensaje\": \"Cuenta bloqueada. Contacta con el administrador\"}");
+                return;
+            }
 
-        int idUsuario = model.validar(email, password);
+            int idUsuario = model.validar(email, password);
 
-        if (idUsuario != -1) {
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("idUsuario", idUsuario);
+            if (idUsuario != -1) {
+                HttpSession sesion = request.getSession();
+                sesion.setAttribute("idUsuario", idUsuario);
 
-            String rol = model.obtenerRolPorEmail(email);
-            sesion.setAttribute("rol", rol);
+                String rol = model.obtenerRolPorEmail(email);
+                sesion.setAttribute("rol", rol);
 
-            out.print("{\"ok\": true, \"rol\": \"" + rol + "\"}");
-        } else {
-            out.print("{\"ok\": false, \"mensaje\": \"Credenciales incorrectas\"}");
+                out.print("{\"ok\": true, \"rol\": \"" + rol + "\"}");
+            } else {
+                out.print("{\"ok\": false, \"mensaje\": \"Credenciales incorrectas\"}");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            out.print("{\"ok\": false, \"mensaje\": \"No se pudo conectar con MySQL\"}");
         }
     }
 }

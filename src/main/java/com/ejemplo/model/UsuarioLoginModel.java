@@ -6,26 +6,23 @@ import java.sql.ResultSet;
 
 public class UsuarioLoginModel {
 
-    public int validar(String email, String password) {
-        try {
-            Connection con = ConexionBD.getConnection();
+    public int validar(String email, String password) throws Exception {
+        SchemaModel.asegurarSchema();
 
-            PreparedStatement ps = con.prepareStatement(
+        try (Connection con = ConexionBD.getConnection();
+             PreparedStatement ps = con.prepareStatement(
                 "SELECT id FROM usuarios WHERE email = ? AND password = ?"
-            );
+             )) {
 
             ps.setString(1, email);
             ps.setString(2, password);
 
-            ResultSet rs = ps.executeQuery();
-
-            if (rs.next()) {
-                return rs.getInt("id");
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt("id");
+                }
             }
 
-            return -1;
-
-        } catch (Exception e) {
             return -1;
         }
     }
@@ -43,18 +40,20 @@ public class UsuarioLoginModel {
         String rol = "USER";
 
         try {
-            Connection con = ConexionBD.getConnection();
-
-            PreparedStatement ps = con.prepareStatement(
+            SchemaModel.asegurarSchema();
+            try (Connection con = ConexionBD.getConnection();
+                 PreparedStatement ps = con.prepareStatement(
                 "SELECT rol FROM usuarios WHERE email = ?"
-            );
+                 )) {
 
-            ps.setString(1, email);
+                ps.setString(1, email);
 
-            ResultSet rs = ps.executeQuery();
+                try (ResultSet rs = ps.executeQuery()) {
+                    if (rs.next()) {
+                        rol = rs.getString("rol");
+                    }
+                }
 
-            if (rs.next()) {
-                rol = rs.getString("rol");
             }
 
         } catch (Exception e) {

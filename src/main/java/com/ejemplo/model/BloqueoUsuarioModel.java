@@ -98,23 +98,7 @@ public class BloqueoUsuarioModel {
     }
 
     private static void asegurarSchema(Connection con) throws Exception {
-        try (PreparedStatement ps = con.prepareStatement(
-                "CREATE TABLE IF NOT EXISTS usuarios_bloqueados (" +
-                "id INT AUTO_INCREMENT PRIMARY KEY, " +
-                "email VARCHAR(100) UNIQUE NOT NULL, " +
-                "motivo VARCHAR(255), " +
-                "creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP)")) {
-            ps.executeUpdate();
-        }
-
-        try (PreparedStatement ps = con.prepareStatement(
-                "ALTER TABLE usuarios ADD COLUMN bloqueado BOOLEAN DEFAULT FALSE")) {
-            ps.executeUpdate();
-        } catch (SQLSyntaxErrorException e) {
-            if (!e.getMessage().toLowerCase().contains("duplicate column")) {
-                throw e;
-            }
-        }
+        SchemaModel.asegurarSchema(con);
     }
 
     private static void actualizarUsuario(Connection con, String email, boolean bloqueado) throws Exception {

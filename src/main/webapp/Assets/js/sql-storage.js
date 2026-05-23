@@ -43,9 +43,8 @@
 
     function apiBase() {
         const path = window.location.pathname;
-        const isTomcat = window.location.origin.includes("localhost:8080") || window.location.origin.includes("127.0.0.1:8080");
-        const origin = isTomcat ? window.location.origin : "http://localhost:8080";
-        const context = isTomcat && path.includes("/buscador-contactos/") ? "/buscador-contactos" : "";
+        const origin = window.location.origin;
+        const context = path.includes("/buscador-contactos/") ? "/buscador-contactos" : "";
         return `${origin}${context}/api/state`;
     }
 

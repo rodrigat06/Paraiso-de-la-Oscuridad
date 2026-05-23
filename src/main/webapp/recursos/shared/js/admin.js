@@ -11,7 +11,7 @@ const AUTH_STORAGE_KEY = "sportbook-authenticated";
 
 const ROLE_STORAGE_KEY = "sportbook-user-role";
 
-const API_BASE = window.location.origin.includes("localhost:8080") || window.location.origin.includes("127.0.0.1:8080") ? window.location.origin : "http://localhost:8080";
+const API_BASE = window.location.origin;
 
 
 const elements = {

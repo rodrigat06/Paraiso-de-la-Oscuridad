@@ -47,18 +47,7 @@ public class MediaModel {
     }
 
     private void asegurarTabla() throws Exception {
-        String sql = "CREATE TABLE IF NOT EXISTS app_media ("
-                + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                + "nombre VARCHAR(255) NOT NULL,"
-                + "content_type VARCHAR(120) NOT NULL,"
-                + "datos LONGBLOB NOT NULL,"
-                + "creado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP"
-                + ")";
-
-        try (Connection con = ConexionBD.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.executeUpdate();
-        }
+        SchemaModel.asegurarSchema();
     }
 
     public record Archivo(String nombre, String contentType, byte[] datos) {}

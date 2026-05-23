@@ -65,18 +65,6 @@ public class AppStateModel {
     }
 
     private void asegurarTabla() throws Exception {
-        String sql = "CREATE TABLE IF NOT EXISTS app_estado ("
-                + "id INT AUTO_INCREMENT PRIMARY KEY,"
-                + "clave VARCHAR(120) NOT NULL,"
-                + "usuario_email VARCHAR(100) NOT NULL DEFAULT '',"
-                + "valor LONGTEXT NOT NULL,"
-                + "actualizado_en TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,"
-                + "UNIQUE KEY uq_app_estado (clave, usuario_email)"
-                + ")";
-
-        try (Connection con = ConexionBD.getConnection();
-             PreparedStatement ps = con.prepareStatement(sql)) {
-            ps.executeUpdate();
-        }
+        SchemaModel.asegurarSchema();
     }
 }

@@ -34,9 +34,7 @@
         if (error) error.textContent = "";
 
         try {
-            const loginUrl = window.location.origin.includes("localhost:8080") || window.location.origin.includes("127.0.0.1:8080")
-                ? `${window.location.origin}/auth/login`
-                : "http://localhost:8080/auth/login";
+            const loginUrl = `${window.location.origin}/auth/login`;
 
             const res = await fetch(loginUrl, {
                 method: "POST",

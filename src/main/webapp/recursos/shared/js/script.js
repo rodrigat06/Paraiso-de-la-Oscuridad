@@ -15,7 +15,7 @@ const USER_PHONE_STORAGE_KEY = "sportbook-user-phone";
 
 const LEGACY_KEYS = ["sportbook-reservas-v1", "sportbook-reservas-empty-v1"];
 
-const PUBLIC_API = window.location.origin.includes("localhost:8080") || window.location.origin.includes("127.0.0.1:8080") ? `${window.location.origin}/api` : "http://localhost:8080/api";
+const PUBLIC_API = `${window.location.origin}/api`;
 
 
 const activities = {

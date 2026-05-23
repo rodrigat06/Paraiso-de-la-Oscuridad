@@ -39,11 +39,7 @@
     }
 
     const urlRegistro = () => {
-        const { origin } = window.location;
-        if (origin.includes("localhost:8080") || origin.includes("127.0.0.1:8080")) {
-            return `${origin}/auth/register`;
-        }
-        return "http://localhost:8080/auth/register";
+        return `${window.location.origin}/auth/register`;
     };
 
     formulario.addEventListener("submit", (event) => {

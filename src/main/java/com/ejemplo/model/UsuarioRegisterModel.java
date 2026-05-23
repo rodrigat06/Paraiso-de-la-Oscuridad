@@ -7,6 +7,7 @@ public class UsuarioRegisterModel {
 
     public boolean registrar(String nombre, String apellido, String email, String password) {
         try (Connection con = ConexionBD.getConnection()) {
+            SchemaModel.asegurarSchema(con);
 
             if (BloqueoUsuarioModel.estaBloqueado(email)) {
                 return false;

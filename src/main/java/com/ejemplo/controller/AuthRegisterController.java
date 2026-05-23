@@ -40,7 +40,15 @@ public class AuthRegisterController extends HttpServlet {
             sb.append(line);
         }
 
-        JsonObject obj = Json.createReader(new StringReader(sb.toString())).readObject();
+        JsonObject obj;
+        try {
+            obj = Json.createReader(new StringReader(sb.toString())).readObject();
+        } catch (Exception e) {
+            response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+            response.setContentType("application/json; charset=UTF-8");
+            response.getWriter().print("{\"ok\": false, \"mensaje\": \"Solicitud no valida\"}");
+            return;
+        }
         String nombre = obj.getString("nombre");
         String apellido = obj.getString("apellidos");
         String email = obj.getString("email");
