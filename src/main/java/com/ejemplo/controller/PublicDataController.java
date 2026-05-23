@@ -5,7 +5,6 @@ import com.ejemplo.model.AppStateModel;
 import com.ejemplo.model.MediaModel;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import jakarta.servlet.MultipartConfigElement;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

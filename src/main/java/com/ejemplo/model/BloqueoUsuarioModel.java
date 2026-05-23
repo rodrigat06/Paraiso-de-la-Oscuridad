@@ -3,7 +3,6 @@ package com.ejemplo.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
