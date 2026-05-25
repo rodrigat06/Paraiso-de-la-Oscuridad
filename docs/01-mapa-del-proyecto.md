@@ -86,7 +86,9 @@ src/main/webapp/
 | `Melanie Martinez/` | `pages/artists/melanie/` |
 | `significados-canciones/` | `pages/meanings/` |
 
-Nota: los significados ya no viven como 63 HTML sueltos. Ahora usan una plantilla unica en `WEB-INF/templates/significado.html` y datos en `Assets/data/significados.json`.
+Nota: los significados ya no viven como 63 HTML sueltos. Ahora usan una plantilla unica en `Jazmin Bean/significado.html` y datos en `Jazmin Bean/data/significados.json`.
+
+Las carpetas de artistas son autosuficientes: lo especifico de Jazmin queda en `Jazmin Bean/` y lo especifico de Melanie queda en `Melanie Martinez/`.
 
 ## Regla para mover archivos
 

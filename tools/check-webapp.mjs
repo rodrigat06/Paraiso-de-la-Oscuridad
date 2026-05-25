@@ -50,7 +50,7 @@ function startServer() {
 
     let file = path.normalize(path.join(root, pathname));
     if (pathname.startsWith("/significados-canciones/")) {
-      file = path.join(root, "WEB-INF/templates/significado.html");
+      file = path.join(root, "Jazmin Bean/significado.html");
     }
     if (!file.startsWith(root)) {
       response.writeHead(403);

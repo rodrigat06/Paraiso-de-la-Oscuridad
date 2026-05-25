@@ -98,17 +98,17 @@
     margin: 0;
     padding-left: 1.1rem;
 }
-body.Melanie Martinez-seccion .seccion-extra__titulo,
-body.Melanie Martinez-seccion .disco-card,
-body.Melanie Martinez-seccion .significado-card,
-body.Melanie Martinez-seccion .bio-card {
+body.jazmin-seccion .seccion-extra__titulo,
+body.jazmin-seccion .disco-card,
+body.jazmin-seccion .significado-card,
+body.jazmin-seccion .bio-card {
     border-color: #7dffcb;
     box-shadow: 7px 7px 0 #070014, 10px 10px 0 rgba(255, 72, 191, 0.45);
 }
-body.Melanie Martinez-seccion .seccion-extra__titulo,
-body.Melanie Martinez-seccion .disco-card h3,
-body.Melanie Martinez-seccion .significado-card h3,
-body.Melanie Martinez-seccion .bio-card h3 { color: #7dffcb; }
+body.jazmin-seccion .seccion-extra__titulo,
+body.jazmin-seccion .disco-card h3,
+body.jazmin-seccion .significado-card h3,
+body.jazmin-seccion .bio-card h3 { color: #7dffcb; }
 body.jazmin-seccion .seccion-extra__titulo,
 body.jazmin-seccion .disco-card,
 body.jazmin-seccion .significado-card,
@@ -372,7 +372,7 @@ body.jazmin-seccion .bio-card h3 { color: #f5ff7e; }
     background: #E68E9E;
     color: white;
 }
-body.Melanie Martinez-seccion .grid-discos.interactiva .disco-card.interactivo,
+body.jazmin-seccion .grid-discos.interactiva .disco-card.interactivo,
 body.jazmin-seccion .grid-discos.interactiva .disco-card.interactivo {
     background-color: #FFB6C1;
     border-color: #ffffff;
@@ -401,32 +401,32 @@ html {
     scroll-behavior: smooth;
 }
 body.melanie-seccion,
-body.Melanie Martinez-seccion,
+body.jazmin-seccion,
 body.jazmin-seccion {
     overflow-x: hidden !important;
     overflow-y: auto !important;
     min-height: 100vh;
 }
 body.melanie-seccion::-webkit-scrollbar,
-body.Melanie Martinez-seccion::-webkit-scrollbar,
+body.jazmin-seccion::-webkit-scrollbar,
 body.jazmin-seccion::-webkit-scrollbar {
     width: 14px;
 }
 body.melanie-seccion::-webkit-scrollbar-track,
-body.Melanie Martinez-seccion::-webkit-scrollbar-track,
+body.jazmin-seccion::-webkit-scrollbar-track,
 body.jazmin-seccion::-webkit-scrollbar-track {
     background: #0b0204;
     border-left: 2px solid #ff7fa7;
 }
 body.melanie-seccion::-webkit-scrollbar-thumb,
-body.Melanie Martinez-seccion::-webkit-scrollbar-thumb,
+body.jazmin-seccion::-webkit-scrollbar-thumb,
 body.jazmin-seccion::-webkit-scrollbar-thumb {
     background: #ff7fa7;
     border: 3px solid #0b0204;
     box-shadow: inset 0 0 0 2px #66dbff;
 }
-body.Melanie Martinez-seccion::-webkit-scrollbar-track { border-left-color: #7dffcb; }
-body.Melanie Martinez-seccion::-webkit-scrollbar-thumb {
+body.jazmin-seccion::-webkit-scrollbar-track { border-left-color: #7dffcb; }
+body.jazmin-seccion::-webkit-scrollbar-thumb {
     background: #ff48bf;
     box-shadow: inset 0 0 0 2px #7dffcb;
 }
@@ -950,13 +950,13 @@ body.jazmin-seccion::-webkit-scrollbar-thumb {
     text-align: center !important;
 }
 .tema-guia { color: #7a5363 !important; }
-body.Melanie Martinez-seccion .cantante-significado,
-body.Melanie Martinez-seccion .album-significado,
-body.Melanie Martinez-seccion .cancion-detalle { border-color: #7dffcb; }
-body.Melanie Martinez-seccion .cantante-significado > summary { color: #ffffff; text-shadow: 2px 2px 0 #ff48bf; }
-body.Melanie Martinez-seccion .album-significado > summary { color: #ff48bf; }
-body.Melanie Martinez-seccion .letra-panel h4,
-body.Melanie Martinez-seccion .sentido-panel h4 { color: #ff48bf; }
+body.jazmin-seccion .cantante-significado,
+body.jazmin-seccion .album-significado,
+body.jazmin-seccion .cancion-detalle { border-color: #7dffcb; }
+body.jazmin-seccion .cantante-significado > summary { color: #ffffff; text-shadow: 2px 2px 0 #ff48bf; }
+body.jazmin-seccion .album-significado > summary { color: #ff48bf; }
+body.jazmin-seccion .letra-panel h4,
+body.jazmin-seccion .sentido-panel h4 { color: #ff48bf; }
 body.jazmin-seccion .cantante-significado,
 body.jazmin-seccion .album-significado,
 body.jazmin-seccion .cancion-detalle { border-color: #ff9ad5; }
@@ -985,7 +985,7 @@ body.melanie-seccion {
     --sig-text: #ffffff;
 }
 
-body.Melanie Martinez-seccion {
+body.jazmin-seccion {
     --sig-ink: #06140e;
     --sig-panel: #0b0208;
     --sig-page: #effff8;

@@ -31,16 +31,16 @@ Tambien se detectan duplicados claros:
 
 ## Fase 1.5 - Borrar duplicados exactos
 
-Estado: hecha.
+Estado: ajustada.
 
-Se revisaron todos los archivos de `src/main/webapp` por contenido, no por nombre. Si dos archivos eran identicos, se dejo una sola copia y se actualizaron los enlaces.
+Se revisaron todos los archivos de `src/main/webapp` por contenido, no por nombre. Primero se dejo una sola copia de cada archivo repetido.
 
-Resultado:
+Despues se cambio el criterio por claridad: cada artista debe tener su propia carpeta completa. Por eso se restauraron copias propias de Jazmin Bean que antes apuntaban a Melanie Martinez.
 
 ```text
-Duplicados exactos restantes: 0
-Archivos eliminados: 161
-Peso eliminado: 1.17 GB aprox.
+Objetivo actual: carpetas autosuficientes por artista.
+Jazmin Bean: HTML, CSS, JS, datos, imagenes, audios y videos dentro de su carpeta.
+Melanie Martinez: HTML, CSS, JS, imagenes, audios y videos dentro de su carpeta.
 ```
 
 Tambien se comprobo que los 98 HTML cargan en movil sin:
@@ -49,7 +49,7 @@ Tambien se comprobo que los 98 HTML cargan en movil sin:
 - recursos 404;
 - desborde horizontal.
 
-Conteo despues de limpiar:
+Conteo despues de organizar por artista:
 
 ```text
 HTML: 36
@@ -86,10 +86,10 @@ src/main/webapp/significados-canciones/
 Ahora quedan estas piezas:
 
 ```text
-src/main/webapp/WEB-INF/templates/significado.html
-src/main/webapp/Assets/data/significados.json
-src/main/webapp/Assets/js/meaning-page.js
-src/main/java/com/ejemplo/controller/MeaningPageController.java
+src/main/webapp/Jazmin Bean/significado.html
+src/main/webapp/Jazmin Bean/data/significados.json
+src/main/webapp/Jazmin Bean/js/meaning-page.js
+src/main/java/com/ejemplo/controller/JazminMeaningController.java
 ```
 
 Que significa esto:
@@ -97,7 +97,7 @@ Que significa esto:
 - `significados.json` guarda los datos de cada cancion.
 - `meaning-page.js` pinta esos datos en pantalla.
 - `significado.html` es la unica plantilla visual.
-- `MeaningPageController.java` hace que las URLs antiguas de canciones sigan funcionando en Railway.
+- `JazminMeaningController.java` hace que las URLs antiguas de canciones sigan funcionando en Railway.
 
 ## Fase 3 - CSS pequeno
 
