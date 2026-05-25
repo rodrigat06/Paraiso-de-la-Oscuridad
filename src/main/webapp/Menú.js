@@ -1,4 +1,7 @@
-﻿function advertenciaEstetica() {
+﻿// Gestiona el menu principal.
+// Aqui se pintan artistas personalizados, se ocultan artistas oficiales,
+// se abre/cierra cada desplegable y se decide que ve un usuario normal o admin.
+function advertenciaEstetica() {
     document.getElementById("modalPlaga").style.display = "flex";
 }
 

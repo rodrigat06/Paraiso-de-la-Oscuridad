@@ -10,6 +10,16 @@ import java.util.regex.Pattern;
 
 public class ConexionBD {
 
+    /*
+     * Esta clase es el puente entre Java y MySQL.
+     *
+     * En local puede usar valores por defecto.
+     * En Railway lee las variables MYSQLHOST, MYSQLPORT, MYSQLDATABASE,
+     * MYSQLUSER, MYSQLPASSWORD o MYSQL_URL.
+     *
+     * Si la base de datos no conecta, casi siempre el problema esta en
+     * estas variables o en que el servicio MySQL de Railway no esta enlazado.
+     */
     private static final String MYSQL_URL = env("MYSQL_URL", "");
     private static final String DB_HOST = env("DB_HOST", env("MYSQLHOST", "mysql"));
     private static final String DB_PORT = env("DB_PORT", env("MYSQLPORT", "3306"));

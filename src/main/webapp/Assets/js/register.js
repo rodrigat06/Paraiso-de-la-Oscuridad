@@ -1,4 +1,8 @@
-﻿document.addEventListener("DOMContentLoaded", () => {
+﻿// Gestiona la pagina de registro.
+// 1. Abre y cierra la guia visual.
+// 2. Valida que las dos contrasenas coincidan.
+// 3. Envia los datos al servidor Java en /auth/register.
+document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const redirect = params.get("redirect");
     const loginLink = document.querySelector(".extra-links a");
