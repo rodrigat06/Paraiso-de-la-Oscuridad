@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ficha de cantante - Paraiso de la Oscuridad</title>
+  <link rel="icon" href="../../inicio/img/logo.png">
+  <link rel="stylesheet" href="../melanie-martinez/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../../index.html">
+      <img src="../../inicio/img/logo.png" alt="">
+      <span data-artist-name>Artista</span>
+    </a>
+    <nav class="nav">
+      <a href="../../explorar/index.html">Explorar</a>
+      <a id="editLink" href="../../administrador/index.html">Editar</a>
+      <a href="../../guia/index.html">Guia</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-artist-genre>Genero</p>
+        <h1 data-artist-title>Artista</h1>
+        <p data-artist-bio>Ficha creada desde el administrador.</p>
+      </div>
+      <img class="portrait" data-artist-cover src="../../inicio/img/logo.png" alt="">
+    </section>
+
+    <section class="panel">
+      <h2>Buscar en esta ficha</h2>
+      <input id="pageSearch" class="search" type="search" placeholder="Buscar album, EP, single o cancion...">
+    </section>
+
+    <section id="albums" class="discography"></section>
+    <section id="eps" class="discography"></section>
+    <section id="singles" class="discography"></section>
+  </main>
+
+  <script src="../artist-store.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

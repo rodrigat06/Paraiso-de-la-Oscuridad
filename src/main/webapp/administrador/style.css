@@ -25,7 +25,7 @@ img { max-width: 100%; image-rendering: pixelated; }
 
 .topbar,
 .page {
-  width: min(920px, calc(100% - 28px));
+  width: min(1120px, calc(100% - 28px));
   margin: 0 auto;
 }
 
@@ -38,7 +38,8 @@ img { max-width: 100%; image-rendering: pixelated; }
 }
 
 .brand,
-.nav {
+.nav,
+.actions {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -50,6 +51,7 @@ img { max-width: 100%; image-rendering: pixelated; }
 h1 { color: var(--pink); }
 
 .nav a,
+.button,
 button {
   border: var(--border);
   padding: 11px 14px;
@@ -61,7 +63,7 @@ button {
 }
 
 .panel,
-.mini-card {
+.release {
   border: var(--border);
   background: rgba(21, 3, 10, .96);
   box-shadow: 6px 6px 0 #21000b;
@@ -72,34 +74,34 @@ button {
 h2 { color: var(--blue); }
 p,
 label,
+input,
 select,
 textarea,
-small { font-size: 12px; }
-p,
 small,
-.muted { color: var(--soft); }
+li { font-size: 12px; }
 
-form,
-.saved-list,
-.mini-card {
+p,
+small { color: var(--soft); }
+
+form {
   display: grid;
   gap: 12px;
 }
 
+input,
 select,
 textarea {
   width: 100%;
   border: var(--border);
-  padding: 14px;
+  padding: 13px;
   background: #050103;
   color: var(--text);
   font: inherit;
 }
 
-button {
-  background: var(--red);
-  color: white;
-  cursor: pointer;
+.release-list {
+  display: grid;
+  gap: 12px;
 }
 
 .message { color: var(--blue); }
@@ -107,5 +109,6 @@ button {
 @media (max-width: 760px) {
   .nav,
   .nav a,
-  button { width: 100%; text-align: center; justify-content: center; }
+  button,
+  .button { width: 100%; text-align: center; justify-content: center; }
 }

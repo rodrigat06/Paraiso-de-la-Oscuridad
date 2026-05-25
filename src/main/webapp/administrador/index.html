@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador - Paraiso de la Oscuridad</title>
+  <link rel="icon" href="../inicio/img/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <img src="../inicio/img/logo.png" alt="">
+      <span>Administrador</span>
+    </a>
+    <nav class="nav">
+      <a href="../explorar/index.html">Explorar</a>
+      <a href="../guia/index.html">Guia</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="panel">
+      <h1>Editar cantante</h1>
+      <p>Guarda cantantes, albumes, EPs, singles y canciones. Puedes usar URLs completas o rutas del proyecto.</p>
+
+      <label for="artistSelect">Cantante</label>
+      <select id="artistSelect"></select>
+
+      <form id="artistForm">
+        <label for="name">Nombre</label>
+        <input id="name" required>
+
+        <label for="slug">Identificador</label>
+        <input id="slug" required>
+
+        <label for="genre">Genero</label>
+        <input id="genre" required>
+
+        <label for="cover">Imagen principal</label>
+        <input id="cover" required>
+
+        <label for="bio">Biografia</label>
+        <textarea id="bio" rows="4" required></textarea>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Añadir lanzamiento</h2>
+      <form id="releaseForm">
+        <label for="releaseType">Tipo</label>
+        <select id="releaseType">
+          <option value="albums">Album</option>
+          <option value="eps">EP</option>
+          <option value="singles">Single</option>
+        </select>
+
+        <label for="releaseTitle">Titulo</label>
+        <input id="releaseTitle">
+
+        <label for="releaseCover">Portada</label>
+        <input id="releaseCover">
+
+        <label for="releaseNote">Nota</label>
+        <input id="releaseNote">
+
+        <button type="button" id="addRelease">Añadir lanzamiento</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Añadir cancion al lanzamiento seleccionado</h2>
+      <form id="trackForm">
+        <label for="releaseTarget">Lanzamiento</label>
+        <select id="releaseTarget"></select>
+
+        <label for="trackTitle">Cancion</label>
+        <input id="trackTitle">
+
+        <label for="trackAudio">Audio</label>
+        <input id="trackAudio">
+
+        <label for="trackCover">Imagen de la cancion</label>
+        <input id="trackCover">
+
+        <button type="button" id="addTrack">Añadir cancion</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Vista editable</h2>
+      <div id="releaseList" class="release-list"></div>
+      <div class="actions">
+        <button id="saveArtist">Guardar cantante</button>
+        <a id="viewArtist" class="button" href="../explorar/index.html">Ver ficha</a>
+      </div>
+      <p id="message" class="message"></p>
+    </section>
+  </main>
+
+  <script src="../artistas/artist-store.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

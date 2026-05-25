@@ -109,6 +109,17 @@ p { color: var(--soft); }
 
 .artist-card[hidden] { display: none; }
 
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button.secondary {
+  background: #220613;
+  color: var(--pink);
+}
+
 .mini-card {
   display: grid;
   gap: 8px;

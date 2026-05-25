@@ -1,32 +1,42 @@
-// Busca dentro de las tarjetas existentes sin recargar la pagina.
+// Pinta todos los cantantes: los base y los creados/editados en administrador.
 const search = document.querySelector("#artistSearch");
-const cards = document.querySelectorAll(".artist-card");
-const savedBox = document.querySelector("#savedArtists");
+const grid = document.querySelector("#artistGrid");
+
+function artistLink(artist) {
+  return artist.page ? `../${artist.page}` : `../artistas/ficha/index.html?artist=${artist.slug}`;
+}
+
+function artistCard(artist) {
+  const releaseText = ["albums", "eps", "singles"]
+    .flatMap((type) => artist.releases[type])
+    .flatMap((release) => [release.title, ...release.tracks.map((track) => track[0])])
+    .join(" ");
+  const text = `${artist.name} ${artist.genre} ${releaseText}`.toLowerCase();
+  return `
+    <article class="artist-card" data-text="${text}">
+      <img src="${window.artistStore.assetUrl(artist.cover, "../")}" alt="${artist.name}">
+      <h2>${artist.name}</h2>
+      <p>${artist.genre}</p>
+      <div class="card-actions">
+        <a class="button" href="${artistLink(artist)}">Abrir ficha</a>
+        <a class="button secondary" href="../administrador/index.html?artist=${artist.slug}">Editar</a>
+      </div>
+    </article>
+  `;
+}
+
+function paintArtists() {
+  grid.innerHTML = window.artistStore.allArtists().map(artistCard).join("");
+  filterCards();
+}
 
 function filterCards() {
   const text = search.value.trim().toLowerCase();
-
-  cards.forEach((card) => {
+  document.querySelectorAll(".artist-card").forEach((card) => {
     const found = card.dataset.text.includes(text);
     card.hidden = text.length > 0 && !found;
   });
 }
 
-function paintSavedArtists() {
-  const saved = JSON.parse(localStorage.getItem("famous-artists") || "[]");
-
-  if (saved.length === 0) {
-    savedBox.innerHTML = "<p class='muted'>Todavia no has añadido ningun cantante famoso.</p>";
-    return;
-  }
-
-  savedBox.innerHTML = saved.map((artist) => `
-    <article class="mini-card">
-      <strong>${artist.name}</strong>
-      <span>${artist.genre}</span>
-    </article>
-  `).join("");
-}
-
 search.addEventListener("input", filterCards);
-paintSavedArtists();
+paintArtists();
