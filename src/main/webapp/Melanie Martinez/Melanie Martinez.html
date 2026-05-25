@@ -15,7 +15,7 @@
         <span>Melanie Martinez</span>
       </a>
       <nav class="nav">
-        <a class="btn" href="../Menú.html">Explorar</a>
+        <a class="btn" href="../Men%C3%BA.html">Explorar</a>
         <a class="btn" href="../Jazmin%20Bean/Jazmin%20Bean.html">Jazmin</a>
       </nav>
     </header>
@@ -23,7 +23,7 @@
     <section class="hero">
       <div class="hero-copy">
         <h1>Melanie Martinez</h1>
-        <p class="muted">La parte de Melanie queda como una ficha visual sencilla: eras, canciones clave y descripcion corta.</p>
+        <p class="muted">Ficha sencilla con eras, portadas, canciones escuchables y visual de vinilo sin animaciones pesadas.</p>
         <ul class="chips">
           <li class="chip">Cry Baby</li>
           <li class="chip">K-12</li>
@@ -37,20 +37,92 @@
       <article class="panel">
         <h2>Canciones clave</h2>
         <input class="search" data-filter="#melanie-list" placeholder="Filtrar canciones...">
-        <ul id="melanie-list" class="list">
-          <li data-item><span>Cry Baby</span></li>
-          <li data-item><span>Dollhouse</span></li>
-          <li data-item><span>Soap</span></li>
-          <li data-item><span>Mad Hatter</span></li>
-          <li data-item><span>Death</span></li>
-          <li data-item><span>Void</span></li>
-        </ul>
+
+        <div id="melanie-list" class="music-list">
+          <article class="track-card" data-item>
+            <div class="vinyl-box">
+              <img class="track-cover" src="img/cry%20baby.jpg" alt="Portada de Cry Baby">
+              <span class="vinyl" aria-hidden="true"></span>
+            </div>
+            <div class="track-info">
+              <h3>Cry Baby</h3>
+              <audio controls preload="none">
+                <source src="audio/Cry%20Baby.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+
+          <article class="track-card" data-item>
+            <div class="vinyl-box">
+              <img class="track-cover" src="img/dollhouse%20single.jpg" alt="Portada de Dollhouse">
+              <span class="vinyl" aria-hidden="true"></span>
+            </div>
+            <div class="track-info">
+              <h3>Dollhouse</h3>
+              <audio controls preload="none">
+                <source src="audio/DOLLHOUSE.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+
+          <article class="track-card" data-item>
+            <div class="vinyl-box">
+              <img class="track-cover" src="img/soap%20single.jpg" alt="Portada de Soap">
+              <span class="vinyl" aria-hidden="true"></span>
+            </div>
+            <div class="track-info">
+              <h3>Soap</h3>
+              <audio controls preload="none">
+                <source src="audio/Soap.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+
+          <article class="track-card" data-item>
+            <div class="vinyl-box">
+              <img class="track-cover" src="img/Portada%20Melanie.jpg" alt="Portada de Mad Hatter">
+              <span class="vinyl" aria-hidden="true"></span>
+            </div>
+            <div class="track-info">
+              <h3>Mad Hatter</h3>
+              <audio controls preload="none">
+                <source src="audio/Mad%20Hatter.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+
+          <article class="track-card" data-item>
+            <div class="vinyl-box">
+              <img class="track-cover" src="img/death.jpg" alt="Portada de Death">
+              <span class="vinyl" aria-hidden="true"></span>
+            </div>
+            <div class="track-info">
+              <h3>Death</h3>
+              <audio controls preload="none">
+                <source src="audio/death.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+
+          <article class="track-card" data-item>
+            <div class="vinyl-box">
+              <img class="track-cover" src="img/void.jpg" alt="Portada de Void">
+              <span class="vinyl" aria-hidden="true"></span>
+            </div>
+            <div class="track-info">
+              <h3>Void</h3>
+              <audio controls preload="none">
+                <source src="audio/void.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </article>
+        </div>
       </article>
 
       <article class="panel">
         <h2>Resumen</h2>
-        <p>Melanie no necesita una pagina por cada album para verse bien. Con una ficha fuerte queda mas clara y carga mejor.</p>
-        <p class="muted">La estetica sigue siendo de culto pop oscuro, pero sin exceso de estructura.</p>
+        <p>Melanie queda clara sin una pagina por album: imagen principal, canciones esenciales y reproductores faciles de usar.</p>
+        <p class="muted">La estetica sigue siendo pop oscuro, pero con menos peso y menos puntos donde romperse.</p>
       </article>
     </section>
   </main>
