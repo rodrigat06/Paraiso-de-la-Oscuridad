@@ -870,13 +870,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.querySelector("[data-guardar-biografia]").addEventListener("click", () => {
+    document.querySelector("[data-guardar-biografia]")?.addEventListener("click", () => {
         actualizarArtista((artista) => {
             artista.biografia = document.getElementById("biografia-artista").value.trim();
         });
     });
 
-    document.querySelector("[data-guardar-visuales]").addEventListener("click", async () => {
+    document.querySelector("[data-guardar-visuales]")?.addEventListener("click", async () => {
         const artista = obtenerArtistaActual();
         const visuales = artista.visuales || {};
         const secciones = visuales.secciones || {};
@@ -943,7 +943,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    document.querySelector("[data-form-significado]").addEventListener("submit", (event) => {
+    document.querySelector("[data-form-significado]")?.addEventListener("submit", (event) => {
         event.preventDefault();
         const formulario = event.currentTarget;
 
