@@ -1,4 +1,21 @@
 (function () {
+    function loadResponsiveFixes() {
+        if (document.querySelector('link[data-responsive-fixes="paraiso"]')) return;
+
+        const script = document.currentScript;
+        const src = script ? script.getAttribute("src") || "" : "";
+        const base = src.includes("/")
+            ? src.slice(0, src.lastIndexOf("/") + 1)
+            : "";
+        const link = document.createElement("link");
+        link.rel = "stylesheet";
+        link.href = `${base}../css/responsive-fix.css?v=responsive-20260525-1`;
+        link.dataset.responsiveFixes = "paraiso";
+        document.head.appendChild(link);
+    }
+
+    loadResponsiveFixes();
+
     const globalKeys = new Set([
         "wikisingers_artistas_personalizados",
         "wikisingers_artistas_ocultos",
