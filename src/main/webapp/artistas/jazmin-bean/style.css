@@ -238,3 +238,88 @@ audio {
   .release-head img,
   .vinyl-box { margin: 0 auto; }
 }
+
+/* Piel visual cercana al original: exterior rosa, interior negro y albumes como libros/discos. */
+body {
+  background: #e88da0;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #ff4f91;
+  box-shadow: 4px 0 0 #050103, 8px 0 0 #ff9fc0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+body::before { left: max(8px, calc((100vw - 1120px) / 2 - 14px)); }
+body::after { right: max(8px, calc((100vw - 1120px) / 2 - 14px)); transform: scaleX(-1); }
+
+.topbar,
+.page {
+  position: relative;
+  z-index: 2;
+  background: #090105;
+  border-left: 3px double var(--pink);
+  border-right: 3px double var(--pink);
+}
+
+.topbar {
+  padding: 18px;
+}
+
+.page {
+  padding: clamp(16px, 4vw, 34px);
+  min-height: calc(100svh - 96px);
+}
+
+.nav a {
+  border: 3px double var(--pink);
+  box-shadow: 5px 5px 0 #000, 8px 8px 0 var(--red);
+  text-transform: uppercase;
+}
+
+.panel,
+.hero-copy,
+.portrait,
+.release {
+  border: 4px double var(--pink);
+  outline: 2px solid #050103;
+  background: #0b0105;
+  box-shadow: 8px 8px 0 #000, 12px 12px 0 rgba(201, 0, 63, .7);
+}
+
+.portrait,
+.release-head img,
+.vinyl-box img {
+  border: 4px solid #fff5fa;
+  box-shadow: 5px 5px 0 #000;
+}
+
+.release-head {
+  background: #16030b;
+  padding: 10px;
+  border: 2px solid rgba(255, 127, 167, .55);
+}
+
+.track {
+  border: 2px solid rgba(255, 127, 167, .75);
+  background: #17030a;
+  box-shadow: 4px 4px 0 #000;
+}
+
+h1,
+h2,
+h3 {
+  text-shadow: 3px 3px 0 #000, 5px 5px 0 var(--red);
+  text-transform: uppercase;
+}
+
+.release-head strong::before {
+  color: var(--blue);
+}
