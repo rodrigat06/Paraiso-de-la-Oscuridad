@@ -6,13 +6,13 @@ function obtenerBaseWebapp() {
 }
 
 const baseWebapp = obtenerBaseWebapp();
-const imagenDefecto = `${baseWebapp}img index/Wikisingers.png`;
+const imagenDefecto = `${baseWebapp}./recursos/global/img-index/Wikisingers.png`;
 const iconosSecciones = {
     albums: `${baseWebapp}Jazmin Bean/gifs/Albumes.gif`,
     eps: `${baseWebapp}Jazmin Bean/gifs/Singles.gif`,
     singles: `${baseWebapp}Jazmin Bean/gifs/Singles.gif`,
     significados: `${baseWebapp}Jazmin Bean/img/significado.png`,
-    biografia: `${baseWebapp}img index/Informacion.png`
+    biografia: `${baseWebapp}./recursos/global/img-index/Informacion.png`
 };
 const generosBase = ["Alt-Pop", "Indie Pop", "Electropop", "Darkpop", "Bubblegum Pop", "Trap", "Trap Metal", "Hip Hop", "Pop-Rock", "Alt-Rock"];
 const moodsBase = ["Alegre", "Amor", "Concentración", "Energía", "Fiesta", "Rabia", "Relax", "Triste"];

@@ -97,13 +97,13 @@ function crearIdArtista(nombre) {
 function leerArchivoComoDataUrl(archivo) {
     return new Promise((resolve) => {
         if (!archivo) {
-            resolve("img index/Wikisingers.png");
+            resolve("./recursos/global/img-index/Wikisingers.png");
             return;
         }
 
         const lector = new FileReader();
         lector.onload = () => resolve(lector.result);
-        lector.onerror = () => resolve("img index/Wikisingers.png");
+        lector.onerror = () => resolve("./recursos/global/img-index/Wikisingers.png");
         lector.readAsDataURL(archivo);
     });
 }
@@ -143,7 +143,7 @@ function obtenerCancionesPersonalizadas() {
                         titulo: datosCancion.titulo,
                         genero: datosCancion.genero || item.genero || "",
                         mood: datosCancion.mood || item.mood || "",
-                        imagen: item.portada || artista.portada || "img index/Wikisingers.png",
+                        imagen: item.portada || artista.portada || "./recursos/global/img-index/Wikisingers.png",
                         audio: datosCancion.audio || "",
                         url: rutaArtistaPersonalizado(artista.id)
                     });
@@ -160,7 +160,7 @@ function obtenerCancionesPersonalizadas() {
                 titulo: single.titulo,
                 genero: single.genero || "",
                 mood: single.mood || "",
-                imagen: single.portada || artista.portada || "img index/Wikisingers.png",
+                imagen: single.portada || artista.portada || "./recursos/global/img-index/Wikisingers.png",
                 audio: single.audio || "",
                 url: rutaArtistaPersonalizado(artista.id)
             });
@@ -230,7 +230,7 @@ function crearTarjetaCancion(cancion) {
     enlace.className = "cancion-filtrada-imagen";
 
     const imagen = document.createElement("img");
-    imagen.src = cancion.imagen || "img index/Wikisingers.png";
+    imagen.src = cancion.imagen || "./recursos/global/img-index/Wikisingers.png";
     imagen.alt = cancion.titulo || "Cancion";
     enlace.appendChild(imagen);
 
@@ -327,7 +327,7 @@ function pintarArtistasPersonalizados() {
         enlace.href = rutaArtistaPersonalizado(artista.id);
 
         const imagen = document.createElement("img");
-        imagen.src = artista.portada || "img index/Wikisingers.png";
+        imagen.src = artista.portada || "./recursos/global/img-index/Wikisingers.png";
         imagen.alt = artista.nombre;
 
         const nombre = document.createElement("p");

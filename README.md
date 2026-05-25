@@ -38,3 +38,13 @@ src/main/webapp/Assets/css/responsive-fix.css
 ```
 
 Esa capa se carga en todos los HTML para que telefono, tablet y ordenador no rompan el ancho de la pagina.
+
+Tambien se eliminaron duplicados exactos y las paginas repetidas de significados se convirtieron en una sola plantilla con datos JSON.
+
+## Comprobar que no se ha roto la web
+
+Este comando abre todas las paginas HTML en modo movil y avisa si hay errores JavaScript, recursos 404 o desbordes:
+
+```bash
+node tools/check-webapp.mjs
+```

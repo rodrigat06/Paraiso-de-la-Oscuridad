@@ -28,7 +28,7 @@ src/main/webapp/
 ├── administrador/                 Panel de administrador nuevo.
 ├── Jazmin Bean/                   Paginas, imagenes, audios y videos de Jazmin.
 ├── Melanie Martinez/              Paginas, imagenes, audios y videos de Melanie.
-├── significados-canciones/        Paginas individuales de significado de canciones.
+├── significados-canciones/        Ruta servida por Java para significados.
 ├── Assets/                        CSS y JS compartidos.
 ├── recursos/                      Otra carpeta de recursos compartidos.
 └── paginas/                       Intento anterior de ordenar paginas.
@@ -85,6 +85,8 @@ src/main/webapp/
 | `Jazmin Bean/` | `pages/artists/jazmin/` |
 | `Melanie Martinez/` | `pages/artists/melanie/` |
 | `significados-canciones/` | `pages/meanings/` |
+
+Nota: los significados ya no viven como 63 HTML sueltos. Ahora usan una plantilla unica en `WEB-INF/templates/significado.html` y datos en `Assets/data/significados.json`.
 
 ## Regla para mover archivos
 

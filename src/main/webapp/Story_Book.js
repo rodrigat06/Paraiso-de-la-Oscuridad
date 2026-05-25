@@ -74,7 +74,7 @@ function obtenerAudiosPersonalizados() {
                     titulo: single.titulo,
                     genero: single.genero || artista.genero || "",
                     mood: single.mood || artista.mood || "",
-                    imagen: single.portada || artista.portada || "img index/Wikisingers.png",
+                    imagen: single.portada || artista.portada || "./recursos/global/img-index/Wikisingers.png",
                     audio: single.audio,
                     url: "Artista Personalizado.html?id=" + encodeURIComponent(artista.id)
                 }));
@@ -114,7 +114,7 @@ function nuevaLista() {
     const nueva = {
         id: `conjuro-${Date.now()}`,
         nombre: nombre.trim() || `Playlist ${listas.length + 1}`,
-        portada: "img index/gif/ouija.gif",
+        portada: "./recursos/global/img-index/gif/ouija.gif",
         canciones: []
     };
 
@@ -140,7 +140,7 @@ function abrirConjuro(id) {
     if (titulo) titulo.textContent = lista.nombre;
     if (nombreInput) nombreInput.value = lista.nombre;
     configurarModalFavoritos(false);
-    if (preview) preview.src = lista.portada || "img index/gif/ouija.gif";
+    if (preview) preview.src = lista.portada || "./recursos/global/img-index/gif/ouija.gif";
     if (buscador) buscador.value = "";
     if (sugerencias) sugerencias.innerHTML = "";
 
@@ -385,7 +385,7 @@ function renderReproductor(lista) {
         const pista = document.createElement("article");
         pista.className = "pista-playlist";
         pista.innerHTML = `
-            <img src="${cancion.imagen || 'img index/Wikisingers.png'}" alt="">
+            <img src="${cancion.imagen || './recursos/global/img-index/Wikisingers.png'}" alt="">
             <div>
                 <strong>${index + 1}. ${cancion.titulo}</strong>
                 <span>${cancion.artista}</span>

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="Menú.css">
     <link rel="stylesheet" href="./Assets/css/responsive-fix.css?v=responsive-20260525-2">
-    <link rel="icon" type="image/x-icon" href="img index/Wikisingers.png">
+    <link rel="icon" type="image/x-icon" href="./recursos/global/img-index/Wikisingers.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="Assets/js/sql-storage.js?v=responsive-20260525-2"></script>
 </head>
@@ -14,11 +14,11 @@
         
         <div class="navegacion-superior">
             <a href="Menú.html" class="item-navegacion">
-                <img src="img index/Wikisingers.png" alt="Menú" class="icono-pixel">
+                <img src="./recursos/global/img-index/Wikisingers.png" alt="Menú" class="icono-pixel">
                 <span class="texto-menu">Menú</span>
             </a>
             <a href="index.html" class="item-navegacion btn-atras">
-                <img src="img index/volver.png" alt="Atrás" class="icono-pixel">
+                <img src="./recursos/global/img-index/volver.png" alt="Atrás" class="icono-pixel">
                 <span class="texto-menu">Atrás</span>
             </a>
         </div>
@@ -26,34 +26,34 @@
         <div class="contenedor-derecha">
             <div class="seccion-usuario">
                 <div class="contenedor-perfil">
-                    <img src="img index/Perfil.png" alt="Perfil" class="icono-pixel">
+                    <img src="./recursos/global/img-index/Perfil.png" alt="Perfil" class="icono-pixel">
                     <a href="index.html" class="btn-logout">Cerrar Sesión</a>
                 </div>
             </div>
             
             <div class="contenedor-ayuda-global">
                 <a href="#" class="boton-ayuda-global" id="disparador-ayuda">
-                    <img src="img index/Informacion.png" alt="Información" class="icono-pixel">
+                    <img src="./recursos/global/img-index/Informacion.png" alt="Información" class="icono-pixel">
                 </a>
                 <p class="texto-ayuda-subtitulado">Guía</p>
             </div>
         </div>
 
         <div class="contenedor">
-            <img src="img index/Wikisingers.png" class="conejito" alt="deco">
+            <img src="./recursos/global/img-index/Wikisingers.png" class="conejito" alt="deco">
             <div class="buscador">
                 <input type="text" id="mibuscador" placeholder="Buscar entidad...">
                 <button onclick="Ejecutar()">
-                    <img class="busca" src="img index/Buscador.png" alt="icon">
+                    <img class="busca" src="./recursos/global/img-index/Buscador.png" alt="icon">
                 </button>
             </div>
-            <img src="img index/Wikisingers.png" class="conejito2" alt="deco">
+            <img src="./recursos/global/img-index/Wikisingers.png" class="conejito2" alt="deco">
         </div>
 
         <header class="Encabezado">
             <details class="detalles-retro">
                 <summary>
-                    <img class="Generos" src="img index/Generos.png" alt="icon">
+                    <img class="Generos" src="./recursos/global/img-index/Generos.png" alt="icon">
                     <p>Géneros</p>
                 </summary>
                 <div class="lista">
@@ -79,8 +79,8 @@
             <details class="detalles-retro">
                 <summary>
                     <div class="contenedor-mood">
-                        <img class="mood" src="img index/mood.png" alt="emociones">
-                        <img class="mood2" src="img index/mood2.png" alt="emociones-alt">
+                        <img class="mood" src="./recursos/global/img-index/mood.png" alt="emociones">
+                        <img class="mood2" src="./recursos/global/img-index/mood2.png" alt="emociones-alt">
                     </div>
                     <p>Mood</p>
                 </summary>
@@ -100,7 +100,7 @@
             <details class="detalles-retro">
                 <summary>
                     <div class="img-menu">
-                        <img class="igual" src="img index/gif/ouija.gif" alt="ouija">
+                        <img class="igual" src="./recursos/global/img-index/gif/ouija.gif" alt="ouija">
                     </div>
                     <p>Conjuros</p>
                 </summary>
@@ -112,7 +112,7 @@
             <details class="detalles-retro">
                 <summary>
                     <div class="img-menu">
-                        <img class="igual" src="img index/Favoritos.png" alt="favoritos">
+                        <img class="igual" src="./recursos/global/img-index/Favoritos.png" alt="favoritos">
                     </div>
                     <p>Favoritos</p>
                 </summary>
@@ -122,14 +122,14 @@
 
             <button type="button" class="boton-anadir-menu" onclick="abrirModalArtista()">
                 <div class="img-menu">
-                    <img class="igual" src="img index/Wikisingers.png" alt="añadir">
+                    <img class="igual" src="./recursos/global/img-index/Wikisingers.png" alt="añadir">
                 </div>
                 <p>Añadir</p>
             </button>
 
             <a class="boton-admin-menu" href="administrador/admin.html" aria-label="Entrar al panel de administrador" hidden>
                 <div class="img-menu">
-                    <img class="igual" src="img index/gif/Parpadeo.gif" alt="administrador">
+                    <img class="igual" src="./recursos/global/img-index/gif/Parpadeo.gif" alt="administrador">
                 </div>
                 <p>Admin</p>
             </a>
@@ -227,7 +227,7 @@
                 <span class="cerrar-btn" onclick="cerrarConjuro()">&times;</span>
 
                 <div class="portada-contenedor" onclick="document.getElementById('input-archivo').click()" title="Subir imagen desde el PC">
-                    <img id="img-portada-lista" src="img index/gif/ouija.gif" alt="Portada">
+                    <img id="img-portada-lista" src="./recursos/global/img-index/gif/ouija.gif" alt="Portada">
                     <div class="overlay-edit">SUBIR</div>
                     <input type="file" id="input-archivo" style="display:none" accept="image/*" onchange="subirImagenLocal(event)">
                 </div>
@@ -261,35 +261,35 @@
                 <h2>Índice del menú <br>(Elige el ritual que necesitas)</h2>
                 <div class="indice-menu-guia">
                     <article>
-                        <img src="img index/Generos.png" alt="Géneros">
+                        <img src="./recursos/global/img-index/Generos.png" alt="Géneros">
                         <div>
                             <h3>Géneros</h3>
                             <p>Filtra las canciones por estilo musical para encontrar sonidos parecidos.</p>
                         </div>
                     </article>
                     <article>
-                        <img src="img index/mood.png" alt="Mood">
+                        <img src="./recursos/global/img-index/mood.png" alt="Mood">
                         <div>
                             <h3>Mood</h3>
                             <p>Busca canciones según la emoción que quieras escuchar.</p>
                         </div>
                     </article>
                     <article>
-                        <img src="img index/gif/ouija.gif" alt="Conjuros">
+                        <img src="./recursos/global/img-index/gif/ouija.gif" alt="Conjuros">
                         <div>
                             <h3>Conjuros</h3>
                             <p>Crea playlists propias y añade canciones desde el buscador interno.</p>
                         </div>
                     </article>
                     <article>
-                        <img src="img index/Favoritos.png" alt="Favoritos">
+                        <img src="./recursos/global/img-index/Favoritos.png" alt="Favoritos">
                         <div>
                             <h3>Favoritos</h3>
                             <p>Revisa las canciones que has guardado para volver a ellas rápido.</p>
                         </div>
                     </article>
                     <article>
-                        <img src="img index/Wikisingers.png" alt="Añadir">
+                        <img src="./recursos/global/img-index/Wikisingers.png" alt="Añadir">
                         <div>
                             <h3>Añadir</h3>
                             <p>Publica o registra un nuevo artista con sus álbumes, EPs, singles y estética.</p>

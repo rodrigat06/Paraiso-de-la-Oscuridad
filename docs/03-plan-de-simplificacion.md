@@ -10,7 +10,7 @@ La limpieza correcta se hace por fases.
 
 ## Fase 1 - Entender y documentar
 
-Estado: empezada.
+Estado: hecha.
 
 Se crea esta documentacion:
 
@@ -29,6 +29,35 @@ Tambien se detectan duplicados claros:
 | `Assets/js/catalogo-canciones.js` y `recursos/shared/js/catalogo-canciones.js` | Hecho: queda `Assets/js/catalogo-canciones.js` |
 | `Assets/js/register.js` y `recursos/shared/js/register.js` | Hecho: queda `Assets/js/register.js` |
 
+## Fase 1.5 - Borrar duplicados exactos
+
+Estado: hecha.
+
+Se revisaron todos los archivos de `src/main/webapp` por contenido, no por nombre. Si dos archivos eran identicos, se dejo una sola copia y se actualizaron los enlaces.
+
+Resultado:
+
+```text
+Duplicados exactos restantes: 0
+Archivos eliminados: 161
+Peso eliminado: 1.17 GB aprox.
+```
+
+Tambien se comprobo que los 98 HTML cargan en movil sin:
+
+- errores JavaScript;
+- recursos 404;
+- desborde horizontal.
+
+Conteo despues de limpiar:
+
+```text
+HTML: 36
+CSS: 39
+JS: 41
+JSON: 1
+```
+
 ## Fase 2 - Nombres simples
 
 Renombrar carpetas con nombres faciles:
@@ -43,6 +72,32 @@ significados-canciones  -> pages/meanings
 ```
 
 Regla: mantener redirecciones desde las rutas antiguas durante un tiempo.
+
+## Fase 2.5 - Significados en una sola pagina
+
+Estado: hecha.
+
+Antes habia 63 archivos HTML casi iguales dentro de:
+
+```text
+src/main/webapp/significados-canciones/
+```
+
+Ahora quedan estas piezas:
+
+```text
+src/main/webapp/WEB-INF/templates/significado.html
+src/main/webapp/Assets/data/significados.json
+src/main/webapp/Assets/js/meaning-page.js
+src/main/java/com/ejemplo/controller/MeaningPageController.java
+```
+
+Que significa esto:
+
+- `significados.json` guarda los datos de cada cancion.
+- `meaning-page.js` pinta esos datos en pantalla.
+- `significado.html` es la unica plantilla visual.
+- `MeaningPageController.java` hace que las URLs antiguas de canciones sigan funcionando en Railway.
 
 ## Fase 3 - CSS pequeno
 
