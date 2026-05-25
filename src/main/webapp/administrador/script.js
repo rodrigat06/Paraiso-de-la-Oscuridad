@@ -1,4 +1,5 @@
-// Administrador local: guarda cambios en el navegador con localStorage.
+// Administrador simple: crea y edita artistas sin tocar codigo.
+// Los datos se guardan en localStorage y los archivos en IndexedDB.
 const artistSelect = document.querySelector("#artistSelect");
 const releaseTarget = document.querySelector("#releaseTarget");
 const releaseList = document.querySelector("#releaseList");
@@ -12,12 +13,63 @@ function emptyArtist() {
     genre: "",
     cover: "",
     bio: "",
+    page: "",
     releases: { albums: [], eps: [], singles: [] }
   };
 }
 
 function clone(data) {
-  return JSON.parse(JSON.stringify(data));
+  return JSON.parse(JSON.stringify(data || emptyArtist()));
+}
+
+function field(id) {
+  return document.querySelector(`#${id}`);
+}
+
+function releaseLabel(type) {
+  if (type === "albums") return "Album";
+  if (type === "eps") return "EP";
+  return "Single";
+}
+
+function clearFileInput(id) {
+  field(id).value = "";
+}
+
+function mediaPreviewAttributes(ref) {
+  if (!ref) return `src="" hidden`;
+  if (window.artistMedia?.isMediaRef(ref)) return `src="" data-media-src="${ref}"`;
+  return `src="${window.artistStore.assetUrl(ref, "../")}"`;
+}
+
+async function setPreview(img, ref) {
+  img.hidden = !ref;
+  img.removeAttribute("data-media-src");
+
+  if (!ref) {
+    img.src = "";
+    return;
+  }
+
+  if (window.artistMedia?.isMediaRef(ref)) {
+    img.dataset.mediaSrc = ref;
+    await window.artistMedia.hydrate(img.parentElement);
+    return;
+  }
+
+  img.src = window.artistStore.assetUrl(ref, "../");
+}
+
+async function savePickedFile(inputId, targetId, previewId) {
+  const file = field(inputId).files[0];
+  if (!file) return;
+
+  const ref = await window.artistMedia.saveFile(file);
+  field(targetId).value = ref;
+
+  if (previewId) {
+    await setPreview(field(previewId), ref);
+  }
 }
 
 function fillArtistSelect() {
@@ -28,27 +80,24 @@ function fillArtistSelect() {
   `;
 }
 
-function loadArtist(slug) {
+async function loadArtist(slug) {
   currentArtist = slug ? clone(window.artistStore.findArtist(slug)) : emptyArtist();
-  document.querySelector("#name").value = currentArtist.name;
-  document.querySelector("#slug").value = currentArtist.slug;
-  document.querySelector("#genre").value = currentArtist.genre;
-  document.querySelector("#cover").value = currentArtist.cover;
-  document.querySelector("#bio").value = currentArtist.bio;
+  field("name").value = currentArtist.name;
+  field("slug").value = currentArtist.slug;
+  field("genre").value = currentArtist.genre;
+  field("cover").value = currentArtist.cover;
+  field("bio").value = currentArtist.bio;
+  await setPreview(field("coverPreview"), currentArtist.cover);
   renderEditor();
 }
 
 function syncArtistFields() {
-  currentArtist.name = document.querySelector("#name").value.trim();
-  currentArtist.slug = document.querySelector("#slug").value.trim() || window.artistStore.slugify(currentArtist.name);
-  currentArtist.genre = document.querySelector("#genre").value.trim();
-  currentArtist.cover = document.querySelector("#cover").value.trim();
-  currentArtist.bio = document.querySelector("#bio").value.trim();
-  currentArtist.page = currentArtist.page || "";
-}
-
-function releaseLabel(type) {
-  return type === "albums" ? "Album" : type === "eps" ? "EP" : "Single";
+  currentArtist.name = field("name").value.trim();
+  currentArtist.slug = field("slug").value.trim() || window.artistStore.slugify(currentArtist.name);
+  currentArtist.genre = field("genre").value.trim();
+  currentArtist.cover = field("cover").value.trim();
+  currentArtist.bio = field("bio").value.trim();
+  currentArtist.page = "";
 }
 
 function renderEditor() {
@@ -61,13 +110,16 @@ function renderEditor() {
       releaseTarget.innerHTML += `<option value="${key}">${releaseLabel(type)} - ${release.title}</option>`;
       releaseList.innerHTML += `
         <details class="release" open>
-          <summary>${releaseLabel(type)}: ${release.title}</summary>
-          <p>${release.note || ""}</p>
-          <small>${release.cover || "Sin portada"}</small>
+          <summary>
+            <img class="mini-cover" ${mediaPreviewAttributes(release.cover || currentArtist.cover)} alt="">
+            <span>${releaseLabel(type)}: ${release.title}</span>
+          </summary>
+          <p>${release.note || "Sin nota."}</p>
           <button type="button" data-delete-release="${key}">Borrar lanzamiento</button>
           <ul>
             ${release.tracks.map((track, trackIndex) => `
               <li>
+                <img class="song-cover" ${mediaPreviewAttributes(track[2] || release.cover || currentArtist.cover)} alt="">
                 <strong>${track[0]}</strong>
                 <button type="button" data-delete-track="${key}:${trackIndex}">Borrar</button>
               </li>
@@ -77,50 +129,65 @@ function renderEditor() {
       `;
     });
   });
+
+  window.artistMedia?.hydrate(releaseList);
 }
 
-document.querySelector("#name").addEventListener("input", () => {
-  if (!document.querySelector("#slug").value.trim()) {
-    document.querySelector("#slug").value = window.artistStore.slugify(document.querySelector("#name").value);
+field("name").addEventListener("input", () => {
+  if (!field("slug").value.trim()) {
+    field("slug").value = window.artistStore.slugify(field("name").value);
   }
 });
 
 artistSelect.addEventListener("change", () => loadArtist(artistSelect.value));
+field("coverFile").addEventListener("change", () => savePickedFile("coverFile", "cover", "coverPreview"));
+field("releaseCoverFile").addEventListener("change", () => savePickedFile("releaseCoverFile", "releaseCover", "releasePreview"));
+field("trackCoverFile").addEventListener("change", () => savePickedFile("trackCoverFile", "trackCover", "trackPreview"));
+field("trackAudioFile").addEventListener("change", () => savePickedFile("trackAudioFile", "trackAudio"));
 
-document.querySelector("#addRelease").addEventListener("click", () => {
+field("addRelease").addEventListener("click", () => {
   syncArtistFields();
-  const type = document.querySelector("#releaseType").value;
-  const title = document.querySelector("#releaseTitle").value.trim();
+
+  const type = field("releaseType").value;
+  const title = field("releaseTitle").value.trim();
   if (!title) return;
 
   currentArtist.releases[type].push({
     title,
-    cover: document.querySelector("#releaseCover").value.trim() || currentArtist.cover,
-    note: document.querySelector("#releaseNote").value.trim(),
+    cover: field("releaseCover").value.trim() || currentArtist.cover,
+    note: field("releaseNote").value.trim(),
     tracks: []
   });
 
-  document.querySelector("#releaseTitle").value = "";
-  document.querySelector("#releaseCover").value = "";
-  document.querySelector("#releaseNote").value = "";
+  field("releaseTitle").value = "";
+  field("releaseCover").value = "";
+  field("releaseNote").value = "";
+  clearFileInput("releaseCoverFile");
+  setPreview(field("releasePreview"), "");
   renderEditor();
 });
 
-document.querySelector("#addTrack").addEventListener("click", () => {
+field("addTrack").addEventListener("click", () => {
   syncArtistFields();
-  const [type, index] = releaseTarget.value.split(":");
-  const title = document.querySelector("#trackTitle").value.trim();
-  if (!title || !currentArtist.releases[type]?.[index]) return;
+  if (!releaseTarget.value) return;
 
-  currentArtist.releases[type][index].tracks.push([
+  const [type, index] = releaseTarget.value.split(":");
+  const release = currentArtist.releases[type]?.[index];
+  const title = field("trackTitle").value.trim();
+  if (!title || !release) return;
+
+  release.tracks.push([
     title,
-    document.querySelector("#trackAudio").value.trim(),
-    document.querySelector("#trackCover").value.trim() || currentArtist.releases[type][index].cover || currentArtist.cover
+    field("trackAudio").value.trim(),
+    field("trackCover").value.trim() || release.cover || currentArtist.cover
   ]);
 
-  document.querySelector("#trackTitle").value = "";
-  document.querySelector("#trackAudio").value = "";
-  document.querySelector("#trackCover").value = "";
+  field("trackTitle").value = "";
+  field("trackAudio").value = "";
+  field("trackCover").value = "";
+  clearFileInput("trackAudioFile");
+  clearFileInput("trackCoverFile");
+  setPreview(field("trackPreview"), "");
   renderEditor();
 });
 
@@ -141,19 +208,23 @@ releaseList.addEventListener("click", (event) => {
   }
 });
 
-document.querySelector("#saveArtist").addEventListener("click", () => {
+field("saveArtist").addEventListener("click", () => {
   syncArtistFields();
+
+  if (!currentArtist.name || !currentArtist.cover || !currentArtist.bio) {
+    message.textContent = "Faltan nombre, portada o biografia.";
+    return;
+  }
+
   currentArtist.slug = window.artistStore.slugify(currentArtist.slug || currentArtist.name);
-  currentArtist.page = "";
   window.artistStore.saveArtist(currentArtist);
   fillArtistSelect();
   artistSelect.value = currentArtist.slug;
-  document.querySelector("#viewArtist").href = `../artistas/ficha/index.html?artist=${currentArtist.slug}`;
-  message.textContent = "Cantante guardado. Ya aparece en Explorar.";
+  field("viewArtist").href = `../artistas/ficha/index.html?artist=${currentArtist.slug}`;
+  message.textContent = "Cantante guardado. Ya aparece en Explorar y se puede abrir su ficha.";
 });
 
 fillArtistSelect();
-loadArtist(new URLSearchParams(location.search).get("artist") || "");
-if (currentArtist.slug) {
-  artistSelect.value = currentArtist.slug;
-}
+loadArtist(new URLSearchParams(location.search).get("artist") || "").then(() => {
+  if (currentArtist.slug) artistSelect.value = currentArtist.slug;
+});

@@ -20,9 +20,19 @@
   </header>
 
   <main class="page">
+    <section class="panel purpose">
+      <h1>Centro de artistas</h1>
+      <p>Esta pagina sirve para ordenar la web: eliges un cantante, escribes su biografia, separas albumes, EPs y singles, y luego metes canciones con portada y audio.</p>
+      <ol>
+        <li>Explorar muestra todos los cantantes.</li>
+        <li>Cada ficha muestra biografia, discos y canciones.</li>
+        <li>Administrador crea o edita lo que despues se ve en la web.</li>
+      </ol>
+    </section>
+
     <section class="panel">
       <h1>Editar cantante</h1>
-      <p>Guarda cantantes, albumes, EPs, singles y canciones. Puedes usar URLs completas o rutas del proyecto.</p>
+      <p>Usa archivos del ordenador para portadas. Si el cantante ya existe, puedes editarlo y guardarlo otra vez.</p>
 
       <label for="artistSelect">Cantante</label>
       <select id="artistSelect"></select>
@@ -38,7 +48,9 @@
         <input id="genre" required>
 
         <label for="cover">Imagen principal</label>
-        <input id="cover" required>
+        <input id="cover" type="hidden" required>
+        <input id="coverFile" type="file" accept="image/*">
+        <img id="coverPreview" class="preview" alt="Vista previa de la imagen principal">
 
         <label for="bio">Biografia</label>
         <textarea id="bio" rows="4" required></textarea>
@@ -59,7 +71,9 @@
         <input id="releaseTitle">
 
         <label for="releaseCover">Portada</label>
-        <input id="releaseCover">
+        <input id="releaseCover" type="hidden">
+        <input id="releaseCoverFile" type="file" accept="image/*">
+        <img id="releasePreview" class="preview small" alt="Vista previa del lanzamiento">
 
         <label for="releaseNote">Nota</label>
         <input id="releaseNote">
@@ -78,10 +92,13 @@
         <input id="trackTitle">
 
         <label for="trackAudio">Audio</label>
-        <input id="trackAudio">
+        <input id="trackAudio" type="hidden">
+        <input id="trackAudioFile" type="file" accept="audio/*">
 
         <label for="trackCover">Imagen de la cancion</label>
-        <input id="trackCover">
+        <input id="trackCover" type="hidden">
+        <input id="trackCoverFile" type="file" accept="image/*">
+        <img id="trackPreview" class="preview small" alt="Vista previa de la cancion">
 
         <button type="button" id="addTrack">Añadir cancion</button>
       </form>
@@ -99,6 +116,7 @@
   </main>
 
   <script src="../artistas/artist-store.js"></script>
+  <script src="../artistas/media-store.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

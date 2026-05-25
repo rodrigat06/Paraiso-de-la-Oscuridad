@@ -99,6 +99,61 @@ textarea {
   font: inherit;
 }
 
+input[type="file"] {
+  border-style: dashed;
+  cursor: pointer;
+}
+
+ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 20px;
+}
+
+.purpose {
+  border-color: var(--blue);
+}
+
+.preview {
+  width: min(220px, 100%);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: var(--border);
+  background: #050103;
+}
+
+.preview.small {
+  width: 132px;
+}
+
+.mini-cover,
+.song-cover {
+  width: 54px;
+  height: 54px;
+  object-fit: cover;
+  border: 2px solid var(--pink);
+  background: #050103;
+}
+
+.release summary,
+.release li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.release ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.release li button {
+  margin-left: auto;
+}
+
 .release-list {
   display: grid;
   gap: 12px;
@@ -172,6 +227,10 @@ input,
 select,
 textarea {
   box-shadow: inset 4px 4px 0 #000;
+}
+
+input[type="hidden"] {
+  display: none;
 }
 
 h1,

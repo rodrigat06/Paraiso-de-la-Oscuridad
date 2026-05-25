@@ -1,23 +1,49 @@
 // Esta pagina pinta Jazmin desde el mismo sistema que usa el administrador.
 const artist = window.artistStore.findArtist("jazmin-bean");
 const prefix = "../../";
+const imagePlaceholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23090105'/%3E%3Cpath d='M20 20h120v120H20z' fill='none' stroke='%23ff79a7' stroke-width='6'/%3E%3Ctext x='80' y='88' text-anchor='middle' fill='%2364dcff' font-size='14' font-family='monospace'%3EPORTADA%3C/text%3E%3C/svg%3E";
 
 document.querySelector("h1").textContent = artist.name;
 document.querySelector(".eyebrow").textContent = artist.genre;
 document.querySelector(".hero-copy p:last-child").textContent = artist.bio;
-document.querySelector(".portrait").src = window.artistStore.assetUrl(artist.cover, prefix);
+setImage(document.querySelector(".portrait"), artist.cover);
+
+function setImage(img, path) {
+  if (window.artistMedia?.isMediaRef(path)) {
+    img.src = imagePlaceholder;
+    img.dataset.mediaSrc = path;
+    window.artistMedia.hydrate(img.parentElement);
+    return;
+  }
+
+  img.src = window.artistStore.assetUrl(path, prefix);
+}
+
+function imageAttributes(path, alt) {
+  if (window.artistMedia?.isMediaRef(path)) {
+    return `src="${imagePlaceholder}" data-media-src="${path}" alt="${alt}"`;
+  }
+
+  return `src="${window.artistStore.assetUrl(path, prefix)}" alt="${alt}"`;
+}
+
+function audioSource(audio) {
+  if (!audio) return "";
+  if (window.artistMedia?.isMediaRef(audio)) return `<source data-media-src="${audio}">`;
+  return `<source src="${window.artistStore.assetUrl(audio, prefix)}" type="audio/mpeg">`;
+}
 
 function trackTemplate(track) {
   const [title, audio, cover] = track;
   return `
     <article class="track" data-item="${title.toLowerCase()}">
       <div class="vinyl-box">
-        <img src="${window.artistStore.assetUrl(cover, prefix)}" alt="${title}">
+        <img ${imageAttributes(cover || artist.cover, title)}>
         <span class="vinyl" aria-hidden="true"></span>
       </div>
       <div>
         <h3>${title}</h3>
-        ${audio ? `<audio controls preload="none"><source src="${window.artistStore.assetUrl(audio, prefix)}" type="audio/mpeg"></audio>` : "<p>Audio pendiente.</p>"}
+        ${audio ? `<audio controls preload="none">${audioSource(audio)}</audio>` : "<p>Audio pendiente.</p>"}
       </div>
     </article>
   `;
@@ -30,7 +56,7 @@ function renderSection(id, title, releases) {
       ${releases.map((release, index) => `
         <details class="release" ${index === 0 ? "open" : ""} data-item="${release.title.toLowerCase()} ${release.tracks.map((track) => track[0]).join(" ").toLowerCase()}">
           <summary class="release-head">
-            <img src="${window.artistStore.assetUrl(release.cover, prefix)}" alt="${release.title}">
+            <img ${imageAttributes(release.cover || artist.cover, release.title)}>
             <span><strong>${release.title}</strong><small>${release.note}</small></span>
           </summary>
           <div class="music-list">
@@ -40,6 +66,7 @@ function renderSection(id, title, releases) {
       `).join("")}
     </div>
   `;
+  window.artistMedia?.hydrate(document.querySelector(`#${id}`));
 }
 
 renderSection("albums", "Albumes", artist.releases.albums);

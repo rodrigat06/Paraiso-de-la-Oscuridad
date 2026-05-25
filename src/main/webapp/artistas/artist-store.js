@@ -224,6 +224,7 @@ function saveArtist(artist) {
 
 function assetUrl(path, prefix = "") {
   if (!path) return "";
+  if (/^media:/.test(path)) return path;
   if (/^(https?:|data:|blob:)/.test(path)) return path;
   return `${prefix}${path}`;
 }
