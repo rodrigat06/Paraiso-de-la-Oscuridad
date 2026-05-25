@@ -134,6 +134,37 @@ p,
   gap: 14px;
 }
 
+.discography {
+  margin-top: 18px;
+}
+
+.release-list {
+  display: grid;
+  gap: 18px;
+}
+
+.release {
+  border: var(--border);
+  background: rgba(21, 3, 10, .96);
+  box-shadow: 6px 6px 0 #21000b;
+  padding: 16px;
+}
+
+.release-head {
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.release-head img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border: var(--border);
+}
+
 .track {
   display: grid;
   grid-template-columns: 118px minmax(0, 1fr);
@@ -178,9 +209,12 @@ audio {
 @media (max-width: 760px) {
   .hero,
   .two-columns,
+  .release-head,
   .track { grid-template-columns: 1fr; }
   .nav,
   .nav a { width: 100%; text-align: center; justify-content: center; }
+  .release-head,
   .track { text-align: center; }
+  .release-head img,
   .vinyl-box { margin: 0 auto; }
 }

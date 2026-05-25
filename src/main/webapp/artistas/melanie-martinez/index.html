@@ -21,6 +21,7 @@
   </header>
 
   <main class="page">
+    <!-- Presentacion: mantiene el estilo oscuro sin meter animaciones. -->
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Alt pop / conceptual pop</p>
@@ -30,87 +31,23 @@
       <img class="portrait" src="img/portada.jpg" alt="Melanie Martinez">
     </section>
 
+    <!-- Buscador: sirve para canciones, albumes, EPs y singles. -->
     <section class="panel">
-      <h2>Buscar en esta ficha</h2>
-      <input id="pageSearch" class="search" type="search" placeholder="Buscar album, single o dato...">
+      <h2>Buscar en Melanie</h2>
+      <input id="pageSearch" class="search" type="search" placeholder="Buscar album, EP, single o cancion...">
     </section>
 
-    <section class="two-columns">
-      <article class="panel" data-item="biografia melanie martinez cry baby k-12 portals">
-        <h2>Biografia</h2>
-        <p>Melanie Martinez construye sus discos como mundos. Sus canciones suelen mezclar melodias dulces con temas incomodos o personales.</p>
-        <p>La ficha resume sus eras principales sin convertir la web en un laberinto.</p>
-      </article>
-
-      <article class="panel" data-item="albumes cry baby k-12 after school portals">
-        <h2>Albumes</h2>
-        <ul class="clean-list">
-          <li><strong>Cry Baby</strong><span>Era de personaje, casa de muñecas y narrativa infantil oscura.</span></li>
-          <li><strong>K-12</strong><span>Proyecto visual de colegio, control y fantasia pastel.</span></li>
-          <li><strong>Portals</strong><span>Renacimiento visual con criaturas, muerte y transformacion.</span></li>
-        </ul>
-      </article>
-    </section>
-
+    <!-- Biografia: corta, clara y facil de explicar. -->
     <section class="panel">
-      <h2>Singles y canciones</h2>
-      <div class="music-list">
-        <article class="track" data-item="cry baby">
-          <div class="vinyl-box">
-            <img src="img/cry-baby.jpg" alt="Cry Baby">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Cry Baby</h3>
-            <audio controls preload="none"><source src="audio/cry-baby.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="dollhouse">
-          <div class="vinyl-box">
-            <img src="img/dollhouse.jpg" alt="Dollhouse">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Dollhouse</h3>
-            <audio controls preload="none"><source src="audio/dollhouse.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="soap">
-          <div class="vinyl-box">
-            <img src="img/soap.jpg" alt="Soap">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Soap</h3>
-            <audio controls preload="none"><source src="audio/soap.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="mad hatter death void">
-          <div class="vinyl-box">
-            <img src="img/portada.jpg" alt="Mad Hatter">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Mad Hatter</h3>
-            <audio controls preload="none"><source src="audio/mad-hatter.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="death void portals">
-          <div class="vinyl-box">
-            <img src="img/death.jpg" alt="Death">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Death</h3>
-            <audio controls preload="none"><source src="audio/death.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-      </div>
+      <h2>Biografia</h2>
+      <p>Melanie Martinez construye sus discos como mundos visuales. Sus canciones suelen mezclar melodias dulces con temas personales, incomodos o teatrales.</p>
+      <p>La ficha separa albumes, EPs y singles para que se entienda mejor la discografia.</p>
     </section>
+
+    <!-- El JS pinta la discografia para evitar repetir mucho HTML. -->
+    <section id="albums" class="discography"></section>
+    <section id="eps" class="discography"></section>
+    <section id="singles" class="discography"></section>
   </main>
   <script src="script.js"></script>
 </body>

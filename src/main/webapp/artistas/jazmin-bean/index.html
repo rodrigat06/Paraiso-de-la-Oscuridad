@@ -21,87 +21,33 @@
   </header>
 
   <main class="page">
-    <!-- Hero: nombre, foto y resumen corto del artista. -->
+    <!-- Presentacion: solo explica quien es el artista. -->
     <section class="hero">
       <div class="hero-copy">
         <p class="eyebrow">Dark pop / alt pop</p>
         <h1>Jazmin Bean</h1>
-        <p>Artista britanica de sonido teatral, dulce y agresivo a la vez. Su imagen mezcla fantasia, horror suave y pop alternativo.</p>
+        <p>Artista britanica de estetica teatral, dulce y agresiva. Su musica mezcla fantasia oscura, pop alternativo y una imagen muy reconocible.</p>
       </div>
       <img class="portrait" src="img/icono.jpg" alt="Jazmin Bean">
     </section>
 
-    <!-- Buscador: filtra albumes y singles de esta misma ficha. -->
+    <!-- Buscador: filtra albumes, EPs, singles y canciones. -->
     <section class="panel">
-      <h2>Buscar en esta ficha</h2>
-      <input id="pageSearch" class="search" type="search" placeholder="Buscar album, single o dato...">
+      <h2>Buscar en Jazmin</h2>
+      <input id="pageSearch" class="search" type="search" placeholder="Buscar album, EP, single o cancion...">
     </section>
 
-    <section class="two-columns">
-      <article class="panel" data-item="biografia jazmin bean traumatic livelihood">
-        <h2>Biografia</h2>
-        <p>Jazmin Bean empezo llamando la atencion por una identidad visual muy marcada y canciones con contraste entre lo infantil, lo oscuro y lo incomodo.</p>
-        <p>La ficha esta pensada para explicar lo esencial sin abrir diez paginas distintas.</p>
-      </article>
-
-      <article class="panel" data-item="albumes traumatic livelihood worldwide torture">
-        <h2>Albumes</h2>
-        <ul class="clean-list">
-          <li><strong>Traumatic Livelihood</strong><span>Album de etapa mas directa e introspectiva.</span></li>
-          <li><strong>Worldwide Torture</strong><span>Proyecto clave para entender su estetica inicial.</span></li>
-        </ul>
-      </article>
-    </section>
-
-    <!-- Singles: portada, vinilo visual y audio real. -->
+    <!-- Biografia: bloque corto para no llenar la pagina de texto. -->
     <section class="panel">
-      <h2>Singles y canciones</h2>
-      <div class="music-list">
-        <article class="track" data-item="worldwide torture">
-          <div class="vinyl-box">
-            <img src="img/worldwide-torture.jpg" alt="Worldwide Torture">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Worldwide Torture</h3>
-            <audio controls preload="none"><source src="audio/worldwide-torture.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="favourite toy">
-          <div class="vinyl-box">
-            <img src="img/favourite-toy.jpg" alt="Favourite Toy">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Favourite Toy</h3>
-            <audio controls preload="none"><source src="audio/favourite-toy.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="puppy pound">
-          <div class="vinyl-box">
-            <img src="img/puppy-pound.jpg" alt="Puppy Pound">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>Puppy Pound</h3>
-            <audio controls preload="none"><source src="audio/puppy-pound.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-
-        <article class="track" data-item="you know what youve done terrified yandere">
-          <div class="vinyl-box">
-            <img src="img/you-know-what-yove-done.jpg" alt="You Know What You've Done">
-            <span class="vinyl"></span>
-          </div>
-          <div>
-            <h3>You Know What You've Done</h3>
-            <audio controls preload="none"><source src="audio/you-know-what-youve-done.mp3" type="audio/mpeg"></audio>
-          </div>
-        </article>
-      </div>
+      <h2>Biografia</h2>
+      <p>Jazmin Bean empezo destacando por una identidad visual extrema y canciones con contraste entre lo infantil, lo inquietante y lo vulnerable.</p>
+      <p>Esta ficha mantiene lo importante: biografia, albumes, EPs, singles y audios, sin paginas duplicadas ni significados.</p>
     </section>
+
+    <!-- El JS rellena estas tres zonas para que el HTML no sea enorme. -->
+    <section id="albums" class="discography"></section>
+    <section id="eps" class="discography"></section>
+    <section id="singles" class="discography"></section>
   </main>
   <script src="script.js"></script>
 </body>
