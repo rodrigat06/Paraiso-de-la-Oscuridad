@@ -38,10 +38,6 @@ public class UsuarioRecoveryModel {
             return false;
         }
 
-        if (BloqueoUsuarioModel.estaBloqueado(cleanEmail)) {
-            return false;
-        }
-
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(
                      "UPDATE usuarios SET password = ? WHERE LOWER(email) = LOWER(?)")) {

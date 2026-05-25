@@ -1,0 +1,99 @@
+:root {
+  --bg: #080104;
+  --panel: #15030a;
+  --pink: #ff79a7;
+  --red: #c9003f;
+  --blue: #64dcff;
+  --text: #fff5fa;
+  --soft: #d9a4b9;
+  --border: 2px solid var(--pink);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Press Start 2P", "Courier New", monospace;
+  line-height: 1.7;
+}
+
+a { color: var(--blue); text-decoration: none; }
+
+.auth-page {
+  width: min(720px, calc(100% - 28px));
+  min-height: 100svh;
+  margin: 0 auto;
+  padding: 24px 0;
+  display: grid;
+  place-items: center;
+}
+
+.back {
+  justify-self: start;
+  border: var(--border);
+  padding: 10px 12px;
+  background: #0e0207;
+  box-shadow: 4px 4px 0 #26000c;
+}
+
+.auth-box {
+  width: 100%;
+  border: var(--border);
+  background: rgba(21, 3, 10, .96);
+  box-shadow: 6px 6px 0 #21000b;
+  padding: clamp(18px, 5vw, 34px);
+  text-align: center;
+}
+
+.logo {
+  width: 92px;
+  image-rendering: pixelated;
+}
+
+h1 {
+  color: var(--pink);
+  font-size: clamp(22px, 6vw, 38px);
+}
+
+p,
+label,
+input { font-size: 12px; }
+
+p { color: var(--soft); }
+
+form {
+  display: grid;
+  gap: 12px;
+  text-align: left;
+}
+
+input,
+button {
+  width: 100%;
+  border: var(--border);
+  padding: 14px;
+  background: #050103;
+  color: var(--text);
+  font: inherit;
+}
+
+button {
+  background: var(--red);
+  cursor: pointer;
+}
+
+.message {
+  min-height: 24px;
+  color: var(--blue);
+  text-align: center;
+}
+
+.links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+}

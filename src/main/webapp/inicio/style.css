@@ -1,0 +1,131 @@
+/* Estilo de la portada: oscuro, pixelado y responsive. */
+:root {
+  --bg: #080104;
+  --panel: #17030a;
+  --pink: #ff79a7;
+  --red: #c9003f;
+  --blue: #64dcff;
+  --text: #fff5fa;
+  --soft: #d9a4b9;
+  --border: 2px solid var(--pink);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--text);
+  background:
+    linear-gradient(90deg, rgba(255, 121, 167, .12) 1px, transparent 1px),
+    linear-gradient(rgba(255, 121, 167, .10) 1px, transparent 1px),
+    var(--bg);
+  background-size: 28px 28px;
+  font-family: "Press Start 2P", "Courier New", monospace;
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; image-rendering: pixelated; }
+
+.topbar {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 22px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.brand,
+.nav,
+.actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand img { width: 48px; height: 48px; }
+.brand span { color: var(--pink); }
+
+.nav a,
+.button {
+  border: var(--border);
+  padding: 11px 14px;
+  background: #0e0207;
+  color: var(--blue);
+  box-shadow: 4px 4px 0 #26000c;
+  font-size: 11px;
+}
+
+.button.primary {
+  background: var(--red);
+  color: white;
+}
+
+.home {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+  padding: 20px 0 48px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(220px, .8fr);
+  gap: clamp(18px, 4vw, 34px);
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.hero-text,
+.cards article {
+  border: var(--border);
+  background: rgba(12, 1, 6, .94);
+  box-shadow: 6px 6px 0 #21000b;
+  padding: clamp(18px, 4vw, 32px);
+}
+
+.eyebrow,
+h2 { color: var(--blue); }
+
+h1 {
+  margin: 0 0 16px;
+  color: var(--pink);
+  font-size: clamp(24px, 5vw, 48px);
+  line-height: 1.25;
+}
+
+p { font-size: 12px; color: var(--soft); }
+
+.hero-img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: contain;
+  border: var(--border);
+  background: var(--panel);
+  box-shadow: 6px 6px 0 #21000b;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 780px) {
+  .topbar,
+  .hero,
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .nav,
+  .nav a,
+  .button {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}

@@ -4,56 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Paraiso de la Oscuridad</title>
-  <link rel="icon" href="recursos/global/img-index/Wikisingers.png">
-  <link rel="stylesheet" href="Assets/css/simple-core.css">
+  <link rel="icon" href="inicio/img/logo.png">
+  <link rel="stylesheet" href="inicio/style.css">
 </head>
 <body>
-  <main class="page">
-    <header class="topbar">
-      <a class="brand" href="index.html">
-        <img src="recursos/global/img-index/Wikisingers.png" alt="">
-        <span>Paraiso de la Oscuridad</span>
-      </a>
-      <nav class="nav" aria-label="Navegacion principal">
-        <a class="btn" href="Menú.html">Explorar</a>
-        <a class="btn" href="Inicio%20de%20Sesion/Inicio%20de%20Sesion.html">Entrar</a>
-        <a class="btn" href="Registrarse/Registrarse.html">Registro</a>
-      </nav>
-    </header>
+  <!-- Cabecera: enlaces principales de toda la web. -->
+  <header class="topbar">
+    <a class="brand" href="index.html">
+      <img src="inicio/img/logo.png" alt="">
+      <span>Paraiso de la Oscuridad</span>
+    </a>
+    <nav class="nav">
+      <a href="explorar/index.html">Explorar</a>
+      <a href="cantantes/index.html">Añadir cantante</a>
+      <a href="guia/index.html">Guia</a>
+      <a href="login/index.html">Entrar</a>
+    </nav>
+  </header>
 
+  <!-- Hero: primera impresion, parecida a la estetica original pero ligera. -->
+  <main class="home">
     <section class="hero">
-      <div class="hero-copy">
-        <h1>WikiSingers oscuro, simple y bonito.</h1>
-        <p class="muted">Una version limpia: artistas, canciones clave y significados sin libros raros, carruseles eternos ni cien archivos peleandose entre ellos.</p>
-        <div class="nav">
-          <a class="btn primary" href="Jazmin%20Bean/Jazmin%20Bean.html">Jazmin Bean</a>
-          <a class="btn primary" href="Melanie%20Martinez/Melanie%20Martinez.html">Melanie Martinez</a>
+      <div class="hero-text">
+        <p class="eyebrow">Wiki musical oscura</p>
+        <h1>Un archivo bonito, raro y facil de entender.</h1>
+        <p>Biografias, albumes, singles, canciones escuchables y vinilos visuales sin animaciones pesadas ni carpetas infinitas.</p>
+        <div class="actions">
+          <a class="button primary" href="explorar/index.html">Ver artistas</a>
+          <a class="button" href="guia/index.html">Ver guia</a>
         </div>
       </div>
-      <div class="hero-art">
-        <img class="cover" src="Jazmin%20Bean/img/Icono%20jazmin%20bean.jpg" alt="Jazmin Bean">
-      </div>
+      <img class="hero-img" src="inicio/img/logo.png" alt="Logo de la pagina">
     </section>
 
-    <section class="grid" aria-label="Artistas">
-      <article class="artist-card">
-        <img src="Jazmin%20Bean/img/traumatic%20livelihood.jpg" alt="Jazmin Bean">
-        <h2>Jazmin Bean</h2>
-        <p>Dark pop, teatralidad, heridas bonitas y letras afiladas.</p>
-        <a class="btn" href="Jazmin%20Bean/Jazmin%20Bean.html">Ver artista</a>
+    <!-- Resumen: explica que contiene la pagina sin meter texto enorme. -->
+    <section class="cards">
+      <article>
+        <h2>Artistas</h2>
+        <p>Fichas de Melanie Martinez y Jazmin Bean con datos claros.</p>
       </article>
-      <article class="artist-card">
-        <img src="Melanie%20Martinez/img/Portals%20portada.jpg" alt="Melanie Martinez">
-        <h2>Melanie Martinez</h2>
-        <p>Pop alternativo, mundos visuales y canciones con cuento retorcido.</p>
-        <a class="btn" href="Melanie%20Martinez/Melanie%20Martinez.html">Ver artista</a>
+      <article>
+        <h2>Musica</h2>
+        <p>Singles con reproductor, portada y vinilo estatico.</p>
+      </article>
+      <article>
+        <h2>Orden</h2>
+        <p>Cada seccion tiene su propio HTML, CSS, JS e imagenes.</p>
       </article>
     </section>
-
-    <footer class="footer">
-      <p>Paraiso de la Oscuridad · <span data-year></span></p>
-    </footer>
   </main>
-  <script src="Assets/js/simple-core.js"></script>
+  <script src="inicio/script.js"></script>
 </body>
 </html>

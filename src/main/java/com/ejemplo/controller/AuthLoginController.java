@@ -60,21 +60,12 @@ public class AuthLoginController extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            if (model.estaBloqueado(email)) {
-                out.print("{\"ok\": false, \"mensaje\": \"Cuenta bloqueada. Contacta con el administrador\"}");
-                return;
-            }
-
             int idUsuario = model.validar(email, password);
 
             if (idUsuario != -1) {
                 HttpSession sesion = request.getSession();
                 sesion.setAttribute("idUsuario", idUsuario);
-
-                String rol = model.obtenerRolPorEmail(email);
-                sesion.setAttribute("rol", rol);
-
-                out.print("{\"ok\": true, \"rol\": \"" + rol + "\"}");
+                out.print("{\"ok\": true}");
             } else {
                 out.print("{\"ok\": false, \"mensaje\": \"Credenciales incorrectas\"}");
             }

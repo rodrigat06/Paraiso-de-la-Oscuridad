@@ -49,9 +49,6 @@ function startServer() {
     if (pathname === "/") pathname = "/index.html";
 
     let file = path.normalize(path.join(root, pathname));
-    if (pathname.startsWith("/significados-canciones/")) {
-      file = path.join(root, "Jazmin Bean/significado.html");
-    }
     if (!file.startsWith(root)) {
       response.writeHead(403);
       response.end("Forbidden");
@@ -122,48 +119,6 @@ async function main() {
       failures.push({
         page: path.relative(root, file),
         error: error.message.split("\n")[0]
-      });
-    }
-
-    await page.close();
-  }
-
-  const legacyMeaningUrls = [
-    "significados-canciones/jazmin-bean-hades-avoidant.html",
-    "significados-canciones/significado.html?id=jazmin-bean-hades-avoidant"
-  ];
-
-  for (const relativeUrl of legacyMeaningUrls) {
-    const page = await context.newPage();
-    const pageErrors = [];
-    const missingResources = [];
-
-    page.on("pageerror", (error) => pageErrors.push(error.message));
-    page.on("response", (response) => {
-      const url = response.url();
-      if (response.status() >= 400 && !url.includes("/api/") && !url.includes("/auth/")) {
-        missingResources.push(`${response.status()} ${url}`);
-      }
-    });
-
-    await page.goto(`http://127.0.0.1:4192/${relativeUrl}`, {
-      waitUntil: "domcontentloaded",
-      timeout: 30000
-    });
-    await page.waitForTimeout(120);
-
-    const title = await page.locator("[data-meaning-title]").textContent();
-    const overflow = await page.evaluate(
-      () => Math.max(document.documentElement.scrollWidth, document.body.scrollWidth) - innerWidth
-    );
-
-    if (title !== "AVOIDANT" || pageErrors.length || missingResources.length || overflow > 2) {
-      failures.push({
-        page: relativeUrl,
-        title,
-        pageErrors,
-        missingResources: missingResources.slice(0, 8),
-        overflow
       });
     }
 

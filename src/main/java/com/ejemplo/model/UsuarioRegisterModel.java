@@ -9,22 +9,16 @@ public class UsuarioRegisterModel {
         try (Connection con = ConexionBD.getConnection()) {
             SchemaModel.asegurarSchema(con);
 
-            if (BloqueoUsuarioModel.estaBloqueado(email)) {
-                return false;
-            }
-
             try (PreparedStatement ps = con.prepareStatement(
-                "INSERT INTO usuarios (nombre, apellido, email, password) VALUES (?, ?, ?, ?)"
+                    "INSERT INTO usuarios (nombre, apellido, email, password) VALUES (?, ?, ?, ?)"
             )) {
                 ps.setString(1, nombre);
                 ps.setString(2, apellido);
                 ps.setString(3, email);
                 ps.setString(4, password);
 
-                int filas = ps.executeUpdate();
-                return filas > 0;
+                return ps.executeUpdate() > 0;
             }
-
         } catch (Exception e) {
             return false;
         }

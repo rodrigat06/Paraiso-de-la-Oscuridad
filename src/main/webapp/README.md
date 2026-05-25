@@ -1,26 +1,14 @@
-# Webapp simple
+# Paraiso de la Oscuridad
 
-La web ahora funciona como un catalogo pequeno, no como una coleccion de muchas paginas.
+Estructura simple para explicar el proyecto:
 
-## Paginas principales
+- `index.html`: portada principal.
+- `inicio/`: estilos e imagenes de la portada.
+- `explorar/`: buscador de artistas.
+- `artistas/jazmin-bean/`: ficha, imagenes y audios de Jazmin Bean.
+- `artistas/melanie-martinez/`: ficha, imagenes y audios de Melanie Martinez.
+- `cantantes/`: formulario para añadir cantantes famosos desde una lista cerrada.
+- `login/`, `registro/`, `recuperar/`: formularios de cuenta, cada uno con su CSS y JS.
+- `guia/`: explicacion visual de la organizacion.
 
-```text
-index.html                         Inicio.
-Menú.html                          Selector de artistas.
-Jazmin Bean/Jazmin Bean.html       Ficha simple de Jazmin.
-Melanie Martinez/Melanie Martinez.html  Ficha simple de Melanie.
-Jazmin Bean/significado.html       Plantilla unica para significados.
-```
-
-## Archivos comunes
-
-```text
-Assets/css/simple-core.css         Estetica principal de la version simple.
-Assets/js/simple-core.js           Filtro pequeno de canciones y año del footer.
-Jazmin Bean/data/significados.json Datos de significados.
-Jazmin Bean/js/meaning-page.js     Rellena la plantilla de significados.
-```
-
-## Idea
-
-Menos HTML, menos CSS, menos JS, menos imagenes y cero audio/video pesado. La estetica sigue siendo oscura, pixelada y rosa, pero el codigo es mucho mas facil de tocar.
+Se quitaron administrador y significados para que el proyecto sea mas facil de entender.

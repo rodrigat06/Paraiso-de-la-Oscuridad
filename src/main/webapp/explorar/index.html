@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explorar - Paraiso de la Oscuridad</title>
+  <link rel="icon" href="../inicio/img/logo.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../index.html">
+      <img src="../inicio/img/logo.png" alt="">
+      <span>Explorar</span>
+    </a>
+    <nav class="nav">
+      <a href="../index.html">Inicio</a>
+      <a href="../cantantes/index.html">Añadir cantante</a>
+      <a href="../guia/index.html">Guia</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- Buscador principal: filtra tarjetas por nombre, genero o album. -->
+    <section class="panel intro">
+      <h1>Archivo de artistas</h1>
+      <p>Busca por cantante, genero, album o single. Todo ocurre en esta pagina, sin servidor ni cosas raras.</p>
+      <input id="artistSearch" class="search" type="search" placeholder="Buscar artista, album o estilo...">
+    </section>
+
+    <!-- Tarjetas base: son artistas importantes de la estetica de la web. -->
+    <section id="artistGrid" class="artist-grid">
+      <article class="artist-card" data-text="jazmin bean dark pop alternative worldwide torture traumatic livelihood">
+        <img src="../artistas/jazmin-bean/img/icono.jpg" alt="Jazmin Bean">
+        <h2>Jazmin Bean</h2>
+        <p>Dark pop, teatralidad y fantasia incomoda.</p>
+        <a class="button" href="../artistas/jazmin-bean/index.html">Abrir ficha</a>
+      </article>
+
+      <article class="artist-card" data-text="melanie martinez cry baby portals dollhouse alt pop">
+        <img src="../artistas/melanie-martinez/img/portada.jpg" alt="Melanie Martinez">
+        <h2>Melanie Martinez</h2>
+        <p>Pop conceptual, mundos visuales y personajes.</p>
+        <a class="button" href="../artistas/melanie-martinez/index.html">Abrir ficha</a>
+      </article>
+    </section>
+
+    <!-- Aqui aparecen cantantes añadidos desde la pagina de propuestas. -->
+    <section class="panel">
+      <h2>Cantantes añadidos</h2>
+      <div id="savedArtists" class="saved-list"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

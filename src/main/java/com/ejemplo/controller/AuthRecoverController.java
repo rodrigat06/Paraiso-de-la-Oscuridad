@@ -1,6 +1,5 @@
 package com.ejemplo.controller;
 
-import com.ejemplo.model.BloqueoUsuarioModel;
 import com.ejemplo.model.UsuarioRecoveryModel;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
@@ -89,14 +88,6 @@ public class AuthRecoverController extends HttpServlet {
             return;
         }
 
-        if (BloqueoUsuarioModel.estaBloqueado(email)) {
-            writeJson(response, Json.createObjectBuilder()
-                    .add("ok", false)
-                    .add("mensaje", "Cuenta bloqueada. Contacta con el administrador")
-                    .build());
-            return;
-        }
-
         String nombre = model.obtenerNombrePorEmail(email);
         if (nombre == null) {
             writeJson(response, Json.createObjectBuilder()
@@ -133,14 +124,6 @@ public class AuthRecoverController extends HttpServlet {
             writeJson(response, Json.createObjectBuilder()
                     .add("ok", false)
                     .add("mensaje", "La contraseña debe tener al menos 6 caracteres")
-                    .build());
-            return;
-        }
-
-        if (BloqueoUsuarioModel.estaBloqueado(email)) {
-            writeJson(response, Json.createObjectBuilder()
-                    .add("ok", false)
-                    .add("mensaje", "Cuenta bloqueada. Contacta con el administrador")
                     .build());
             return;
         }

@@ -1,0 +1,80 @@
+:root {
+  --bg: #080104;
+  --panel: #15030a;
+  --pink: #ff79a7;
+  --blue: #64dcff;
+  --text: #fff5fa;
+  --soft: #d9a4b9;
+  --border: 2px solid var(--pink);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  color: var(--text);
+  background: var(--bg);
+  font-family: "Press Start 2P", "Courier New", monospace;
+  line-height: 1.7;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; image-rendering: pixelated; }
+
+.topbar,
+.page {
+  width: min(1120px, calc(100% - 28px));
+  margin: 0 auto;
+}
+
+.topbar {
+  padding: 22px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.brand,
+.nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.brand img { width: 48px; height: 48px; }
+.brand span,
+h1 { color: var(--pink); }
+
+.nav a {
+  border: var(--border);
+  padding: 11px 14px;
+  background: #0e0207;
+  color: var(--blue);
+  box-shadow: 4px 4px 0 #26000c;
+  font-size: 11px;
+}
+
+.panel {
+  border: var(--border);
+  background: rgba(21, 3, 10, .96);
+  box-shadow: 6px 6px 0 #21000b;
+  padding: 18px;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+h2 { color: var(--blue); }
+p { color: var(--soft); font-size: 12px; }
+
+@media (max-width: 760px) {
+  .nav,
+  .nav a { width: 100%; text-align: center; justify-content: center; }
+}

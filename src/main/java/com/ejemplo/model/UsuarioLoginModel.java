@@ -11,55 +11,15 @@ public class UsuarioLoginModel {
 
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(
-                "SELECT id FROM usuarios WHERE email = ? AND password = ?"
+                     "SELECT id FROM usuarios WHERE email = ? AND password = ?"
              )) {
 
             ps.setString(1, email);
             ps.setString(2, password);
 
             try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    return rs.getInt("id");
-                }
+                return rs.next() ? rs.getInt("id") : -1;
             }
-
-            return -1;
         }
-    }
-
-    public boolean estaBloqueado(String email) {
-        try {
-            return BloqueoUsuarioModel.estaBloqueado(email);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-    }
-
-    public String obtenerRolPorEmail(String email) {
-        String rol = "USER";
-
-        try {
-            SchemaModel.asegurarSchema();
-            try (Connection con = ConexionBD.getConnection();
-                 PreparedStatement ps = con.prepareStatement(
-                "SELECT rol FROM usuarios WHERE email = ?"
-                 )) {
-
-                ps.setString(1, email);
-
-                try (ResultSet rs = ps.executeQuery()) {
-                    if (rs.next()) {
-                        rol = rs.getString("rol");
-                    }
-                }
-
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return rol;
     }
 }
