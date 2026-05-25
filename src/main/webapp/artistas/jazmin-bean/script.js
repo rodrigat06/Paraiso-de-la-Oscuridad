@@ -1,70 +1,73 @@
-// Datos de la discografia. Cada bloque tiene titulo, portada y canciones.
+// Discografia basada en las paginas originales de Jazmin.
 const discography = {
   albums: [
     {
+      title: "Worldwide Torture",
+      cover: "img/worldwide-torture.jpg",
+      note: "Lanzamiento principal de la primera etapa.",
+      tracks: [
+        ["Worldwide Torture", "audio/worldwide-torture.mp3", "img/worldwide-torture.jpg"],
+        ["War Zone Urchin", "audio/war-zone-urchin.mp3", "img/war-zone.jpg"],
+        ["Yandere", "audio/yandere.mp3", "img/yandere.jpg"],
+        ["Puppy Pound", "audio/puppy-pound.mp3", "img/puppy-pound.jpg"]
+      ]
+    },
+    {
       title: "Traumatic Livelihood",
       cover: "img/traumatic-livelihood.jpg",
-      note: "Album principal de Jazmin Bean.",
+      note: "Album posterior, mas directo y personal.",
       tracks: [
-        ["Favourite Toy", "audio/favourite-toy.mp3"],
-        ["Terrified", "audio/terrified.mp3"],
-        ["You Know What You've Done", "audio/you-know-what-youve-done.mp3"],
-        ["Piggie", "audio/piggie.mp3"],
-        ["Pesticides", "audio/pesticides.mp3"],
-        ["Carnage", "audio/carnage.mp3"],
-        ["Darling", "audio/darling.mp3"],
-        ["War Zone Urchin", "audio/war-zone-urchin.mp3"]
+        ["Favourite Toy", "audio/favourite-toy.mp3", "img/favourite-toy.jpg"],
+        ["Terrified", "audio/terrified.mp3", "img/terrified.jpg"],
+        ["You Know What You've Done", "audio/you-know-what-youve-done.mp3", "img/you-know-what-yove-done.jpg"],
+        ["Pesticides", "audio/pesticides.mp3", "img/pesticides.jpg"],
+        ["Piggie", "audio/piggie.mp3", "img/piggie.jpg"],
+        ["Carnage", "audio/carnage.mp3", "img/carnage.jpg"],
+        ["Darling", "audio/darling.mp3", "img/darling.jpg"]
       ]
     }
   ],
   eps: [
     {
-      title: "Worldwide Torture",
-      cover: "img/worldwide-torture.jpg",
-      note: "EP / etapa inicial de estetica mas agresiva.",
+      title: "Acoustic Church Session",
+      cover: "img/acoustic.jpg",
+      note: "EP/mini seccion original con formato de libro.",
       tracks: [
-        ["Worldwide Torture", "audio/worldwide-torture.mp3"],
-        ["Yandere", "audio/yandere.mp3"],
-        ["Puppy Pound", "audio/puppy-pound.mp3"],
-        ["Monster Truck", "audio/monster-truck.mp3"],
-        ["Super Slaughter", "audio/super-slaughter.mp3"]
+        ["Worldwide Torture", "audio/worldwide-torture.mp3", "img/worldwide-torture.jpg"],
+        ["War Zone Urchin", "audio/war-zone-urchin.mp3", "img/war-zone.jpg"],
+        ["Yandere", "audio/yandere.mp3", "img/yandere.jpg"],
+        ["Puppy Pound", "audio/puppy-pound.mp3", "img/puppy-pound.jpg"]
       ]
     }
   ],
   singles: [
     {
-      title: "Singles y extras",
-      cover: "img/icono.jpg",
-      note: "Canciones sueltas o material extra recuperado del proyecto original.",
+      title: "Singles",
+      cover: "img/singles.jpg",
+      note: "Singles tal como estaban en la pagina original.",
       tracks: [
-        ["R U Looking 4 Me Now", "audio/r-u-looking-4-me-now.mp3"],
-        ["Avoidant", "audio/avoidant.mp3"],
-        ["Batshit Intelligence", "audio/batshit-intelligence.mp3"],
-        ["Chatroom", "audio/chatroom.mp3"],
-        ["Disney Princess", "audio/disney-princess.mp3"],
-        ["Garbage", "audio/garbage.mp3"],
-        ["Grudge", "audio/grudge.mp3"],
-        ["Gutter", "audio/gutter.mp3"],
-        ["Hell's Front Porch", "audio/hells-front-porch.mp3"],
-        ["Is This A Cult", "audio/is-this-a-cult.mp3"],
-        ["Monolith", "audio/monolith.mp3"],
-        ["Monopoly Man", "audio/monopoly-man.mp3"],
-        ["Possession", "audio/possession.mp3"],
-        ["The Last Two People On Earth", "audio/the-last-two-people-on-earth.mp3"],
-        ["The Plague", "audio/the-plague.mp3"],
-        ["The Vatican", "audio/the-vatican.mp3"],
-        ["Uncanny Valley", "audio/uncanny-valley.mp3"],
-        ["Weight Watchers", "audio/weight-watchers.mp3"],
-        ["White Boy With A Gun", "audio/white-boy-with-a-gun.mp3"]
+        ["Worldwide Torture", "audio/worldwide-torture.mp3", "img/worldwide-torture.jpg"],
+        ["War Zone Urchin", "audio/war-zone-urchin.mp3", "img/war-zone.jpg"],
+        ["Pesticides", "audio/pesticides.mp3", "img/pesticides.jpg"],
+        ["Super Slaughter", "audio/super-slaughter.mp3", "img/super-slaughter.jpg"],
+        ["Yandere", "audio/yandere.mp3", "img/yandere.jpg"],
+        ["Monster Truck", "audio/monster-truck.mp3", "img/monster-truck.jpg"],
+        ["R U Looking 4 Me Now", "audio/r-u-looking-4-me-now.mp3", "img/r-u-looking-4-me-now.jpg"],
+        ["Puppy Pound", "audio/puppy-pound.mp3", "img/puppy-pound.jpg"],
+        ["Carnage", "audio/carnage.mp3", "img/carnage.jpg"],
+        ["Piggie", "audio/piggie.mp3", "img/piggie.jpg"],
+        ["Favourite Toy", "audio/favourite-toy.mp3", "img/favourite-toy.jpg"],
+        ["Terrified", "audio/terrified.mp3", "img/terrified.jpg"],
+        ["You Know What You've Done", "audio/you-know-what-youve-done.mp3", "img/you-know-what-yove-done.jpg"],
+        ["It's Not My Fault It's Yours", "audio/its-not-my-fault.mp3", "img/its-not-my-fault.jpg"],
+        ["Darling", "audio/darling.mp3", "img/darling.jpg"]
       ]
     }
   ]
 };
 
-// Crea una tarjeta de cancion con portada, vinilo y audio.
-function trackTemplate(track, cover) {
-  const [title, audio] = track;
-
+function trackTemplate(track) {
+  const [title, audio, cover] = track;
   return `
     <article class="track" data-item="${title.toLowerCase()}">
       <div class="vinyl-box">
@@ -79,26 +82,23 @@ function trackTemplate(track, cover) {
   `;
 }
 
-// Pinta una seccion completa: albumes, EPs o singles.
 function renderSection(id, title, releases) {
-  const box = document.querySelector(`#${id}`);
-
-  box.innerHTML = `
+  document.querySelector(`#${id}`).innerHTML = `
     <h2>${title}</h2>
     <div class="release-list">
-      ${releases.map((release) => `
-        <article class="release" data-item="${release.title.toLowerCase()} ${release.tracks.map((track) => track[0]).join(" ").toLowerCase()}">
-          <header class="release-head">
+      ${releases.map((release, index) => `
+        <details class="release" ${index === 0 ? "open" : ""} data-item="${release.title.toLowerCase()} ${release.tracks.map((track) => track[0]).join(" ").toLowerCase()}">
+          <summary class="release-head">
             <img src="${release.cover}" alt="${release.title}">
-            <div>
-              <h3>${release.title}</h3>
-              <p>${release.note}</p>
-            </div>
-          </header>
+            <span>
+              <strong>${release.title}</strong>
+              <small>${release.note}</small>
+            </span>
+          </summary>
           <div class="music-list">
-            ${release.tracks.map((track) => trackTemplate(track, release.cover)).join("")}
+            ${release.tracks.map(trackTemplate).join("")}
           </div>
-        </article>
+        </details>
       `).join("")}
     </div>
   `;
@@ -106,12 +106,10 @@ function renderSection(id, title, releases) {
 
 renderSection("albums", "Albumes", discography.albums);
 renderSection("eps", "EPs", discography.eps);
-renderSection("singles", "Singles / extras", discography.singles);
+renderSection("singles", "Singles", discography.singles);
 
-// El buscador oculta lanzamientos que no coinciden con lo escrito.
 document.querySelector("#pageSearch").addEventListener("input", (event) => {
   const query = event.target.value.trim().toLowerCase();
-
   document.querySelectorAll(".release").forEach((release) => {
     release.hidden = query.length > 0 && !release.dataset.item.includes(query);
   });
