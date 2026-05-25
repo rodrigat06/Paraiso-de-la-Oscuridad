@@ -1,0 +1,265 @@
+/* Estilo unico de la version simple: oscuro, pixelado, rosa y ligero. */
+:root {
+  --fondo: #080104;
+  --panel: #15030a;
+  --panel-2: #220613;
+  --rosa: #ff7fa7;
+  --rosa-fuerte: #c9003f;
+  --azul: #66dbff;
+  --texto: #fff5fa;
+  --muted: #d9a4b9;
+  --borde: 2px solid var(--rosa);
+  --sombra: 6px 6px 0 #21000b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  overflow-x: hidden;
+  background: var(--fondo);
+}
+
+body {
+  margin: 0;
+  min-height: 100svh;
+  overflow-x: hidden;
+  color: var(--texto);
+  background:
+    linear-gradient(90deg, rgba(255, 127, 167, 0.13) 1px, transparent 1px),
+    linear-gradient(rgba(255, 127, 167, 0.10) 1px, transparent 1px),
+    var(--fondo);
+  background-size: 28px 28px;
+  font-family: "Press Start 2P", "Courier New", monospace;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: pixelated;
+}
+
+.page {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+  padding: clamp(18px, 4vw, 48px);
+}
+
+.topbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--rosa);
+}
+
+.brand img {
+  width: 52px;
+  height: 52px;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.btn,
+button {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border: var(--borde);
+  box-shadow: 4px 4px 0 #26000c;
+  background: #0e0207;
+  color: var(--azul);
+  font: inherit;
+  font-size: 11px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--rosa-fuerte);
+  color: white;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: clamp(18px, 4vw, 34px);
+  align-items: center;
+  margin-bottom: 34px;
+}
+
+.hero-copy,
+.panel,
+.card,
+.artist-card {
+  border: var(--borde);
+  background: rgba(12, 1, 6, 0.92);
+  box-shadow: var(--sombra);
+}
+
+.hero-copy {
+  padding: clamp(20px, 4vw, 34px);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  color: var(--rosa);
+  font-size: clamp(22px, 5vw, 48px);
+  line-height: 1.25;
+}
+
+h2 {
+  color: var(--azul);
+  font-size: clamp(16px, 3vw, 24px);
+}
+
+h3 {
+  color: var(--rosa);
+  font-size: 14px;
+}
+
+p,
+li,
+input {
+  font-size: 12px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.hero-art {
+  display: grid;
+  gap: 14px;
+}
+
+.cover {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: var(--borde);
+  background: var(--panel);
+  box-shadow: var(--sombra);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 18px;
+}
+
+.panel,
+.card,
+.artist-card {
+  padding: 18px;
+}
+
+.artist-card {
+  display: grid;
+  gap: 14px;
+}
+
+.artist-card img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: var(--borde);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 8px 10px;
+  border: 1px solid var(--rosa);
+  background: var(--panel-2);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.search {
+  width: 100%;
+  margin: 0 0 18px;
+  padding: 14px;
+  border: var(--borde);
+  background: #080104;
+  color: var(--texto);
+  font: inherit;
+}
+
+.list {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  list-style: none;
+}
+
+.list a,
+.list span {
+  display: block;
+  padding: 12px;
+  border: 1px solid rgba(255, 127, 167, 0.55);
+  background: rgba(34, 6, 19, 0.75);
+  text-decoration: none;
+}
+
+.footer {
+  margin-top: 40px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 127, 167, 0.45);
+  color: var(--muted);
+  text-align: center;
+}
+
+@media (max-width: 760px) {
+  .page {
+    padding: 14px;
+  }
+
+  .topbar,
+  .hero {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .nav,
+  .btn {
+    width: 100%;
+  }
+}

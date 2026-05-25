@@ -4,50 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Significado - Paraiso de la Oscuridad</title>
-  <link rel="stylesheet" href="../Jazmin Bean/css/artist.css">
-  <link rel="stylesheet" href="../Jazmin Bean/css/melanie-theme.css">
-  <link rel="stylesheet" href="../Jazmin Bean/css/secciones-extra.css?v=significados-unico-1">
-  <link rel="stylesheet" href="../Assets/css/responsive-fix.css?v=perf-symmetry-20260525-1">
-  <link rel="icon" type="image/x-icon" href="../recursos/global/img-index/Wikisingers.png">
-  <script src="../Assets/js/sql-storage.js?v=perf-symmetry-20260525-1"></script>
+  <link rel="icon" href="../recursos/global/img-index/Wikisingers.png">
+  <link rel="stylesheet" href="../Assets/css/simple-core.css">
 </head>
-<body class="jazmin-seccion">
-  <div class="contenedor-maestro significado-detalle-maestro">
-    <div class="navegacion-superior">
-      <a href="../Menú.html" class="item-navegacion">
-        <img src="../recursos/global/img-index/Wikisingers.png" alt="Menu" class="icono-pixel">
-        <span class="texto-menu">Menu</span>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <img src="../recursos/global/img-index/Wikisingers.png" alt="">
+        <span>Significado</span>
       </a>
-      <a href="../Jazmin Bean/significados.html" class="item-navegacion btn-atras">
-        <img src="../recursos/global/img-index/volver.png" alt="Atras" class="icono-pixel">
-        <span class="texto-menu">Atras</span>
-      </a>
-    </div>
+      <nav class="nav">
+        <a class="btn" href="../Jazmin%20Bean/Jazmin%20Bean.html">Jazmin</a>
+        <a class="btn" href="../Menú.html">Explorar</a>
+      </nav>
+    </header>
 
-    <main class="seccion-extra significado-cancion-page">
-      <section class="significado-cancion-hero">
-        <img data-meaning-image src="../Jazmin Bean/img/Icono jazmin bean.jpg" alt="">
-        <p data-meaning-artist>Jazmin Bean</p>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="muted" data-meaning-artist>Jazmin Bean</p>
         <h1 data-meaning-title>Significado</h1>
-        <span data-meaning-album></span>
-      </section>
-
-      <div class="significado-layout">
-        <section class="letra-panel">
-          <h4>Letra</h4>
-          <div data-meaning-letter></div>
-        </section>
-
-        <section class="sentido-panel">
-          <h4>Significado</h4>
-          <div data-meaning-text></div>
-        </section>
+        <p data-meaning-album></p>
       </div>
-    </main>
-  </div>
+      <img class="cover" data-meaning-image src="../Jazmin%20Bean/img/Icono%20jazmin%20bean.jpg" alt="">
+    </section>
 
-  <script src="../Jazmin Bean/js/meaning-page.js?v=meaning-single-1"></script>
-  <script src="../Assets/js/history-back.js"></script>
-  <script src="../Assets/js/site-footer.js?v=footer-1"></script>
+    <section class="grid">
+      <article class="panel">
+        <h2>Letra</h2>
+        <div data-meaning-letter></div>
+      </article>
+      <article class="panel">
+        <h2>Interpretacion</h2>
+        <div data-meaning-text></div>
+      </article>
+    </section>
+  </main>
+  <script src="../Jazmin%20Bean/js/meaning-page.js"></script>
 </body>
 </html>

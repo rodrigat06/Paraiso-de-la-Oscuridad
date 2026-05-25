@@ -1,166 +1,59 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
-    <head>
-        <title>Jazmin Bean - WikiSingers</title>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="css/artist.css">
-    <link rel="stylesheet" href="css/melanie-theme.css">
-        <link rel="icon" type="image/x-icon" href="../recursos/global/img-index/Wikisingers.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/jazmin-theme.css">
-    <link rel="stylesheet" href="../Assets/css/responsive-fix.css?v=perf-symmetry-20260525-1">
-    <script src="../Assets/js/sql-storage.js?v=perf-symmetry-20260525-1"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jazmin Bean - Paraiso de la Oscuridad</title>
+  <link rel="icon" href="../recursos/global/img-index/Wikisingers.png">
+  <link rel="stylesheet" href="../Assets/css/simple-core.css">
 </head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="../index.html">
+        <img src="../recursos/global/img-index/Wikisingers.png" alt="">
+        <span>Jazmin Bean</span>
+      </a>
+      <nav class="nav">
+        <a class="btn" href="../Menú.html">Explorar</a>
+        <a class="btn" href="../Melanie%20Martinez/Melanie%20Martinez.html">Melanie</a>
+      </nav>
+    </header>
 
-    <body>
-        <div class="contenedor-maestro">
-        
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>Jazmin Bean</h1>
+        <p class="muted">Una ficha directa: estetica oscura, canciones importantes y enlaces de significado sin montar una biblioteca infinita.</p>
+        <ul class="chips">
+          <li class="chip">Dark pop</li>
+          <li class="chip">Alt pop</li>
+          <li class="chip">Teatral</li>
+        </ul>
+      </div>
+      <img class="cover" src="img/Icono%20jazmin%20bean.jpg" alt="Jazmin Bean">
+    </section>
 
-<div class="navegacion-superior">
-        <a href="../Menú.html" class="item-navegacion">
-            <img src="../recursos/global/img-index/Wikisingers.png" alt="Menú" class="icono-pixel">
-            <span class="texto-menu">Menú</span>
-        </a>
+    <section class="grid">
+      <article class="panel">
+        <h2>Canciones clave</h2>
+        <input class="search" data-filter="#jazmin-list" placeholder="Filtrar canciones...">
+        <ul id="jazmin-list" class="list">
+          <li data-item><span>Traumatic Livelihood</span></li>
+          <li data-item><span>Worldwide Torture</span></li>
+          <li data-item><a href="../significados-canciones/jazmin-bean-hades-avoidant.html">Avoidant</a></li>
+          <li data-item><span>Favourite Toy</span></li>
+          <li data-item><span>Puppy Pound</span></li>
+          <li data-item><span>You Know What You've Done</span></li>
+        </ul>
+      </article>
 
-        <a href="../Menú.html" class="item-navegacion btn-atras">
-            <img src="../recursos/global/img-index/volver.png" alt="Atrás" class="icono-pixel">
-            <span class="texto-menu">Atrás</span>
-        </a>
-    </div>
-
-    <div class="contenedor-derecha">
-    <div class="info"><img src="../recursos/global/img-index/Informacion.png" alt="Info" class="icono-pixel"><a href="#" class="btn-info-texto">Guia</a></div>
-
-    <div class="seccion-usuario">
-        <div class="contenedor-perfil">
-            <img src="../recursos/global/img-index/Perfil.png" alt="Perfil" class="icono-pixel">
-            <a href="../index.html" class="btn-logout">Cerrar Sesión</a>
-        </div>
-    </div>
-</div>
-
-    <!-- SECCIÓN BUSCADOR CON CONEJITOS -->
-    <div class="contenedor">
-    <img src="img/cordero 1 .png" class="conejito" alt="deco">
-    
-    <div class="buscador">
-        <input type="text" id="mibuscador" placeholder="Buscar el ritual que quieras...">
-        <button onclick="Ejecutar()">
-            <img class="busca" src="../recursos/global/img-index/Buscador.png" alt="icon">
-        </button>
-    </div>
-
-    <img src="img/cordero 2.png" class="conejito2" alt="deco">
-</div>
-
-<header class="Encabezado">
-
-    <div class="item-encabezado">
-        <a href="Albums/Albums.html" class="enlace-nav">
-            <img src="gifs/Albumes.gif" alt="Albums" class="icono-pixel">
-            <p>Albums</p>
-        </a>
-    </div>
-
-    <div class="item-encabezado">
-        <a href="Albums/EPs.html" class="enlace-nav">
-            <img src="gifs/Singles.gif" alt="EPs" class="icono-pixel">
-            <p>EPs</p>
-        </a>
-    </div>
-
-    <div class="item-encabezado">
-        <a href="significados.html" class="enlace-nav"><img src="img/significado.png" alt="Merchandaising" class="icono-pixel">
-            <p>Significados</p>
-        </a>
-    </div>
-
-    <div class="item-encabezado">
-        <a href="biografia.html" class="enlace-nav"><img src="gifs/Singles.gif" alt="Biografía" class="icono-pixel">
-            <p>Biografía</p>
-        </a>
-    </div>
-
-</header>
-    <!-- CARRUSEL INFINITO -->
-    <div class="carrusel-ventana">
-        <div class="carrusel-cinta">
-
-            <img src="img/1.jpg" class="carrusel-img">
-            <img src="img/2.jpg" class="carrusel-img">
-            <img src="img/3.jpg" class="carrusel-img">
-            <img src="img/4.jpg" class="carrusel-img">
-            <img src="img/5.jpg" class="carrusel-img">
-            <img src="img/6.jpg" class="carrusel-img">
-            <img src="img/7.jpg" class="carrusel-img">
-            <img src="img/8.jpg" class="carrusel-img">
-            <img src="img/9.jpg" class="carrusel-img">
-            <img src="img/10.jpg" class="carrusel-img">
-            <img src="img/1.jpg" class="carrusel-img">
-            <img src="img/2.jpg" class="carrusel-img">
-            <img src="img/3.jpg" class="carrusel-img">
-            <img src="img/4.jpg" class="carrusel-img">
-            <img src="img/5.jpg" class="carrusel-img">
-            <img src="img/6.jpg" class="carrusel-img">
-            <img src="img/7.jpg" class="carrusel-img">
-            <img src="img/8.jpg" class="carrusel-img">
-            <img src="img/9.jpg" class="carrusel-img">
-            <img src="img/10.jpg" class="carrusel-img">
-            <img src="img/1.jpg" class="carrusel-img">
-            <img src="img/2.jpg" class="carrusel-img">
-            <img src="img/3.jpg" class="carrusel-img">
-            <img src="img/4.jpg" class="carrusel-img">
-            <img src="img/5.jpg" class="carrusel-img">
-            <img src="img/6.jpg" class="carrusel-img">
-            <img src="img/7.jpg" class="carrusel-img">
-            <img src="img/8.jpg" class="carrusel-img">
-            <img src="img/9.jpg" class="carrusel-img">
-            <img src="img/10.jpg" class="carrusel-img">
-            <img src="img/1.jpg" class="carrusel-img">
-            <img src="img/2.jpg" class="carrusel-img">
-            <img src="img/3.jpg" class="carrusel-img">
-            <img src="img/4.jpg" class="carrusel-img">
-            <img src="img/5.jpg" class="carrusel-img">
-            <img src="img/6.jpg" class="carrusel-img">
-            <img src="img/7.jpg" class="carrusel-img">
-            <img src="img/8.jpg" class="carrusel-img">
-            <img src="img/9.jpg" class="carrusel-img">
-            <img src="img/10.jpg" class="carrusel-img">
-            <img src="img/1.jpg" class="carrusel-img">
-            <img src="img/2.jpg" class="carrusel-img">
-            <img src="img/3.jpg" class="carrusel-img">
-            <img src="img/4.jpg" class="carrusel-img">
-            <img src="img/5.jpg" class="carrusel-img">
-            <img src="img/6.jpg" class="carrusel-img">
-            <img src="img/7.jpg" class="carrusel-img">
-            <img src="img/8.jpg" class="carrusel-img">
-            <img src="img/9.jpg" class="carrusel-img">
-            <img src="img/10.jpg" class="carrusel-img">
-        </div>
-    </div>
-</div>
-<script src="../Assets/js/page-info.js"></script>
-<script src="../Assets/js/profile-editor.js?v=perfil-cuenta-3"></script>
-<script src="../Assets/js/history-back.js"></script>
-<script src="../Assets/js/heart-animation.js?v=guide-static-20260525-1"></script>
-
-<script src="../Assets/js/site-footer.js?v=footer-1"></script>
+      <article class="panel">
+        <h2>Resumen</h2>
+        <p>Jazmin funciona mejor en la web como una ficha de atmosfera: portada, lista corta y significados seleccionados.</p>
+        <p class="muted">Esto reemplaza albumes separados, libros visuales, videos y scripts innecesarios.</p>
+      </article>
+    </section>
+  </main>
+  <script src="../Assets/js/simple-core.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

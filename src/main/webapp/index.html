@@ -1,106 +1,59 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paraíso de la Oscuridad</title>
-    <link rel="stylesheet" href="paginas/inicio/index.css">
-    <link rel="stylesheet" href="./Assets/css/responsive-fix.css?v=perf-symmetry-20260525-1">
-    <link rel="icon" type="image/x-icon" href="recursos/global/img-index/Wikisingers.png">
-    <script src="Assets/js/sql-storage.js?v=perf-symmetry-20260525-1"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paraiso de la Oscuridad</title>
+  <link rel="icon" href="recursos/global/img-index/Wikisingers.png">
+  <link rel="stylesheet" href="Assets/css/simple-core.css">
 </head>
-
 <body>
-   <div class="contenedor-ayuda-global">
-    <a href="#" class="boton-ayuda-global" id="disparador-ayuda">
-        <img src="recursos/global/img-index/Informacion.png" alt="Información">
-    </a>
-    <p class="texto-ayuda-subtitulado">Guia</p>
+  <main class="page">
+    <header class="topbar">
+      <a class="brand" href="index.html">
+        <img src="recursos/global/img-index/Wikisingers.png" alt="">
+        <span>Paraiso de la Oscuridad</span>
+      </a>
+      <nav class="nav" aria-label="Navegacion principal">
+        <a class="btn" href="Menú.html">Explorar</a>
+        <a class="btn" href="Inicio%20de%20Sesion/Inicio%20de%20Sesion.html">Entrar</a>
+        <a class="btn" href="Registrarse/Registrarse.html">Registro</a>
+      </nav>
+    </header>
 
-    <div class="pantalla-ayuda-modal" id="modal-ayuda-visual">
-        <div class="cuerpo-ayuda-retro">
-            
-            <h2>Manual para aparecer en el paraiso <br><span>(Procure hablar con la entidad antes de todo)</span></h2>
-            
-            <div class="galeria-explicativa">
-                <div class="tarjeta-instruccion">
-                    <img src="recursos/global/img-index/Rezo.png" alt="Paso 1: El Vuelo">
-                    <p>Para <span>Iniciar Sesión en el paraiso</span> pulse el boton <span>"Entrar al paraiso"</span>.</p>
-                </div>
-                <div class="tarjeta-instruccion">
-                    <img src="recursos/global/img-index/Entrada a la plaga.png" alt="Paso 2: Entrar">
-                    <p>Para <span>Registrase en el paraiso</span> pulse el botón <span>"Abrazar la Plaga"</span>.</p>
-                </div>
-                <div class="tarjeta-instruccion">
-                    <img src="recursos/global/img-index/Informacion.png" alt="Paso 2: Entrar">
-                    <p>Dentro de cada pagina aparecerá un <span>corazón</span> con el nombre <span>Guía</span> el cual te dará informaciónde cada pagina en la que te encuentres <span>PULSALO</span> en caso de no entender como continuar.</p>
-                </div>
-            </div>
-            <button class="cerrar-ayuda-btn ritual-btn">Entendí el ritual</button>
+    <section class="hero">
+      <div class="hero-copy">
+        <h1>WikiSingers oscuro, simple y bonito.</h1>
+        <p class="muted">Una version limpia: artistas, canciones clave y significados sin libros raros, carruseles eternos ni cien archivos peleandose entre ellos.</p>
+        <div class="nav">
+          <a class="btn primary" href="Jazmin%20Bean/Jazmin%20Bean.html">Jazmin Bean</a>
+          <a class="btn primary" href="Melanie%20Martinez/Melanie%20Martinez.html">Melanie Martinez</a>
         </div>
-    </div>
-</div>
-
-    
-
-    <section class="bienvenida">
-        <div class="bocadillo">
-            
-            <div class="bienvenida-contenido">
-                <h1>¿Venderías tu alma al <br><span>Paraíso de la Oscuridad?</span></h1>
-                
-               <div class="bienvenida-decoracion">
-    <a href="javascript:void(0)" class="logo-trigger" onclick="advertenciaEstetica()">
-        <img src="recursos/global/img-index/Wikisingers.png" alt="Logo" class="logo-animado"> 
-        <span class="texto-trigger">HABLAR CON LA ENTIDAD</span>
-    </a>
-</div>
-
-                <p>Esta pagina web no es para todo el mundo, aquí juntamos lo bizarro con la belleza.</p>
-                
-                <div class="botones-bienvenida">
-                    <a href="Inicio de Sesion/Inicio de Sesion.html" class="btn-principal">Entrar al Paraíso</a>
-                    <a href="Registrarse/Registrarse.html" class="btn-secundario">Abrazar la Plaga</a>
-                </div>
-            </div>
-        </div>
+      </div>
+      <div class="hero-art">
+        <img class="cover" src="Jazmin%20Bean/img/Icono%20jazmin%20bean.jpg" alt="Jazmin Bean">
+      </div>
     </section>
 
+    <section class="grid" aria-label="Artistas">
+      <article class="artist-card">
+        <img src="Jazmin%20Bean/img/traumatic%20livelihood.jpg" alt="Jazmin Bean">
+        <h2>Jazmin Bean</h2>
+        <p>Dark pop, teatralidad, heridas bonitas y letras afiladas.</p>
+        <a class="btn" href="Jazmin%20Bean/Jazmin%20Bean.html">Ver artista</a>
+      </article>
+      <article class="artist-card">
+        <img src="Melanie%20Martinez/img/Portals%20portada.jpg" alt="Melanie Martinez">
+        <h2>Melanie Martinez</h2>
+        <p>Pop alternativo, mundos visuales y canciones con cuento retorcido.</p>
+        <a class="btn" href="Melanie%20Martinez/Melanie%20Martinez.html">Ver artista</a>
+      </article>
+    </section>
 
-    <div id="modalPlaga" class="modal-overlay">
-        <div class="modal-contenido">
-            <h2 class="titulo-dualidad">EL PARAÍSO TE RECLAMA</h2>
-            <p class="poesia">
-                Has cruzado el umbral hacia una <span>eternidad de tonos pastel</span>. 
-                Aquí, la belleza se alimenta de lo extraño y el silencio grita en colores suaves.
-            </p>
-            <p class="poesia">
-                No busques lógica en nuestras sombras radiantes. Solo déjate infectar por 
-                <span>la decadencia</span> de quienes cantan lo que nadie se atreve a decir de una manera peculiar. 
-            </p>
-            <p class="pregunta">¿Aceptas que la oscuridad sea tu nuevo paraíso?</p>
-            <button onclick="cerrarModal()" class="btn-entendido">Hacer pacto de sangre y brillo</button>
-        </div>
-    </div>
-<script src="Assets/js/page-info.js"></script>
-    
-    <script src="paginas/inicio/index.js"></script>
-<script src="Assets/js/heart-animation.js?v=guide-static-20260525-1"></script>
-
-<script src="Assets/js/site-footer.js?v=footer-1"></script>
+    <footer class="footer">
+      <p>Paraiso de la Oscuridad · <span data-year></span></p>
+    </footer>
+  </main>
+  <script src="Assets/js/simple-core.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

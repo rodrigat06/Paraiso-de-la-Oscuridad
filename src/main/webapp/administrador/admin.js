@@ -362,7 +362,6 @@ function renderArtists() {
             <h3>${escapeHTML(artist.nombre)}</h3>
             <p>${escapeHTML(artist.tipo === "propio" ? "Artista propio" : "Artista famoso añadido")}</p>
             <div class="acciones-item">
-                <a class="boton-secundario" href="../Artista Personalizado.html?id=${encodeURIComponent(artist.id)}">Editar</a>
                 <button type="button" class="peligro" data-delete-custom="${escapeHTML(artist.id)}">Eliminar</button>
             </div>
         </article>
