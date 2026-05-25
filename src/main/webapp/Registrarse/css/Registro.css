@@ -39,6 +39,7 @@ body::before {
 
 
 .register-container {
+    z-index: -1;
     position: relative;
     width: 100%;
     min-height: 100%;
@@ -547,6 +548,9 @@ body::before {
 
 
 @media (max-width: 50rem) {
+    
+    z-index: -1;
+    
     .capa-ojos-fondo, .capa-ojos-frente {
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(4, 1fr);
@@ -596,6 +600,7 @@ body::before {
     .ojo-mediano { width: 3.6rem; }
     .ojo-pequeno { width: 2.6rem; }
     .ojo-diminuto { width: 1.6rem; }
+    
 }
 
 
