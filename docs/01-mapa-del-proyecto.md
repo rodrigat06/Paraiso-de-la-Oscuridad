@@ -31,7 +31,7 @@ src/main/webapp/
 ├── significados-canciones/        Ruta servida por Java para significados.
 ├── Assets/                        CSS y JS compartidos.
 ├── recursos/                      Otra carpeta de recursos compartidos.
-└── paginas/                       Intento anterior de ordenar paginas.
+└── paginas/inicio/                CSS y JS del index.
 ```
 
 ## Problema actual de organizacion
@@ -39,7 +39,7 @@ src/main/webapp/
 Hay tres problemas grandes:
 
 1. Algunas carpetas usan espacios y tildes, por ejemplo `Inicio de Sesion`, `Menú.html`, `contraseña olvidada`.
-2. Hay archivos duplicados, por ejemplo `Menú.css` y `paginas/menu/menu.css`.
+2. Las carpetas duplicadas antiguas ya se eliminaron. Queda solo el codigo que carga la web.
 3. Hay CSS y JS muy largos que hacen muchas cosas a la vez.
 
 Eso no significa que la web este mal hecha. Significa que ha crecido rapido y ahora toca ordenarla.

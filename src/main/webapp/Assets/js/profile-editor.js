@@ -117,12 +117,11 @@
 
     function profileArtistUrl(id) {
         const path = decodeURIComponent(location.pathname).replace(/\\/g, "/");
-        if (path.includes("/paginas/artista-personalizado/")) return `Artista Personalizado.html?id=${encodeURIComponent(id)}`;
         const segments = path.split("/").filter(Boolean);
         const rootIndex = Math.max(segments.indexOf("webapp"), segments.indexOf("buscador-contactos"));
         const depth = segments.slice(rootIndex >= 0 ? rootIndex + 1 : 0, -1).length;
         const prefix = depth <= 0 ? "" : "../".repeat(depth);
-        return `${prefix}paginas/artista-personalizado/Artista Personalizado.html?id=${encodeURIComponent(id)}`;
+        return `${prefix}Artista Personalizado.html?id=${encodeURIComponent(id)}`;
     }
 
     function injectStyles() {

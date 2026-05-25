@@ -22,12 +22,10 @@ Tambien se detectan duplicados claros:
 
 | Duplicado | Que hacer |
 | --- | --- |
-| `Menú.css` y `paginas/menu/menu.css` | Hecho: queda `Menú.css` |
-| `Menú.js` y `paginas/menu/menu.js` | Hecho: queda `Menú.js` |
-| `Artista Personalizado.css` y `paginas/artista-personalizado/Artista Personalizado.css` | Dejar solo uno |
-| `Artista Personalizado.js` y `paginas/artista-personalizado/Artista Personalizado.js` | Dejar solo uno |
-| `Assets/js/catalogo-canciones.js` y `recursos/shared/js/catalogo-canciones.js` | Hecho: queda `Assets/js/catalogo-canciones.js` |
-| `Assets/js/register.js` y `recursos/shared/js/register.js` | Hecho: queda `Assets/js/register.js` |
+| `Menú.css` y carpetas antiguas de `paginas/menu` | Hecho: queda `Menú.css` |
+| `Menú.js` y carpetas antiguas de `paginas/menu` | Hecho: queda `Menú.js` |
+| `Artista Personalizado.*` duplicado en `paginas/artista-personalizado` | Hecho: queda la pagina principal |
+| `Assets/js/*` y `recursos/shared/js/*` duplicados | Hecho: queda `Assets/js/*` |
 
 ## Fase 1.5 - Borrar duplicados exactos
 

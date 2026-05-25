@@ -2,7 +2,7 @@
 const params = new URLSearchParams(window.location.search);
 const artistaId = params.get("id");
 function obtenerBaseWebapp() {
-    return window.location.pathname.toLowerCase().includes("/paginas/artista-personalizado/") ? "../../" : "";
+    return "";
 }
 
 const baseWebapp = obtenerBaseWebapp();

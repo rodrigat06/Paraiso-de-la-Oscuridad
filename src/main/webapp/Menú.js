@@ -71,10 +71,7 @@ async function guardarArtistasPersonalizadosSeguro(artistas) {
 }
 
 function rutaArtistaPersonalizado(id) {
-    const archivo = `Artista Personalizado.html?id=${encodeURIComponent(id)}`;
-    return window.location.pathname.toLowerCase().includes("/paginas/menu/")
-        ? `../artista-personalizado/${archivo}`
-        : archivo;
+    return `Artista Personalizado.html?id=${encodeURIComponent(id)}`;
 }
 
 function obtenerArtistasOficialesOcultos() {
