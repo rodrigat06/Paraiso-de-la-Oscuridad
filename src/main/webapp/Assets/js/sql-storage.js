@@ -9,7 +9,7 @@
             : "";
         const link = document.createElement("link");
         link.rel = "stylesheet";
-        link.href = `${base}../css/responsive-fix.css?v=responsive-20260525-2`;
+        link.href = `${base}../css/responsive-fix.css?v=perf-symmetry-20260525-1`;
         link.dataset.responsiveFixes = "paraiso";
         document.head.appendChild(link);
     }

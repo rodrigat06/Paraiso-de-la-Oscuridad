@@ -862,3 +862,177 @@ body:has(.barra-admin) {
         max-width: calc(100vw - 0.8rem) !important;
     }
 }
+
+/* -------------------------------------------------------------------------- */
+/* MODO RENDIMIENTO Y SIMETRIA GLOBAL                                         */
+/* -------------------------------------------------------------------------- */
+/* Este bloque vive al final para ganar a los CSS antiguos sin repetir         */
+/* el mismo arreglo en cada pagina del proyecto.                               */
+
+/* Define el ancho maximo comun para que las paginas se centren igual. */
+:root {
+    --rx-content-max: 72rem;
+}
+
+/* Reduce animaciones y transiciones largas que pueden atascar moviles flojos. */
+*,
+*::before,
+*::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+}
+
+/* Desactiva avisos de animacion permanente al navegador. */
+* {
+    will-change: auto !important;
+}
+
+/* Respeta el ajuste del sistema cuando el usuario pide menos movimiento. */
+@media (prefers-reduced-motion: reduce) {
+    /* Apaga cualquier animacion heredada por completo en ese modo. */
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Centra los contenedores principales con el mismo ancho maximo. */
+.contenedor-maestro,
+.bienvenida,
+.register-container,
+.login-container,
+.panel-admin,
+.significado-detalle-maestro,
+.formulario-artista,
+.carrusel-seccion-artista,
+.catalogo-artista,
+.album-navegacion-container,
+.seccion-libro,
+.seccion-significados,
+.contenido-significados,
+.contenedor-principal,
+.main-content {
+    width: min(100%, var(--rx-content-max)) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Mantiene tarjetas y cajas exactamente centradas dentro de su seccion. */
+.caja,
+.register-box,
+.login-box,
+.modal-contenido,
+.cuerpo-ayuda-retro,
+.cuerpo-guia-registro,
+.admin-card,
+.album-card,
+.artista-personalizado,
+.cancion-filtrada,
+.hoja,
+.Port {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Equilibra los grids para que las columnas queden centradas. */
+.grid-albums,
+.portadas1,
+.resultado-canciones-genero,
+.galeria-explicativa,
+.pasos-guia-registro,
+.lista-artistas-personalizados,
+.contenedor-tarjetas,
+.cards,
+.album-grid {
+    justify-content: center !important;
+    justify-items: center !important;
+    align-items: stretch !important;
+}
+
+/* Centra textos de cabeceras y bloques principales. */
+.Encabezado,
+.titulo,
+.titulo-infectado,
+.subtitulo,
+.poesia,
+.pregunta,
+.bienvenida-contenido,
+.significado-detalle-header,
+.cabecera-admin,
+.album-header,
+.artist-header {
+    text-align: center !important;
+}
+
+/* Elimina inclinaciones decorativas que rompian la simetria. */
+.Port:nth-child(odd),
+.Port:nth-child(even),
+.conejito,
+.conejito2,
+.cucaracha-plaga,
+.ojo,
+.mood,
+.mood2,
+.igual,
+.Generos {
+    transform: none !important;
+}
+
+/* Trata GIFs decorativos como imagenes estaticas para bajar consumo. */
+img[src$=".gif"],
+img[src*=".gif?"] {
+    animation: none !important;
+    transform: none !important;
+}
+
+/* Centra los videos dentro de libros, albums y bloques de contenido. */
+video {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Centra botones y enlaces de navegacion sin cambiar la estetica pixel. */
+button,
+.btn-principal,
+.btn-secundario,
+.Iniciar,
+.crear,
+.boton-anadir-menu,
+.boton-admin-menu,
+.boton-secundario,
+.item-navegacion,
+.enlace-nav {
+    justify-content: center !important;
+    text-align: center !important;
+}
+
+/* Ajustes extra para pantallas pequenas. */
+@media (max-width: 48rem) {
+    /* En movil el ancho maximo debe ser el propio ancho de pantalla. */
+    :root {
+        --rx-content-max: 100vw;
+    }
+
+    /* Evita padding lateral accidental del body en paginas antiguas. */
+    body {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Obliga a los bloques principales a ocupar solo el ancho visible. */
+    .contenedor-maestro,
+    .bienvenida,
+    .register-container,
+    .login-container,
+    .panel-admin,
+    .significado-detalle-maestro,
+    .formulario-artista {
+        width: 100% !important;
+        max-width: 100vw !important;
+    }
+}
