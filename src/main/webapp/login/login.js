@@ -7,6 +7,12 @@ if (wantsAdmin) {
   message.textContent = "Entra con la cuenta administradora para abrir ese panel.";
 }
 
+if (new URLSearchParams(location.search).get("logout") === "1") {
+  localStorage.removeItem("user-email");
+  localStorage.removeItem("user-role");
+  message.textContent = "Sesion cerrada.";
+}
+
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   message.textContent = "Comprobando...";
