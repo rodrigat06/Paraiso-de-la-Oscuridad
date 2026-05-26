@@ -14,6 +14,7 @@ import java.io.PrintWriter;
 import java.io.StringReader;
 
 import com.ejemplo.model.UsuarioLoginModel;
+import com.ejemplo.model.UsuarioSesion;
 
 @WebServlet("/auth/login")
 public class AuthLoginController extends HttpServlet {
@@ -60,12 +61,19 @@ public class AuthLoginController extends HttpServlet {
         PrintWriter out = response.getWriter();
 
         try {
-            int idUsuario = model.validar(email, password);
+            UsuarioSesion usuario = model.validar(email, password);
 
-            if (idUsuario != -1) {
+            if (usuario != null) {
                 HttpSession sesion = request.getSession();
-                sesion.setAttribute("idUsuario", idUsuario);
-                out.print("{\"ok\": true}");
+                sesion.setAttribute("idUsuario", usuario.getId());
+                sesion.setAttribute("email", usuario.getEmail());
+                sesion.setAttribute("rol", usuario.getRol());
+                JsonObject json = Json.createObjectBuilder()
+                        .add("ok", true)
+                        .add("email", usuario.getEmail())
+                        .add("rol", usuario.getRol())
+                        .build();
+                out.print(json.toString());
             } else {
                 out.print("{\"ok\": false, \"mensaje\": \"Credenciales incorrectas\"}");
             }

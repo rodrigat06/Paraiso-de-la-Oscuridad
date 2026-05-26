@@ -6,19 +6,27 @@ import java.sql.ResultSet;
 
 public class UsuarioLoginModel {
 
-    public int validar(String email, String password) throws Exception {
+    public UsuarioSesion validar(String email, String password) throws Exception {
         SchemaModel.asegurarSchema();
 
         try (Connection con = ConexionBD.getConnection();
              PreparedStatement ps = con.prepareStatement(
-                     "SELECT id FROM usuarios WHERE email = ? AND password = ?"
+                     "SELECT id, email, rol FROM usuarios WHERE LOWER(email) = LOWER(?) AND password = ? AND bloqueado = FALSE"
              )) {
 
             ps.setString(1, email);
             ps.setString(2, password);
 
             try (ResultSet rs = ps.executeQuery()) {
-                return rs.next() ? rs.getInt("id") : -1;
+                if (!rs.next()) {
+                    return null;
+                }
+
+                return new UsuarioSesion(
+                        rs.getInt("id"),
+                        rs.getString("email"),
+                        rs.getString("rol")
+                );
             }
         }
     }

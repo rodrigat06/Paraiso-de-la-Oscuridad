@@ -1,6 +1,11 @@
-// Envia el formulario al backend. Si falla, muestra un mensaje claro.
+// Envia el formulario al backend y guarda el rol recibido.
 const form = document.querySelector("#loginForm");
 const message = document.querySelector("#message");
+const wantsAdmin = new URLSearchParams(location.search).get("admin") === "1";
+
+if (wantsAdmin) {
+  message.textContent = "Entra con la cuenta administradora para abrir ese panel.";
+}
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -23,8 +28,22 @@ form.addEventListener("submit", async (event) => {
       return;
     }
 
-    localStorage.setItem("user-email", data.email);
-    window.location.href = "../explorar/index.html";
+    const result = await response.json();
+
+    if (!result.ok) {
+      message.textContent = result.mensaje || "Correo o contraseña incorrectos.";
+      return;
+    }
+
+    localStorage.setItem("user-email", result.email || data.email);
+    localStorage.setItem("user-role", result.rol || "USER");
+
+    if (wantsAdmin && result.rol !== "ADMIN") {
+      message.textContent = "Esta cuenta no es administradora.";
+      return;
+    }
+
+    window.location.href = result.rol === "ADMIN" ? "../administrador/index.html" : "../explorar/index.html";
   } catch (error) {
     message.textContent = "No se pudo conectar con el servidor.";
   }
