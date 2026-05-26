@@ -43,7 +43,7 @@ form.addEventListener("submit", async (event) => {
       return;
     }
 
-    window.location.href = result.rol === "ADMIN" ? "../administrador/index.html" : "../explorar/index.html";
+    window.location.href = result.rol === "ADMIN" ? "../administrador/administrador.html" : "../explorar/explorar.html";
   } catch (error) {
     message.textContent = "No se pudo conectar con el servidor.";
   }

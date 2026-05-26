@@ -220,7 +220,7 @@ field("saveArtist").addEventListener("click", () => {
   window.artistStore.saveArtist(currentArtist);
   fillArtistSelect();
   artistSelect.value = currentArtist.slug;
-  field("viewArtist").href = `../artistas/ficha/index.html?artist=${currentArtist.slug}`;
+  field("viewArtist").href = `../artistas/ficha/ficha-artista.html?artist=${currentArtist.slug}`;
   message.textContent = "Cantante guardado. Ya aparece en Explorar y se puede abrir su ficha.";
 });
 

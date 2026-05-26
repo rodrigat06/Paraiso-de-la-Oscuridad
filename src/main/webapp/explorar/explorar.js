@@ -4,7 +4,7 @@ const grid = document.querySelector("#artistGrid");
 const imagePlaceholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 160'%3E%3Crect width='160' height='160' fill='%23090105'/%3E%3Cpath d='M20 20h120v120H20z' fill='none' stroke='%23ff79a7' stroke-width='6'/%3E%3Ctext x='80' y='88' text-anchor='middle' fill='%2364dcff' font-size='14' font-family='monospace'%3EARTISTA%3C/text%3E%3C/svg%3E";
 
 function artistLink(artist) {
-  return artist.page ? `../${artist.page}` : `../artistas/ficha/index.html?artist=${artist.slug}`;
+  return artist.page ? `../${artist.page}` : `../artistas/ficha/ficha-artista.html?artist=${artist.slug}`;
 }
 
 function imageAttributes(path, alt) {
@@ -28,7 +28,7 @@ function artistCard(artist) {
       <p>${artist.genre}</p>
       <div class="card-actions">
         <a class="button" href="${artistLink(artist)}">Abrir ficha</a>
-        <a class="button secondary" href="../administrador/index.html?artist=${artist.slug}">Editar</a>
+        <a class="button secondary" href="../administrador/administrador.html?artist=${artist.slug}">Editar</a>
       </div>
     </article>
   `;

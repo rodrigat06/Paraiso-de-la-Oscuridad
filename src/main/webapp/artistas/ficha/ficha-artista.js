@@ -13,7 +13,7 @@ if (!artist) {
   document.querySelector("[data-artist-genre]").textContent = artist.genre;
   document.querySelector("[data-artist-bio]").textContent = artist.bio;
   setImage(document.querySelector("[data-artist-cover]"), artist.cover);
-  document.querySelector("#editLink").href = `../../administrador/index.html?artist=${artist.slug}`;
+  document.querySelector("#editLink").href = `../../administrador/administrador.html?artist=${artist.slug}`;
 
   renderSection("albums", "Albumes", artist.releases.albums);
   renderSection("eps", "EPs", artist.releases.eps);

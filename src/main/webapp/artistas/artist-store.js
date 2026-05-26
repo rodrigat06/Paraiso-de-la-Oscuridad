@@ -7,7 +7,7 @@ const defaultArtists = [
     name: "Jazmin Bean",
     genre: "Dark pop / alt pop",
     cover: "artistas/jazmin-bean/img/icono.jpg",
-    page: "artistas/jazmin-bean/index.html",
+    page: "artistas/jazmin-bean/jazmin-bean.html",
     editable: true,
     bio: "Artista britanica de estetica teatral, dulce y agresiva. Su musica mezcla fantasia oscura, pop alternativo y una imagen muy reconocible.",
     releases: {
@@ -82,7 +82,7 @@ const defaultArtists = [
     name: "Melanie Martinez",
     genre: "Alt pop / conceptual pop",
     cover: "artistas/melanie-martinez/img/portada.jpg",
-    page: "artistas/melanie-martinez/index.html",
+    page: "artistas/melanie-martinez/melanie-martinez.html",
     editable: true,
     bio: "Cantante estadounidense conocida por crear eras visuales completas, personajes reconocibles y un pop oscuro con imaginario infantil.",
     releases: {

@@ -46,7 +46,7 @@ function localUrl(file) {
 function startServer() {
   const server = http.createServer((request, response) => {
     let pathname = decodeURIComponent(new URL(request.url, "http://localhost").pathname);
-    if (pathname === "/") pathname = "/index.html";
+    if (pathname === "/") pathname = "/pagina-principal.html";
 
     let file = path.normalize(path.join(root, pathname));
     if (!file.startsWith(root)) {

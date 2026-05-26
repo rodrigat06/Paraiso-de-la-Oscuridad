@@ -28,7 +28,7 @@ public class LoginFilter implements Filter {
             return;
         }
 
-        httpResponse.sendRedirect(httpRequest.getContextPath() + "/login/index.html");
+        httpResponse.sendRedirect(httpRequest.getContextPath() + "/login/login.html");
     }
 
     private boolean tieneSesion(HttpServletRequest request) {

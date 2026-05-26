@@ -29,6 +29,6 @@ public class AdminFilter implements Filter {
             return;
         }
 
-        httpResponse.sendRedirect(httpRequest.getContextPath() + "/login/index.html?admin=1");
+        httpResponse.sendRedirect(httpRequest.getContextPath() + "/login/login.html?admin=1");
     }
 }
